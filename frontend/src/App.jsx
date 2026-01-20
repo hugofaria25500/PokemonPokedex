@@ -1,14 +1,15 @@
-import { useHello } from "./hooks/useHello";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PokemonPage from "./pages/PokemonPage";
 
 function App() {
-  const message = useHello();
-
   return (
-    <div>
-      <h1>Frontend React</h1>
-      <p>{message}</p>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<PokemonPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
-export default App
+export default App;
+
