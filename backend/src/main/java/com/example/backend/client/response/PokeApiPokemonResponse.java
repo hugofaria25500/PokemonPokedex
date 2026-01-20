@@ -7,7 +7,7 @@ public class PokeApiPokemonResponse {
 
     public PokeApiPokemonResponse() {
     }
-
+    
     public PokeApiPokemonResponse(long id, String name, String imageUrl) {
         this.id = id;
         this.name = name;
