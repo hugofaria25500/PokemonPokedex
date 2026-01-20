@@ -1,19 +1,17 @@
-package com.example.backend.DTO;
+package com.example.backend.dto;
 
-import java.util.List;
-
-public class PokemonDTO {
+public class AbilitiesDTO {
 
     private long id;
+
     private String name;
 
-    //https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg
     private String imageUrl;
 
-    public PokemonDTO() {
+    public AbilitiesDTO() {
     }
 
-    public PokemonDTO(long id, String name, String imageUrl) {
+    public AbilitiesDTO(long id, String name, String imageUrl) {
         this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;

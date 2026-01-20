@@ -1,17 +1,14 @@
-package com.example.backend.DTO;
+package com.example.backend.client.response;
 
-public class AbilitiesDTO {
-
+public class PokeApiPokemonResponse {
     private long id;
-
     private String name;
-
     private String imageUrl;
 
-    public AbilitiesDTO() {
+    public PokeApiPokemonResponse() {
     }
 
-    public AbilitiesDTO(long id, String name, String imageUrl) {
+    public PokeApiPokemonResponse(long id, String name, String imageUrl) {
         this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;

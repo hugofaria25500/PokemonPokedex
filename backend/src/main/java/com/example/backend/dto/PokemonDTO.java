@@ -1,17 +1,17 @@
-package com.example.backend.DTO;
+package com.example.backend.dto;
 
-public class TypesDTO {
+public class PokemonDTO {
 
     private long id;
-
     private String name;
 
+    //https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg
     private String imageUrl;
 
-    public TypesDTO() {
+    public PokemonDTO() {
     }
 
-    public TypesDTO(long id, String name, String imageUrl) {
+    public PokemonDTO(long id, String name, String imageUrl) {
         this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;
