@@ -1,15 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 body {
-    background-color: black;
     margin: 0;
+    background-image: url("../resources/img/pokeball_background_image.jpg");
+    background-size: cover;
+    height: 100vh;
+    backdrop-filter: blur(75px);
+    font-family: 'Varela Round', sans-serif;
+}
+
+.navbar-wrapper {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
 .navbar-container {
-    width: 100%;
-    background-color: #ffcb05;
-    padding: 20px;
+    width: 65%;
+    height: 70px;
     display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: bold;
+    font-size: 15;
+
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 40px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
-h1 {
-    color: white;
+.navbar-option-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 14px;
+    border-radius: 30px;
+
+    transition: background-color 0.2s ease;
+}
+
+.navbar-option-container:hover {
+    background-color: rgba(163, 150, 150, 0.771);
+    cursor: pointer;
+}
+
+.navbar-icon {
+    width: 35px;
+    height: 35px;
+}
+
+.navbar-option-container a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.navbar-option-container.disabled {
+    opacity: 0.4;
+    cursor: default;
+    pointer-events: none;
 }
