@@ -17,7 +17,7 @@ function Navbar() {
         <div className="navbar-wrapper">
             <nav className="navbar-container">
                 <NavbarOption icon={homeIcon} label="Home" />
-                <NavbarOption icon={pokedexIcon} label="Pokedéx" />
+                <NavbarOption icon={pokedexIcon} label="Pokédex" />
                 <NavbarOption icon={tradingCardIcon} label="Trading Cards" disabled={true}/>
                 <NavbarOption icon={gamesIcon} label="Video Games" disabled={true}/>
                 <NavbarOption icon={pokemonTvIcon} label="Pokemon TV" disabled={true}/>

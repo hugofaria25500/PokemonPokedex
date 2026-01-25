@@ -9,7 +9,9 @@ function SearchBar() {
                 className="search-input"
                 placeholder="Search Pokémon..."
             />
-            <img className="navbar-icon" src={pokeballIcon} alt="Pokeball Icon" />
+            <div className="search-button-container">
+                <img className="navbar-icon" src={pokeballIcon} alt="Pokeball Icon" />
+            </div>
         </div>
     );
 }
