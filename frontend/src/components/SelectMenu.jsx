@@ -2,7 +2,7 @@ import { useState } from "react";
 import SelectOption from "./SelectOption";
 import ArrowDownIcon from "../resources/img/icons/arrow_down_icon.png";
 
-function SelectMenu({label, icon}) {
+function SelectMenu({label, icon, options}) {
     const [open, setOpen] = useState(false);
 
     return (
@@ -21,12 +21,13 @@ function SelectMenu({label, icon}) {
             </div>
 
             <div className={`select-options ${open ? "active" : ""}`}>
-                <SelectOption label="Option 1" icon="" onClick={() => {}} />
-                <SelectOption label="Option 2" icon="" onClick={() => {}} />
-                    {/* 
-                <SelectOption label="Option 3" icon="" onClick={() => {}} />
-                <SelectOption label="Option 4" icon="" onClick={() => {}} />
-                <SelectOption label="Option 5" icon="" onClick={() => {}} />*/}
+                {options.map((option, index) => (
+                    <SelectOption 
+                        key={index}             
+                        label={option}
+                        icon=""
+                        onClick={() => {}} />
+                ))}
             </div>
 
         </div>
