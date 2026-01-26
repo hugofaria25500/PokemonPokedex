@@ -3,15 +3,9 @@ import PokemonSelected from "./PokemonSelected";
 
 function PokemonGrid({ pokemons }) {
   return (
-    <div>
-        <div className="pokemon-grid">
-            <PokemonList pokemons={pokemons} />
-        </div>
-        {/* 
-        <div>
-            <PokemonSelected pokemon={pokemons[0]} />
-        </div> */}
-    </div>
+      <div className="pokemon-grid-container">
+          <PokemonList pokemons={pokemons} />
+      </div>
   );
 }
 

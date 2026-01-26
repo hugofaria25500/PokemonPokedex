@@ -243,3 +243,21 @@ body {
     border: 3px solid lightcoral;
 }
 
+/*POKEMON LIST*/
+
+.pokemon-grid-container {
+    margin-top: 20px;
+    width: 100%;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.pokemon-grid-container .pokemon-grid {
+    width: 90%;
+    height: 100%;
+    background-color: salmon;
+}
+
