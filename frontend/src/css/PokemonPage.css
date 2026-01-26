@@ -129,6 +129,117 @@ body {
 /*FILTER BOX*/
 .filter-box-container{
     width: 100%;
-    height: 100px;
-    background-color: lightgreen;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
+
+.select-menu {
+    position: relative;
+    cursor: pointer;
+    width: 200px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.select-menu .select-trigger{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.select-trigger .label-box{
+    width: 80%;
+    height: 20px;
+    display: flex;
+}
+
+.select-trigger .label-box .iconType{
+    width: 15%;
+    height: 100%;
+    padding: 0 10px;
+}
+
+.select-trigger .label-box .iconType img{
+    width: 100%;
+    height: 100%;
+}
+
+.select-trigger .select-arrow{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.select-trigger .select-arrow img{
+    width: 25px;
+    height: 25px;
+    transition: transform 0.5s ease;
+}
+
+.select-trigger .select-arrow.open img {
+    transform: rotate(180deg);
+    transition: transform 0.5s ease;
+}
+
+
+.refresh-container{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.refresh-container .refresh-icon{
+    width: 25px;
+    height: 25px;
+    transition: transform 0.5s ease;
+}
+
+.refresh-container .refresh-icon:hover{
+    transform: rotate(180deg) scale(1.2);
+}
+
+
+/*SELECT MENU - OPTIONS*/
+
+.select-options {
+    position: absolute;
+    width: 200px;
+    max-height: 160px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease,transform 0.2s ease;
+    z-index: 10;
+}
+
+.select-menu .select-options.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(14px); 
+    transition: opacity 0.2s ease,transform 0.2s ease;
+}
+
+.select-menu .select-option {
+    height: 30px;
+    cursor: pointer;
+    background-color: blue;
+    border: 3px solid lightcoral;
+}
+
