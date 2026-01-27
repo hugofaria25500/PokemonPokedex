@@ -4,10 +4,11 @@ import PokemonSearchBar from "../components/PokemonSearchBar.jsx";
 import PokemonGrid from "../components/PokemonGrid.jsx";
 
 import "../css/PokemonPage.css";
+import "../css/App.css";
 
 function PokemonPage() {
   return (
-      <div>
+      <div className="page">
         <Navbar />
         <PokemonSearchBar />
         <PokemonGrid pokemons={pokemonData} />
