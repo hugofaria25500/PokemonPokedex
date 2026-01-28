@@ -1,57 +1,199 @@
+import grassTypeLogo from '../resources/img/types/grass_type_logo.png';
+import fireTypeLogo from '../resources/img/types/fire_type_logo.png';
+import waterTypeLogo from '../resources/img/types/water_type_logo.png'; 
+
 export const pokemonData = [
   {
-    id: 1,
+    id: "001",
     name: "Bulbasaur",
-    type: "Grass/Poison",
-    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+    type: ["Grass", "Poison"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+    typeUrl: grassTypeLogo
   },
   {
-    id: 2,
+    id: "002",
     name: "Ivysaur",
-    type: "Grass/Poison",
-    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"
+    type: ["Grass", "Poison"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
+    typeUrl: grassTypeLogo
   },
   {
-    id: 3,
+    id: "003",
     name: "Venusaur",
-    type: "Grass/Poison",
-    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png"
+    type: ["Grass", "Poison"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
+    typeUrl: grassTypeLogo
   },
   {
-    id: 4,
+    id: "004",
     name: "Charmander",
-    type: "Fire",
-    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+    type: ["Fire"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+    typeUrl: fireTypeLogo
   },
   {
-    id: 5,
+    id: "005",
     name: "Charmeleon",
-    type: "Fire",
-    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png"
+    type: ["Fire"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png",
+    typeUrl: fireTypeLogo
   },
+  
   {
-    id: 6,
+    id: "006",
     name: "Charizard",
-    type: "Fire/Flying",
-    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"
+    type: ["Fire", "Flying"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
+    typeUrl: fireTypeLogo
   },
   {
-    id: 7,
+    id: "007",
     name: "Squirtle",
-    type: "Water",
-    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
+    type: ["Water"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+    typeUrl: waterTypeLogo
   },
   {
-    id: 8,
+    id: "008",
     name: "Wartortle",
-    type: "Water",
-    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png"
+    type: ["Water"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png",
+    typeUrl: waterTypeLogo
   },
   {
-    id: 9,
+    id: "009",
     name: "Blastoise",
-    type: "Water",
-    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png"
+    type: ["Water"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",
+    typeUrl: waterTypeLogo
+  },
+  {
+    id: "001",
+    name: "Bulbasaur",
+    type: ["Grass", "Poison"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+    typeUrl: grassTypeLogo
+  },
+  {
+    id: "002",
+    name: "Ivysaur",
+    type: ["Grass", "Poison"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
+    typeUrl: grassTypeLogo
+  },
+  {
+    id: "003",
+    name: "Venusaur",
+    type: ["Grass", "Poison"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
+    typeUrl: grassTypeLogo
+  },
+  {
+    id: "004",
+    name: "Charmander",
+    type: ["Fire"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+    typeUrl: fireTypeLogo
+  },
+  {
+    id: "005",
+    name: "Charmeleon",
+    type: ["Fire"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png",
+    typeUrl: fireTypeLogo
+  },
+  
+  {
+    id: "006",
+    name: "Charizard",
+    type: ["Fire", "Flying"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
+    typeUrl: fireTypeLogo
+  },
+  {
+    id: "007",
+    name: "Squirtle",
+    type: ["Water"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+    typeUrl: waterTypeLogo
+  },
+  {
+    id: "008",
+    name: "Wartortle",
+    type: ["Water"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png",
+    typeUrl: waterTypeLogo
+  },
+  {
+    id: "009",
+    name: "Blastoise",
+    type: ["Water"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",
+    typeUrl: waterTypeLogo
+  },
+  {
+    id: "001",
+    name: "Bulbasaur",
+    type: ["Grass", "Poison"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+    typeUrl: grassTypeLogo
+  },
+  {
+    id: "002",
+    name: "Ivysaur",
+    type: ["Grass", "Poison"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
+    typeUrl: grassTypeLogo
+  },
+  {
+    id: "003",
+    name: "Venusaur",
+    type: ["Grass", "Poison"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
+    typeUrl: grassTypeLogo
+  },
+  {
+    id: "004",
+    name: "Charmander",
+    type: ["Fire"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+    typeUrl: fireTypeLogo
+  },
+  {
+    id: "005",
+    name: "Charmeleon",
+    type: ["Fire"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png",
+    typeUrl: fireTypeLogo
+  },
+  
+  {
+    id: "006",
+    name: "Charizard",
+    type: ["Fire", "Flying"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
+    typeUrl: fireTypeLogo
+  },
+  {
+    id: "007",
+    name: "Squirtle",
+    type: ["Water"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+    typeUrl: waterTypeLogo
+  },
+  {
+    id: "008",
+    name: "Wartortle",
+    type: ["Water"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png",
+    typeUrl: waterTypeLogo
+  },
+  {
+    id: "009",
+    name: "Blastoise",
+    type: ["Water"],
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",
+    typeUrl: waterTypeLogo
   }
 ];
 
