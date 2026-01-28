@@ -2,6 +2,10 @@
 .selected-pokemon-box{
     width: 25%;
     height: 100%;
+}
+
+.selected-pokemon-box .pokemon-selected-card {
+    width: 100%;
     background-color: rgba(0,0,0,0.35);
     border-radius: 20px;
     display: flex;
@@ -9,12 +13,10 @@
     align-items: center;
 }
 
-.card-base {
-    width: 100%;
+.pokemon-selected-card .card-base {
+    width: 180px;
     height: 220px;
-    background-color: rgba(0,0,0,0.35);
     border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,57 +26,4 @@
     overflow: hidden;
 }
 
-.card-base .type-logo {
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    right: 18px;
-    filter: blur(30px);
-    z-index: -1;
-}
 
-.card-base .frame-box {
-    width: 100%;
-    height: 60%;
-    margin: 0 10px 12px 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px; 
-}
-
-.pokemon-card .frame-box img {
-    width: 60%;
-}
-
-.card-base .label-box {
-    margin-top: -10px;
-    width: 100%;
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: start
-}
-
-.card-base .id-box {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.id-box p{
-    margin: 10px 0 0 0;
-    color: white;
-    font-weight: bold;
-    background-color: black;
-    padding: 4px 10px;
-    border-radius: 10px;
-    font-size: 13px;
-}
-
-.card-base .label-box p {
-    margin: 0px 0px 5px 0px;
-    text-align: center;
-    color: white;
-}
