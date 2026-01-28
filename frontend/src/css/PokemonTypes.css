@@ -1,0 +1,119 @@
+.type-badge-box {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+.type-badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+
+  font-size: 10px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* GRASS */
+.grass-type-badge {
+  background-color: #7AC74C;
+}
+
+/* POISON */
+.poison-type-badge {
+  background-color: #A33EA1;
+}
+
+/* FIRE */
+.fire-type-badge {
+  background-color: #EE8130;
+}
+
+/* WATER */
+.water-type-badge {
+  background-color: #6390F0;
+}
+
+/* ELECTRIC */
+.electric-type-badge {
+  background-color: #F7D02C;
+  color: #333;
+}
+
+/* ICE */
+.ice-type-badge {
+  background-color: #96D9D6;
+  color: #333;
+}
+
+/* FIGHTING */
+.fighting-type-badge {
+  background-color: #C22E28;
+}
+
+/* GROUND */
+.ground-type-badge {
+  background-color: #E2BF65;
+  color: #333;
+}
+
+/* FLYING */
+.flying-type-badge {
+  background-color: #A98FF3;
+}
+
+/* PSYCHIC */
+.psychic-type-badge {
+  background-color: #F95587;
+}
+
+/* BUG */
+.bug-type-badge {
+  background-color: #A6B91A;
+}
+
+/* ROCK */
+.rock-type-badge {
+  background-color: #B6A136;
+}
+
+/* GHOST */
+.ghost-type-badge {
+  background-color: #735797;
+}
+
+/* DRAGON */
+.dragon-type-badge {
+  background-color: #6F35FC;
+}
+
+/* DARK */
+.dark-type-badge {
+  background-color: #705746;
+}
+
+/* STEEL */
+.steel-type-badge {
+  background-color: #B7B7CE;
+  color: #333;
+}
+
+/* FAIRY */
+.fairy-type-badge {
+  background-color: #D685AD;
+}
+
+/*EXTRAS*/
+
+.type-badge {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.type-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}

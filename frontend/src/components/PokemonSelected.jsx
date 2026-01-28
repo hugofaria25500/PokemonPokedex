@@ -1,9 +1,26 @@
+import "../css/PokemonSelected.css"
+
 function PokemonSelected({ pokemon }) {
   return (
     <div className="pokemon-selected-card">
-      <div className="card-frame">
-        <img src={pokemon.imageUrl} alt={pokemon.name} />
+      <div className="card-base">
+        <img className="type-logo" src={pokemon.typeUrl} />
+        <div className="id-box">
+          <p>#{pokemon.id}</p>
+        </div>
+        <div className="frame-box">
+          <img src={pokemon.imageUrl} />
+        </div>
+        <div className="label-box">
+          <p>{pokemon.name}</p>
+          <div className="type-badge-box">
+            {pokemon.type.map((type, index) => (
+              <p key={index} className={`type-badge ${type.toLowerCase()}-type-badge`}> {type}</p>
+            ))}
+          </div>
+        </div>
       </div>
+      
       <div className="minimal-stats">
         <h2>#{pokemon.id}</h2>
         <h2>{pokemon.name}</h2>
