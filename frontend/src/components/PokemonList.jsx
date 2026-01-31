@@ -1,6 +1,8 @@
 import PokemonCard from "./PokemonCard";
 import PokemonSelected from "./PokemonSelected";
 
+import {selectedPokemon}  from "../js/data.js";
+
 function PokemonList({ pokemons }) {
     return (
         <div className="pokemon-grid">
@@ -10,7 +12,7 @@ function PokemonList({ pokemons }) {
                 ))}
             </div>
             <div className="selected-pokemon-box">
-                <PokemonSelected pokemon={pokemons[0]} />
+                <PokemonSelected pokemon={selectedPokemon} />
             </div> 
         </div>
   );

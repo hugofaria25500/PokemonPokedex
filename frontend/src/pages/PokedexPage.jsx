@@ -1,4 +1,4 @@
-import { pokemonData } from "../js/data.js";
+import { pokemonDataMock } from "../js/data.js";
 import Navbar from "../components/Navbar.jsx";
 import PokemonSearchBar from "../components/PokemonSearchBar.jsx";
 import PokemonGrid from "../components/PokemonGrid.jsx";
@@ -11,7 +11,7 @@ function PokemonPage() {
       <div className="page">
         <Navbar />
         <PokemonSearchBar />
-        <PokemonGrid pokemons={pokemonData} />
+        <PokemonGrid pokemons={pokemonDataMock} />
       </div>
   );
 }

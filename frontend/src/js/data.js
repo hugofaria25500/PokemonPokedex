@@ -2,7 +2,7 @@ import grassTypeLogo from '../resources/img/types/grass_type_logo.png';
 import fireTypeLogo from '../resources/img/types/fire_type_logo.png';
 import waterTypeLogo from '../resources/img/types/water_type_logo.png'; 
 
-export const pokemonData = [
+export const pokemonDataMock = [
   {
     id: "001",
     name: "Bulbasaur",
@@ -234,3 +234,65 @@ export const regionFilterOptions = [
   "Alola",
   "Galar",
 ];
+
+export const selectedPokemon = {
+  id: "001",
+  name: "Bulbasaur",
+  types: ["Grass", "Poison"],
+  imageUrl:
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+  typeUrl: grassTypeLogo,
+  about: {
+    description:
+      "A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon.",
+    region: "Kanto",
+    height: "0.7 m",
+    weight: "6.9 kg",
+  },
+
+  stats: {
+    hp: 45,
+    attack: 49,
+    defense: 49,
+    specialAttack: 65,
+    specialDefense: 65,
+    speed: 45
+  },
+
+  abilities: [
+    {
+      id: "ability-001",
+      name: "Overgrow",
+      description:
+        "Powers up Grass-type moves when the Pokémon's HP is low."
+    },
+    {
+      id: "ability-002",
+      name: "Chlorophyll",
+      description:
+        "Boosts the Pokémon?s Speed stat in sunny weather."
+    }
+  ],
+
+  evolutionChain: [
+    {
+      id: "001",
+      name: "Bulbasaur",
+      imageUrl:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+    },
+    {
+      id: "002",
+      name: "Ivysaur",
+      imageUrl:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png"
+    },
+    {
+      id: "003",
+      name: "Venusaur",
+      imageUrl:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png"
+    }
+  ]
+};
+

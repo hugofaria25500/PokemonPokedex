@@ -1,4 +1,5 @@
 import "../css/PokemonSelected.css";
+import GrassTypeImage from "../resources/img/types/grass_type_logo.png"
 
 function PokemonSelected({ pokemon }) {
   return (
@@ -6,28 +7,52 @@ function PokemonSelected({ pokemon }) {
         <img className="type-logo" src={pokemon.typeUrl} />
         <div className="card-base">
 
-                <div className="id-box">
-                  <p>#{pokemon.id}</p>
-                </div>
+            <div className="id-box">
+              <p>#{pokemon.id}</p>
+            </div>
 
-                <div className="frame-box">
-                    <img src="" alt="" />
-                    {/*<img src={pokemon.imageUrl}/>*/}
-                </div>
+            <div className="frame-box">
+                <img id="frame-logo" src={GrassTypeImage}/>
+                <img src={pokemon.imageUrl}/>
+            </div>
 
-                <div className="label-box"> 
-                    <p>{pokemon.name}</p>
-                    <div className="type-badge-box">
-                      {pokemon.type.map((type, index) => (
-                        <p key={index} className={`type-badge ${type.toLowerCase()}-type-badge`}>
-                          {type}
-                        </p>))}
-                    </div>
+            <div className="label-box"> 
+                <p id="pokemon-name-label">{pokemon.name}</p>
+                <div className="type-badge-box">
+                  {pokemon.types.map((type, index) => (
+                    <p key={index} className={`type-badge ${type.toLowerCase()}-type-badge`}>
+                      {type}
+                    </p>))}
                 </div>
+            </div>
         </div>
 
         <div className="about">
-            <h3>About</h3>
+
+            <h3 className="label-text">About</h3>
+            <p id="pokemon-description">{pokemon?.about?.description}</p>
+            
+            <div className="stats">
+
+                <div className="region-container">
+                        <h3>{pokemon.about.region}</h3>
+                        <p>Region</p>
+                </div>
+
+                <div className="body-stats-container">
+                  
+                  <div className="height-container">
+                      <h3>{pokemon.about.height}</h3>
+                      <p>Height</p>
+                  </div>
+
+                  <div className="weight-container">
+                      <h3>{pokemon.about.weight}</h3>
+                      <p>Weight</p>
+                  </div>
+                  
+                </div>
+            </div>
         </div>
         <div className="base-stats">
             <h3>Base Stats</h3>
