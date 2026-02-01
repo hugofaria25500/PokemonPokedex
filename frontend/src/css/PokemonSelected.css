@@ -106,20 +106,23 @@
 }
 
 /*POKEMON ABOUT SECTION*/
-.pokemon-selected-card .about {
+.pokemon-selected-card .about {   
     height: auto;
     background-color: rgba(0,0,0,0.4);
-    border-radius: 40px 40px 0 0;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: start;
     padding: 30px 30px 0px 30px;
+    border-radius: 40px 40px 0 0;
+    letter-spacing: 0.5px;
 }
 
 .about h3 {
     margin: 0;
     font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 100;
 }
 
 .about p {
@@ -131,6 +134,9 @@
     display: flex;
     flex-direction: column;
     align-items: center; 
+    padding: 5px 0;
+    border-radius: 10px;
+    background-color: rgba(160, 145, 145, 0.2);
 }
 
 .about .stats p {
@@ -163,26 +169,57 @@
 
 /*POKEMON BASE STATS SECTION*/
 .pokemon-selected-card .base-stats {
+    height: auto;
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 0px 30px 15px 30px;
+    letter-spacing: 0.5px;
+}
+
+.base-stats h3 {
+    margin: 30px 0 15px 0;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+/*POKEMON ABILITIES*/
+.pokemon-selected-card .abilities {
     height: 400px;
     background-color: rgba(0,0,0,0.4);
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: start;
-    padding: 0px 30px;
+    padding: 0px 30px 15px 30px;
+    letter-spacing: 0.5px;
 }
 
-
-.pokemon-selected-card .abilities {
-    width: 100%;
-    height: 100px;
+.abilities h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 100;
 }
 
+/*POKEMON EVOLUTION CHAIN*/
 .pokemon-selected-card .evolution-chain {
-    width: 100%;
-    height: 100px;
+    height: 400px;
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 0px 30px 15px 30px;
+    letter-spacing: 0.5px;
 }
 
-
+.evolution-chain h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 100;
+}
 
 

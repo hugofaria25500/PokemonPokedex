@@ -1,7 +1,14 @@
+import StatBar from "./StatBar";
+import { typeColors } from "../js/data";
+
 import "../css/PokemonSelected.css";
 import GrassTypeImage from "../resources/img/types/grass_type_logo.png"
 
 function PokemonSelected({ pokemon }) {
+
+  const mainType = pokemon.types[0].toLowerCase();
+  const barColor = typeColors[mainType] || typeColors["normal"];
+
   return (
     <div className="pokemon-selected-card">
         <img className="type-logo" src={pokemon.typeUrl} />
@@ -54,9 +61,20 @@ function PokemonSelected({ pokemon }) {
                 </div>
             </div>
         </div>
+
         <div className="base-stats">
+          
             <h3>Base Stats</h3>
+
+            <StatBar label="HP" value={pokemon.stats.hp} color={barColor} />
+            <StatBar label="Attack" value={pokemon.stats.attack} color={barColor} />
+            <StatBar label="Defense" value={pokemon.stats.defense} color={barColor} />
+            <StatBar label="Sp. Atk" value={pokemon.stats.specialAttack} color={barColor} />
+            <StatBar label="Sp. Def" value={pokemon.stats.specialDefense} color={barColor} />
+            <StatBar label="Speed" value={pokemon.stats.speed} color={barColor} />
+
         </div>
+
         <div className="abilities">
             <h3>Abilities</h3>
         </div>

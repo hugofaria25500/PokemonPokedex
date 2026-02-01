@@ -235,64 +235,90 @@ export const regionFilterOptions = [
   "Galar",
 ];
 
-export const selectedPokemon = {
-  id: "001",
-  name: "Bulbasaur",
-  types: ["Grass", "Poison"],
+
+
+export const selectedPokemon2 = {
+  id: "004",
+  name: "Charmander",
+  types: ["Fire"],
   imageUrl:
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-  typeUrl: grassTypeLogo,
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+  typeUrl: fireTypeLogo,
+
   about: {
     description:
-      "A strange seed was planted on its back at birth. The plant sprouts and grows with this Pok√©mon.",
+      "It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.",
     region: "Kanto",
-    height: "0.7 m",
-    weight: "6.9 kg",
+    height: "0.6 m",
+    weight: "8.5 kg"
   },
 
   stats: {
-    hp: 45,
-    attack: 49,
-    defense: 49,
-    specialAttack: 65,
-    specialDefense: 65,
-    speed: 45
+    hp: 39,
+    attack: 52,
+    defense: 43,
+    specialAttack: 60,
+    specialDefense: 50,
+    speed: 65
   },
 
   abilities: [
     {
-      id: "ability-001",
-      name: "Overgrow",
+      id: "ability-003",
+      name: "Blaze",
       description:
-        "Powers up Grass-type moves when the Pok√©mon's HP is low."
+        "Powers up Fire-type moves when the PokÈmon's HP is low."
     },
     {
-      id: "ability-002",
-      name: "Chlorophyll",
+      id: "ability-004",
+      name: "Solar Power",
       description:
-        "Boosts the Pok√©mon?s Speed stat in sunny weather."
+        "Boosts the PokÈmon?s Special Attack stat in sunny weather, but HP decreases."
     }
   ],
 
   evolutionChain: [
     {
-      id: "001",
-      name: "Bulbasaur",
+      id: "004",
+      name: "Charmander",
       imageUrl:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png"
     },
     {
-      id: "002",
-      name: "Ivysaur",
+      id: "005",
+      name: "Charmeleon",
       imageUrl:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png"
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png"
     },
     {
-      id: "003",
-      name: "Venusaur",
+      id: "006",
+      name: "Charizard",
       imageUrl:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png"
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"
     }
   ]
 };
+
+
+export const typeColors = {
+  grass: "#22c55e",
+  fire: "#ef4444",
+  water: "#3b82f6",
+  electric: "#facc15",
+  poison: "#a855f7",
+  flying: "#60a5fa",
+  bug: "#84cc16",
+  normal: "#a3a3a3",
+  ground: "#d97706",
+  rock: "#78716c",
+  psychic: "#ec4899",
+  ice: "#67e8f9",
+  dragon: "#6366f1",
+  dark: "#374151",
+  steel: "#94a3b8",
+  fairy: "#f472b6",
+  fighting: "#f97316",
+  ghost: "#7c3aed" 
+};
+
 
