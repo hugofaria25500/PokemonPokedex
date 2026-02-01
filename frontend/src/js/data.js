@@ -235,7 +235,61 @@ export const regionFilterOptions = [
   "Galar",
 ];
 
-
+export const selectedPokemon = {
+  id: "001",
+  name: "Bulbasaur",
+  types: ["Grass", "Poison"],
+  imageUrl:
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+  typeUrl: grassTypeLogo,
+  about: {
+    description:
+      "A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon.",
+    region: "Kanto",
+    height: "0.7 m",
+    weight: "6.9 kg",
+  },
+  stats: {
+    hp: 45,
+    attack: 49,
+    defense: 49,
+    specialAttack: 65,
+    specialDefense: 65,
+    speed: 45,
+  },
+  abilities: [
+    {
+      id: "ability-001",
+      name: "Overgrow",
+      description: "Powers up Grass-type moves when the Pokémon's HP is low.",
+    },
+    {
+      id: "ability-002",
+      name: "Chlorophyll",
+      description: "Boosts the Pokémon?s Speed stat in sunny weather.",
+    },
+  ],
+  evolutionChain: [
+    {
+      id: "001",
+      name: "Bulbasaur",
+      imageUrl:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+    },
+    {
+      id: "002",
+      name: "Ivysaur",
+      imageUrl:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
+    },
+    {
+      id: "003",
+      name: "Venusaur",
+      imageUrl:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
+    },
+  ],
+};
 
 export const selectedPokemon2 = {
   id: "004",
@@ -267,13 +321,13 @@ export const selectedPokemon2 = {
       id: "ability-003",
       name: "Blaze",
       description:
-        "Powers up Fire-type moves when the Pok�mon's HP is low."
+        "Powers up Fire-type moves when the Pokémon's HP is low."
     },
     {
       id: "ability-004",
       name: "Solar Power",
       description:
-        "Boosts the Pok�mon?s Special Attack stat in sunny weather, but HP decreases."
+        "Boosts the Pokémon?s Special Attack stat in sunny weather, but HP decreases."
     }
   ],
 
@@ -298,7 +352,6 @@ export const selectedPokemon2 = {
     }
   ]
 };
-
 
 export const typeColors = {
   grass: "#22c55e",

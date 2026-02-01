@@ -1,4 +1,5 @@
 import StatBar from "./StatBar";
+import AbilityBox from "./AbilityBox";
 import { typeColors } from "../js/data";
 
 import "../css/PokemonSelected.css";
@@ -77,6 +78,10 @@ function PokemonSelected({ pokemon }) {
 
         <div className="abilities">
             <h3>Abilities</h3>
+
+            {pokemon.abilities.map((ability) => (
+              <AbilityBox ability={ability}/>
+            ))}
         </div>
         <div className="evolution-chain">
             <h3>Evolution Chain</h3>
