@@ -1,10 +1,13 @@
 import "../css/AbilityBox.css"
 
-function AbilityBox({ability}) {
+function AbilityBox(props) {
     return (
        <div className="ability-container">
-            <span>{ability.name}</span>
-            <p>{ability.description}</p>
+            <span
+                style={{
+                    background:`${props.color}40`
+                }}>{props.ability.name}</span>
+            <p>{props.ability.description}</p>
        </div> 
     ); 
 }
