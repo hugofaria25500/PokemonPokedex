@@ -266,7 +266,7 @@ export const selectedPokemon = {
     {
       id: "ability-002",
       name: "Chlorophyll",
-      description: "Boosts the Pokémon?s Speed stat in sunny weather.",
+      description: "Boosts the Pokémon's Speed stat in sunny weather.",
     },
   ],
   evolutionChain: [
@@ -327,7 +327,7 @@ export const selectedPokemon2 = {
       id: "ability-004",
       name: "Solar Power",
       description:
-        "Boosts the Pokémon?s Special Attack stat in sunny weather, but HP decreases."
+        "Boosts the Pokémon's Special Attack stat in sunny weather, but HP decreases."
     }
   ],
 

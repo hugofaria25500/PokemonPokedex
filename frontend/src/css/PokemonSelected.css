@@ -127,6 +127,7 @@
 
 .about p {
     font-size: 14px;
+    color: #ccc;
 }
 
 .about .stats .region-container {
@@ -188,14 +189,14 @@
 
 /*POKEMON ABILITIES*/
 .pokemon-selected-card .abilities {
-    height: 400px;
+    height: auto;
     background-color: rgba(0,0,0,0.4);
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: start;
     padding: 0px 30px 15px 30px;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.5px; 
 }
 
 .abilities h3 {

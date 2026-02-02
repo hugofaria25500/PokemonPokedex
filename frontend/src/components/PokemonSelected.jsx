@@ -83,6 +83,7 @@ function PokemonSelected({ pokemon }) {
               <AbilityBox ability={ability}/>
             ))}
         </div>
+
         <div className="evolution-chain">
             <h3>Evolution Chain</h3>
         </div>
