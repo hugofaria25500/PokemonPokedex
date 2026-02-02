@@ -8,8 +8,8 @@ function PokemonSelected(props) {
 
     const mainType = props.pokemon.types[0].toLowerCase();
     const barColor = typeColors[mainType] || typeColors["normal"];
-    const imageTypePath = "../resources/img/types/"+mainType+"_type_logo.png";
-   console.log(imageTypePath);
+    const imageTypePath = "/img/types/"+mainType+"_type_logo.png";
+
     return (
         <div className="pokemon-selected-card">
             <img className="type-logo" src={props.pokemon.typeUrl} />

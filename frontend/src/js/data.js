@@ -1,42 +1,38 @@
-import grassTypeLogo from '../resources/img/types/grass_type_logo.png';
-import fireTypeLogo from '../resources/img/types/fire_type_logo.png';
-import waterTypeLogo from '../resources/img/types/water_type_logo.png'; 
-
 export const pokemonDataMock = [
   {
     id: "001",
     name: "Bulbasaur",
     type: ["Grass", "Poison"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-    typeUrl: grassTypeLogo
+    typeUrl: "/img/types/grass_type_logo.png"
   },
   {
     id: "002",
     name: "Ivysaur",
     type: ["Grass", "Poison"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
-    typeUrl: grassTypeLogo
+    typeUrl: "/img/types/grass_type_logo.png"
   },
   {
     id: "003",
     name: "Venusaur",
     type: ["Grass", "Poison"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
-    typeUrl: grassTypeLogo
+    typeUrl: "/img/types/grass_type_logo.png"
   },
   {
     id: "004",
     name: "Charmander",
     type: ["Fire"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
-    typeUrl: fireTypeLogo
+    typeUrl: "/img/types/fire_type_logo.png"
   },
   {
     id: "005",
     name: "Charmeleon",
     type: ["Fire"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png",
-    typeUrl: fireTypeLogo
+    typeUrl: "/img/types/fire_type_logo.png"
   },
   
   {
@@ -44,63 +40,63 @@ export const pokemonDataMock = [
     name: "Charizard",
     type: ["Fire", "Flying"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
-    typeUrl: fireTypeLogo
+    typeUrl: "/img/types/fire_type_logo.png"
   },
   {
     id: "007",
     name: "Squirtle",
     type: ["Water"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
-    typeUrl: waterTypeLogo
+    typeUrl: "/img/types/water_type_logo.png"
   },
   {
     id: "008",
     name: "Wartortle",
     type: ["Water"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png",
-    typeUrl: waterTypeLogo
+    typeUrl: "/img/types/water_type_logo.png"
   },
   {
     id: "009",
     name: "Blastoise",
     type: ["Water"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",
-    typeUrl: waterTypeLogo
+    typeUrl: "/img/types/water_type_logo.png"
   },
   {
     id: "001",
     name: "Bulbasaur",
     type: ["Grass", "Poison"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-    typeUrl: grassTypeLogo
+    typeUrl: "/img/types/grass_type_logo.png"
   },
   {
     id: "002",
     name: "Ivysaur",
     type: ["Grass", "Poison"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
-    typeUrl: grassTypeLogo
+    typeUrl: "/img/types/grass_type_logo.png"
   },
   {
     id: "003",
     name: "Venusaur",
     type: ["Grass", "Poison"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
-    typeUrl: grassTypeLogo
+    typeUrl: "/img/types/grass_type_logo.png"
   },
   {
     id: "004",
     name: "Charmander",
     type: ["Fire"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
-    typeUrl: fireTypeLogo
+    typeUrl: "/img/types/fire_type_logo.png"
   },
   {
     id: "005",
     name: "Charmeleon",
     type: ["Fire"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png",
-    typeUrl: fireTypeLogo
+    typeUrl: "/img/types/fire_type_logo.png"
   },
   
   {
@@ -108,63 +104,63 @@ export const pokemonDataMock = [
     name: "Charizard",
     type: ["Fire", "Flying"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
-    typeUrl: fireTypeLogo
+    typeUrl: "/img/types/fire_type_logo.png"
   },
   {
     id: "007",
     name: "Squirtle",
     type: ["Water"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
-    typeUrl: waterTypeLogo
+    typeUrl: "/img/types/water_type_logo.png"
   },
   {
     id: "008",
     name: "Wartortle",
     type: ["Water"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png",
-    typeUrl: waterTypeLogo
+    typeUrl: "/img/types/water_type_logo.png"
   },
   {
     id: "009",
     name: "Blastoise",
     type: ["Water"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",
-    typeUrl: waterTypeLogo
+    typeUrl: "/img/types/water_type_logo.png"
   },
   {
     id: "001",
     name: "Bulbasaur",
     type: ["Grass", "Poison"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-    typeUrl: grassTypeLogo
+    typeUrl: "/img/types/grass_type_logo.png"
   },
   {
     id: "002",
     name: "Ivysaur",
     type: ["Grass", "Poison"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
-    typeUrl: grassTypeLogo
+    typeUrl: "/img/types/grass_type_logo.png"
   },
   {
     id: "003",
     name: "Venusaur",
     type: ["Grass", "Poison"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
-    typeUrl: grassTypeLogo
+    typeUrl: "/img/types/grass_type_logo.png"
   },
   {
     id: "004",
     name: "Charmander",
     type: ["Fire"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
-    typeUrl: fireTypeLogo
+    typeUrl: "/img/types/fire_type_logo.png"
   },
   {
     id: "005",
     name: "Charmeleon",
     type: ["Fire"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png",
-    typeUrl: fireTypeLogo
+    typeUrl: "/img/types/fire_type_logo.png"
   },
   
   {
@@ -172,28 +168,28 @@ export const pokemonDataMock = [
     name: "Charizard",
     type: ["Fire", "Flying"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
-    typeUrl: fireTypeLogo
+    typeUrl: "/img/types/fire_type_logo.png"
   },
   {
     id: "007",
     name: "Squirtle",
     type: ["Water"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
-    typeUrl: waterTypeLogo
+    typeUrl: "/img/types/water_type_logo.png"
   },
   {
     id: "008",
     name: "Wartortle",
     type: ["Water"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png",
-    typeUrl: waterTypeLogo
+    typeUrl: "/img/types/water_type_logo.png"
   },
   {
     id: "009",
     name: "Blastoise",
     type: ["Water"],
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",
-    typeUrl: waterTypeLogo
+    typeUrl: "/img/types/water_type_logo.png"
   }
 ];
 
@@ -241,7 +237,7 @@ export const selectedPokemon = {
   types: ["Grass", "Poison"],
   imageUrl:
     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-  typeUrl: grassTypeLogo,
+  typeUrl: "/img/types/grass_type_logo.png",
   about: {
     description:
       "A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon.",
@@ -297,7 +293,7 @@ export const selectedPokemon2 = {
   types: ["Fire"],
   imageUrl:
     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
-  typeUrl: fireTypeLogo,
+  typeUrl: "/img/types/fire_type_logo.png",
 
   about: {
     description:
