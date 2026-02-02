@@ -3,6 +3,7 @@ import AbilityBox from "./AbilityBox";
 import { typeColors } from "../js/data";
 
 import "../css/PokemonSelected.css";
+import EvolutionChainBox from "./EvolutionChainBox";
 
 function PokemonSelected(props) {
 
@@ -79,13 +80,16 @@ function PokemonSelected(props) {
             <div className="abilities">
                 <h3>Abilities</h3>
 
-                {props.pokemon.abilities.map((ability) => (
-                <AbilityBox ability={ability} color={barColor} />
+                {props.pokemon.abilities.map((ability, index) => (
+                    <AbilityBox key={index} ability={ability} color={barColor} />
                 ))}
             </div>
 
             <div className="evolution-chain">
                 <h3>Evolution Chain</h3>
+                {props.pokemon.evolutionChain.map((evolution, index) => (
+                    <EvolutionChainBox key={index} evolutionChain={evolution} />
+                ))}
             </div>
         </div>
     );

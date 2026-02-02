@@ -266,7 +266,7 @@ export const selectedPokemon = {
     },
   ],
   evolutionChain: [
-    {
+    [{
       id: "001",
       name: "Bulbasaur",
       imageUrl:
@@ -283,7 +283,7 @@ export const selectedPokemon = {
       name: "Venusaur",
       imageUrl:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
-    },
+    }]
   ],
 };
 
@@ -328,7 +328,7 @@ export const selectedPokemon2 = {
   ],
 
   evolutionChain: [
-    {
+    [{
       id: "004",
       name: "Charmander",
       imageUrl:
@@ -345,7 +345,25 @@ export const selectedPokemon2 = {
       name: "Charizard",
       imageUrl:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"
-    }
+    }],
+    [{
+      id: "004",
+      name: "Charmander",
+      imageUrl:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png"
+    },
+    {
+      id: "005",
+      name: "Charmeleon",
+      imageUrl:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png"
+    },
+    {
+      id: "006",
+      name: "Charizard",
+      imageUrl:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"
+    }]
   ]
 };
 
