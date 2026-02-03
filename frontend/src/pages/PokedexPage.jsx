@@ -5,15 +5,14 @@ import PokemonGrid from "../components/PokemonGrid.jsx";
 
 import "../css/App.css";
 
-function PokemonPage() {
+function PokedexPage() {
     {/*POKEMON PAGE - INSTANTIATING COMPONETNS*/}    
     return (
-        <div className="page-container">
-            <Navbar />
+        <>
             <PokemonSearchBar />
             <PokemonGrid pokemons={pokemonDataMock} />
-        </div>
+        </>
     );
 }
 
-export default PokemonPage;
+export default PokedexPage;
