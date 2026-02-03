@@ -271,18 +271,21 @@ export const selectedPokemon = {
       name: "Bulbasaur",
       imageUrl:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+      type: ["Grass", "Poison"]
     },
     {
       id: "002",
       name: "Ivysaur",
       imageUrl:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
+      type: ["Grass", "Poison"] 
     },
     {
       id: "003",
       name: "Venusaur",
       imageUrl:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
+      type: ["Grass", "Poison"]
     }]
   ],
 };
@@ -332,37 +335,43 @@ export const selectedPokemon2 = {
       id: "004",
       name: "Charmander",
       imageUrl:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png"
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+      type: ["Fire"]
     },
     {
       id: "005",
       name: "Charmeleon",
       imageUrl:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png"
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png",
+      type: ["Fire"]
     },
     {
       id: "006",
       name: "Charizard",
       imageUrl:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
+      type: ["Fire"]
     }],
     [{
       id: "004",
       name: "Charmander",
       imageUrl:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png"
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+      type: ["Fire"]
     },
     {
       id: "005",
       name: "Charmeleon",
       imageUrl:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png"
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png",
+      type: ["Fire"]
     },
     {
       id: "006",
       name: "Charizard",
       imageUrl:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
+      type: ["Fire"]
     }]
   ]
 };

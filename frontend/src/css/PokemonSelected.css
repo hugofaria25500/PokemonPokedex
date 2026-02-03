@@ -207,7 +207,7 @@
 
 /*POKEMON EVOLUTION CHAIN*/
 .pokemon-selected-card .evolution-chain {
-    height: 400px;
+    height: auto;
     background-color: rgba(0,0,0,0.4);
     color: white;
     display: flex;
