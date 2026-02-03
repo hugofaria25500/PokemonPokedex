@@ -1,4 +1,4 @@
-/* CONTAINER */
+/* STAT BAR CONTAINER */
 .stat-bar {
   width: 100%;
   margin-bottom: 8px;
@@ -24,7 +24,7 @@
   font-weight: bold;
 }
 
-/* TRACK (FUNDO) */
+/* TRACK - BAKCGROUND */
 .stat-track {
   width: 100%;
   height: 8px;
@@ -33,7 +33,7 @@
   overflow: hidden;
 }
 
-/* FILL (BARRA) */
+/* FILL - BAR */
 .stat-fill {
   height: 100%;
   border-radius: 6px;
@@ -41,7 +41,7 @@
   animation: fillBar 0.8s ease-out forwards;
 }
 
-/* ANIMAÇÃO */
+/* ANIMATION */
 @keyframes fillBar {
   from {
     width: 0;

@@ -1,7 +1,7 @@
 import SearchBar from "./SearchBar";
 import FilterBox from "./FilterBox";
 
-import "../css/PokemonPage.css";
+import "../css/PokemonSearchBar.css";
 
 function PokemonSearchBar() {
   return (

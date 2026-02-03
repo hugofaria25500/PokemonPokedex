@@ -3,6 +3,8 @@ import PokemonSelected from "./PokemonSelected";
 
 import {selectedPokemon2}  from "../js/data.js";
 
+import "../css/PokemonList.css"
+
 function PokemonList({ pokemons }) {
     return (
         <div className="pokemon-grid">

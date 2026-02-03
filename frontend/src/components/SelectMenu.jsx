@@ -2,6 +2,8 @@ import { useState } from "react";
 import SelectOption from "./SelectOption";
 import ArrowDownIcon from "../resources/img/icons/arrow_down_icon.png";
 
+import "../css/SelectMenu.css"
+
 function SelectMenu({label, icon, options}) {
     const [open, setOpen] = useState(false);
 

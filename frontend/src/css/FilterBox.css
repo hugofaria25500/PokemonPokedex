@@ -1,0 +1,29 @@
+/*FILTER BOX*/
+.filter-box-container{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/*REFRESH BUTTON CONTAINER*/
+.refresh-container{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.refresh-container .refresh-icon{
+    width: 25px;
+    height: 25px;
+    transition: transform 0.5s ease;
+}
+
+.refresh-container .refresh-icon:hover{
+    transform: rotate(180deg) scale(1.2);
+}

@@ -1,0 +1,33 @@
+.navbar-option-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 14px;
+    border-radius: 30px;
+
+    transition: background-color 0.2s ease;
+}
+
+.navbar-option-container:hover {
+    background-color: rgba(163, 150, 150, 0.771);
+    cursor: pointer;
+}
+
+.navbar-icon {
+    width: 35px;
+    height: 35px;
+}
+
+.navbar-option-container a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.navbar-option-container.disabled {
+    opacity: 0.4;
+    cursor: default;
+    pointer-events: none;
+}

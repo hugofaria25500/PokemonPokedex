@@ -1,4 +1,3 @@
-import "../css/PokemonPage.css";
 import SelectMenu from "./SelectMenu";
 import RefreshIcon from "../resources/img/icons/refresh_icon.png";
 import SortByIcon from "../resources/img/icons/sort_by_icon.png";
@@ -7,6 +6,8 @@ import generationIcon from "../resources/img/icons/generation_icon.png";
 import regionIcon from "../resources/img/icons/region_icon.png";
 
 import { sortByFilterOptions, typeFilterOptions, generationFilterOptions, regionFilterOptions } from "../js/data";
+
+import "../css/FilterBox.css";
 
 function FilterBox() {
     return (

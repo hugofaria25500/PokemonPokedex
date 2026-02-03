@@ -1,5 +1,4 @@
-import React from "react";
-import "../css/PokemonPage.css";
+import "../css/NavbarOption.css";
 
 function NavbarOption({ icon, label, disabled = false }) {
   return (

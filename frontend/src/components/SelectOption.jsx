@@ -1,4 +1,4 @@
-import React from "react";
+import "../css/SelectOption.css"
 
 function SelectOption({ label, onClick, icon }) {
     return (

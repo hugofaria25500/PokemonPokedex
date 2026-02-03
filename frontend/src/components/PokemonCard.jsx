@@ -1,4 +1,5 @@
-import '../css/PokemonTypes.css' 
+import "../css/PokemonTypes.css"
+import "../css/PokemonCard.css"
 
 function PokemonCard({ pokemon }) {
   return (

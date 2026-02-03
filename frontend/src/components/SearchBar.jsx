@@ -1,5 +1,6 @@
 import pokeballIcon from "../resources/img/icons/pokeball_icon.png";
-import "../css/PokemonPage.css";
+
+import "../css/SearchBar.css";
 
 function SearchBar() {
     return (
