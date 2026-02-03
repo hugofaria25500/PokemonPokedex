@@ -1,3 +1,4 @@
+/*SELECT MENU CONTAINER*/
 .select-menu {
     position: relative;
     cursor: pointer;
@@ -16,6 +17,7 @@
     align-items: center;
 }
 
+/*SELECT MENU LABEL*/
 .select-trigger .label-box{
     width: 80%;
     height: 20px;
@@ -33,6 +35,7 @@
     height: 100%;
 }
 
+/*SELECT MENU - ARROW BUTTON*/
 .select-trigger .select-arrow{
     width: 20%;
     height: 100%;
@@ -48,6 +51,7 @@
     transition: transform 0.5s ease;
 }
 
+/*DINAMIC SELECT ANIMATION*/
 .select-trigger .select-arrow.open img {
     transform: rotate(180deg);
     transition: transform 0.5s ease;

@@ -1,9 +1,5 @@
-.pokemon-grid {
-    width: 75%;
-    display: flex;
-}
-
-.pokemon-grid .pokemon-list {
+/*POKEMON LIST*/
+.pokemon-list {
     flex: 1;
     display: flex;
     flex-wrap: wrap;

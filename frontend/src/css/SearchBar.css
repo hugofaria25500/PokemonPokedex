@@ -1,3 +1,4 @@
+/*SEARCH BAR CONTAINER*/
 .search-bar-container {
     width: 30%;
     height: 50px;
@@ -10,6 +11,7 @@
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
+/*SEARCH INPUT*/
 .search-input {
     font-family: 'Varela Round', sans-serif;
     font-weight: bold;
@@ -21,10 +23,12 @@
     padding-left: 30px;
 }
 
+/*SEARCH BAR - FOCUS*/
 .search-input:focus {
     outline: none;
 }
 
+/*SEARCH BAR BUTTON*/
 .search-button-container{
     width: 15%;
     display: flex;
@@ -40,6 +44,7 @@
 
 }
 
+/*SEARCH BAR BUTTON - ANIMATION*/
 .search-button-container .navbar-icon:hover{
     transform: rotate(180deg) scale(1.2);
 }

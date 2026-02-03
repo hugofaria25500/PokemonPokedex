@@ -14,6 +14,7 @@
     overflow: hidden;
 }
 
+/*POKEMON BACKGROUND TYPE LOGO*/
 .pokemon-card .type-logo {
     width: 150px;
     height: 150px;
@@ -23,6 +24,7 @@
     z-index: -1;
 }
 
+/*POKEMON FRAME CONTAINER*/
 .pokemon-card .frame-box {
     width: 100%;
     height: 60%;
@@ -37,6 +39,7 @@
     width: 60%;
 }
 
+/*POKEMON INFO BOX*/
 .pokemon-card .label-box {
     margin-top: -10px;
     width: 100%;
@@ -46,6 +49,7 @@
     justify-content: start
 }
 
+/*POKEMON ID*/
 .pokemon-card .id-box {
     width: 100%;
     display: flex;
@@ -63,6 +67,7 @@
     font-size: 13px;
 }
 
+/*POKEMON NAME*/
 .pokemon-card .label-box p {
     margin: 0px 0px 5px 0px;
     text-align: center;

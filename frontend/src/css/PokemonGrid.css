@@ -1,4 +1,4 @@
-/*POKEMON LIST*/
+/*POKEMON GRID CONTAINER*/
 .pokemon-grid-container {
     flex: 1;        
     margin-top: 20px;
@@ -7,4 +7,15 @@
     display: flex;
     justify-content: center;
     overflow: hidden;
+}
+
+.pokemon-grid {
+    width: 80%;
+    display: flex;
+}
+
+/*CARD BASE*/
+.selected-pokemon-box {
+    width: 25%;
+    display: flex;
 }
