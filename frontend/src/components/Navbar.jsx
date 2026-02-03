@@ -11,7 +11,6 @@ import NavbarOption from "./NavbarOption.jsx";
 import "../css/Navbar.css"
 
 function Navbar() {
-
     return (    
         <div className="navbar-wrapper">
             <nav className="navbar-container">
