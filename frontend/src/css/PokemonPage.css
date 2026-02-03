@@ -1,0 +1,336 @@
+/*NAVBAR*/
+.navbar-wrapper {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.25);
+}
+
+.navbar-container {
+    width: 65%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: bold;
+    font-size: 15;
+
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 40px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.navbar-option-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 14px;
+    border-radius: 30px;
+
+    transition: background-color 0.2s ease;
+}
+
+.navbar-option-container:hover {
+    background-color: rgba(163, 150, 150, 0.771);
+    cursor: pointer;
+}
+
+.navbar-icon {
+    width: 35px;
+    height: 35px;
+}
+
+.navbar-option-container a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.navbar-option-container.disabled {
+    opacity: 0.4;
+    cursor: default;
+    pointer-events: none;
+}
+
+/*SEARCH BOX*/
+
+/*SEARCH BAR*/
+.pokemon-search-bar-container {
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar-container {
+    width: 30%;
+    height: 50px;
+    margin: 14px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 40px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.search-input {
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
+    width: 85%;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    padding-left: 30px;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.search-button-container{
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-button-container .navbar-icon{
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+
+}
+
+.search-button-container .navbar-icon:hover{
+    transform: rotate(180deg) scale(1.2);
+}
+
+/*FILTER BOX*/
+.filter-box-container{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.select-menu {
+    position: relative;
+    cursor: pointer;
+    width: 200px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.select-menu .select-trigger{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.select-trigger .label-box{
+    width: 80%;
+    height: 20px;
+    display: flex;
+}
+
+.select-trigger .label-box .iconType{
+    width: 15%;
+    height: 100%;
+    padding: 0 10px;
+}
+
+.select-trigger .label-box .iconType img{
+    width: 100%;
+    height: 100%;
+}
+
+.select-trigger .select-arrow{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.select-trigger .select-arrow img{
+    width: 25px;
+    height: 25px;
+    transition: transform 0.5s ease;
+}
+
+.select-trigger .select-arrow.open img {
+    transform: rotate(180deg);
+    transition: transform 0.5s ease;
+}
+
+
+.refresh-container{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.refresh-container .refresh-icon{
+    width: 25px;
+    height: 25px;
+    transition: transform 0.5s ease;
+}
+
+.refresh-container .refresh-icon:hover{
+    transform: rotate(180deg) scale(1.2);
+}
+
+
+/*SELECT MENU - OPTIONS*/
+.select-options {
+    position: absolute;
+    width: 200px;
+    max-height: 160px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease,transform 0.2s ease;
+    z-index: 10;
+}
+
+.select-menu .select-options.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(14px); 
+    transition: opacity 0.2s ease,transform 0.2s ease;
+}
+
+.select-menu .select-option {
+    height: 30px;
+    cursor: pointer;
+    background-color: blue;
+    border: 3px solid lightcoral;
+}
+
+/*POKEMON LIST*/
+.pokemon-grid-container {
+    flex: 1;        
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.pokemon-grid-container .pokemon-grid {
+    width: 75%;
+    display: flex;
+}
+
+.pokemon-grid .pokemon-list {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 10px;
+    align-items: flex-start;
+    overflow-y: auto;
+
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.pokemon-list::-webkit-scrollbar {
+  display: none;
+}
+
+/*POKEMON CARD*/
+.pokemon-card {
+    width: 180px;
+    height: 220px;
+    background-color: rgba(0,0,0,0.35);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease;
+    border: 1px solid rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.pokemon-card .type-logo {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    right: 18px;
+    filter: blur(30px);
+    z-index: -1;
+}
+
+.pokemon-card .frame-box {
+    width: 100%;
+    height: 60%;
+    margin: 0 10px 12px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px; 
+}
+
+.pokemon-card .frame-box img {
+    width: 60%;
+}
+
+.pokemon-card .label-box {
+    margin-top: -10px;
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start
+}
+
+.pokemon-card .id-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.id-box p{
+    margin: 10px 0 0 0;
+    color: white;
+    font-weight: bold;
+    background-color: black;
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+.pokemon-card .label-box p {
+    margin: 0px 0px 5px 0px;
+    text-align: center;
+    color: white;
+}

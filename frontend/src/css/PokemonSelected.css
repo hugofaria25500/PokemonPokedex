@@ -1,0 +1,226 @@
+/*CARD BASE*/
+.selected-pokemon-box {
+    width: 25%;
+    display: flex;
+}
+
+.selected-pokemon-box .pokemon-selected-card {
+    flex: 1;            
+    overflow-y: auto;   
+    overflow-x: hidden;
+
+    background-color: rgba(0,0,0,0.35);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    border: 2px solid black;
+    border-radius: 20px;
+    position: relative;
+
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.pokemon-selected-card::-webkit-scrollbar {
+  display: none;
+}
+
+.pokemon-selected-card .type-logo {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 100px;
+    left: 30px;
+    filter: blur(120px);
+    z-index: -1;
+}
+
+/*POKEMON CARD BASE STATS*/
+.pokemon-selected-card .card-base {
+    width: 100%;
+    background-color: rgba(0,0,0,0.15);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*ID*/
+.card-base .id-box{
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-base .id-box p{
+    font-size: 16px;
+}
+
+/*FRAME*/
+.card-base .frame-box{
+    margin-top: 0px;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.card-base .frame-box #frame-logo {
+    position: absolute;
+    z-index: -1;
+    top: 10px;
+    width: 250px;
+    height: 250px;
+    opacity: 0.3;
+    filter: blur(5px);
+}
+
+.card-base .frame-box img {
+    width: 200px;
+    height: 200px;
+}
+
+/*POKEMON LABEL BOX*/
+.card-base .label-box {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.card-base .label-box p {
+    margin: 1px;
+}
+
+.card-base .label-box #pokemon-name-label {
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+}
+
+/*POKEMON ABOUT SECTION*/
+.pokemon-selected-card .about {   
+    height: auto;
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 30px 30px 0px 30px;
+    border-radius: 40px 40px 0 0;
+    letter-spacing: 0.5px;
+}
+
+.about h3 {
+    margin: 0;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+.about p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.about .stats .region-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 5px 0;
+    border-radius: 10px;
+    background-color: rgba(160, 145, 145, 0.2);
+}
+
+.about .stats p {
+    margin: 0;
+    font-size: 10px;
+}
+
+.about .stats .body-stats-container {
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.about .stats .body-stats-container .height-container {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about .stats .body-stats-container .weight-container {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*POKEMON BASE STATS SECTION*/
+.pokemon-selected-card .base-stats {
+    height: auto;
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 0px 30px 15px 30px;
+    letter-spacing: 0.5px;
+}
+
+.base-stats h3 {
+    margin: 30px 0 15px 0;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+/*POKEMON ABILITIES*/
+.pokemon-selected-card .abilities {
+    height: auto;
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 0px 30px 15px 30px;
+    letter-spacing: 0.5px; 
+}
+
+.abilities h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+/*POKEMON EVOLUTION CHAIN*/
+.pokemon-selected-card .evolution-chain {
+    height: auto;
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 0px 30px 15px 30px;
+    letter-spacing: 0.5px;
+}
+
+.evolution-chain h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+

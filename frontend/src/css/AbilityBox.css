@@ -1,0 +1,20 @@
+.ability-container {
+    background-color: rgba(160, 145, 145, 0.15);
+    border-radius: 12px;
+    padding: 12px;
+    margin: 5px 0;
+}
+
+.ability-container span {
+    padding: 4px 8px;
+    border-radius: 10px;
+    letter-spacing: 0.5px;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.ability-container p {
+    margin: 10px 0 0 0;
+    font-size: 12px;
+    color: #ccc;
+}
