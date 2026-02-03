@@ -6,6 +6,7 @@ import {selectedPokemon2}  from "../js/data.js";
 import "../css/PokemonList.css"
 
 function PokemonList({ pokemons }) {
+    {/*COMPONENT TO ITERATE EACH POKEMON AND PREPARE IT TO BUILD*/}
     return (
         <div className="pokemon-grid">
             <div className="pokemon-list">

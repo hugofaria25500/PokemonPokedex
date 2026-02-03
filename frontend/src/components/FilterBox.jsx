@@ -10,6 +10,7 @@ import { sortByFilterOptions, typeFilterOptions, generationFilterOptions, region
 import "../css/FilterBox.css";
 
 function FilterBox() {
+    {/*CREATING THE FILTER SECTION BY PASSING THE SELECT MENU DYNAMICALLY*/}
     return (
         <div className="filter-box-container">
             <SelectMenu label="Sort By" icon={SortByIcon} options={sortByFilterOptions} />

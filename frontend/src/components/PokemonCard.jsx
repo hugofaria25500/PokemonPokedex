@@ -2,6 +2,7 @@ import "../css/PokemonTypes.css"
 import "../css/PokemonCard.css"
 
 function PokemonCard({ pokemon }) {
+    {/*POKEMON CARD BUILDING*/}
     return (
         <div className="pokemon-card">
             <img className="type-logo" src={pokemon.typeUrl} />

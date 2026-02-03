@@ -11,8 +11,10 @@ function PokemonSelected(props) {
     const barColor = typeColors[mainType] || typeColors["normal"];
     const imageTypePath = "/img/types/"+mainType+"_type_logo.png";
 
+    {/*MAIN COMPONENT TO CONSTRUCT THE SELECTED POKEMON*/}
     return (
         <div className="pokemon-selected-card">
+            {/*POKEMON VISUAL CARD*/}
             <img className="type-logo" src={props.pokemon.typeUrl} />
             <div className="card-base">
 
@@ -35,7 +37,8 @@ function PokemonSelected(props) {
                     </div>
                 </div>
             </div>
-
+                    
+            {/*ABOUT SECTION*/}        
             <div className="about">
 
                 <h3 className="label-text">About</h3>
@@ -64,6 +67,7 @@ function PokemonSelected(props) {
                 </div>
             </div>
 
+            {/*BASE STATS OF THE POKEMON*/}    
             <div className="base-stats">
             
                 <h3>Base Stats</h3>
@@ -77,6 +81,7 @@ function PokemonSelected(props) {
 
             </div>
 
+            {/*LIST OF ABILITIES OF THE POKEMON*/}    
             <div className="abilities">
                 <h3>Abilities</h3>
 
@@ -85,6 +90,7 @@ function PokemonSelected(props) {
                 ))}
             </div>
 
+            {/*EVOLUTION CHAIN OF THE POKEMON - ITERATING THE EVOLUTION CHAIN ARRAY'S*/}    
             <div className="evolution-chain">
                 <h3>Evolution Chain</h3>
                 {props.pokemon.evolutionChain.map((evolution, index) => (

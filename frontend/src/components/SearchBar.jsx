@@ -3,6 +3,7 @@ import pokeballIcon from "../resources/img/icons/pokeball_icon.png";
 import "../css/SearchBar.css";
 
 function SearchBar() {
+    {/*SEARCH BAR CONTAINER COMPONENT*/}    
     return (
         <div className="search-bar-container">
             <input
