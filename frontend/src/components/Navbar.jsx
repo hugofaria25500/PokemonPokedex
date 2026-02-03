@@ -6,13 +6,12 @@ import gamesIcon from "../resources/img/icons/games_icon.png";
 import pokemonTvIcon from "../resources/img/icons/pokemon_tv_icon.png";
 import eventsIcon from "../resources/img/icons/pokemon_events_icon.png";
 import projectIcon from "../resources/img/icons/project_icon.png";
-
 import NavbarOption from "./NavbarOption.jsx";
 
-import "../css/PokemonPage.css";
+import "../css/Navbar.css"
 
 function Navbar() {
-
+    {/*CREATING THE NAVBAR SECTION BY PASSING THE NAVBAR OPTION DYNAMICALLY*/}
     return (    
         <div className="navbar-wrapper">
             <nav className="navbar-container">

@@ -1,4 +1,3 @@
-import "../css/PokemonPage.css";
 import SelectMenu from "./SelectMenu";
 import RefreshIcon from "../resources/img/icons/refresh_icon.png";
 import SortByIcon from "../resources/img/icons/sort_by_icon.png";
@@ -8,7 +7,10 @@ import regionIcon from "../resources/img/icons/region_icon.png";
 
 import { sortByFilterOptions, typeFilterOptions, generationFilterOptions, regionFilterOptions } from "../js/data";
 
+import "../css/FilterBox.css";
+
 function FilterBox() {
+    {/*CREATING THE FILTER SECTION BY PASSING THE SELECT MENU DYNAMICALLY*/}
     return (
         <div className="filter-box-container">
             <SelectMenu label="Sort By" icon={SortByIcon} options={sortByFilterOptions} />

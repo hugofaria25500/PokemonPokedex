@@ -1,6 +1,7 @@
 import "../css/AbilityBox.css"
 
 function AbilityBox(props) {
+    {/*ADDING DINAMIC BACKGROUND COLOR BASED ON POKEMON TYPE*/}
     return (
        <div className="ability-container">
             <span

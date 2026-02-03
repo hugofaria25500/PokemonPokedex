@@ -3,6 +3,7 @@ import EvolutionChainPokemon from "./EvolutionChainPokemon";
 import "../css/EvolutionChainBox.css"
 
 function EvolutionChainBox (props) {
+    {/*ITERATING EACH POKEMON EVOLUTION AND BUILDING IT*/}
     return (
         <div className="evolution-chain-box-container">
             {props.evolutionChain.map((pokemon, index) => {

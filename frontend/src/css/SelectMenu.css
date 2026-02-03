@@ -1,0 +1,58 @@
+/*SELECT MENU CONTAINER*/
+.select-menu {
+    position: relative;
+    cursor: pointer;
+    width: 200px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.select-menu .select-trigger{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/*SELECT MENU LABEL*/
+.select-trigger .label-box{
+    width: 80%;
+    height: 20px;
+    display: flex;
+}
+
+.select-trigger .label-box .iconType{
+    width: 15%;
+    height: 100%;
+    padding: 0 10px;
+}
+
+.select-trigger .label-box .iconType img{
+    width: 100%;
+    height: 100%;
+}
+
+/*SELECT MENU - ARROW BUTTON*/
+.select-trigger .select-arrow{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.select-trigger .select-arrow img{
+    width: 25px;
+    height: 25px;
+    transition: transform 0.5s ease;
+}
+
+/*DINAMIC SELECT ANIMATION*/
+.select-trigger .select-arrow.open img {
+    transform: rotate(180deg);
+    transition: transform 0.5s ease;
+}

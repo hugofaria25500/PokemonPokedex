@@ -1,0 +1,50 @@
+/*SEARCH BAR CONTAINER*/
+.search-bar-container {
+    width: 30%;
+    height: 50px;
+    margin: 14px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 40px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/*SEARCH INPUT*/
+.search-input {
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
+    width: 85%;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    padding-left: 30px;
+}
+
+/*SEARCH BAR - FOCUS*/
+.search-input:focus {
+    outline: none;
+}
+
+/*SEARCH BAR BUTTON*/
+.search-button-container{
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-button-container .navbar-icon{
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+
+}
+
+/*SEARCH BAR BUTTON - ANIMATION*/
+.search-button-container .navbar-icon:hover{
+    transform: rotate(180deg) scale(1.2);
+}

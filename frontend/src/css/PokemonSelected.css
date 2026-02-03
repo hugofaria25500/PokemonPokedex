@@ -1,10 +1,5 @@
-/*CARD BASE*/
-.selected-pokemon-box {
-    width: 25%;
-    display: flex;
-}
-
-.selected-pokemon-box .pokemon-selected-card {
+/*POKEMON SELECTED CARD*/
+.pokemon-selected-card {
     flex: 1;            
     overflow-y: auto;   
     overflow-x: hidden;

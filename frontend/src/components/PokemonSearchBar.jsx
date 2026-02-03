@@ -1,15 +1,16 @@
 import SearchBar from "./SearchBar";
 import FilterBox from "./FilterBox";
 
-import "../css/PokemonPage.css";
+import "../css/PokemonSearchBar.css";
 
 function PokemonSearchBar() {
-  return (
-    <div className="pokemon-search-bar-container">
-      <SearchBar />
-      <FilterBox />
-    </div>
-  );
+    {/*SEARCH BAR COMPONENT - HIGH LEVEL*/}
+    return (
+        <div className="pokemon-search-bar-container">
+            <SearchBar />
+            <FilterBox />
+        </div>
+    );
 }
 
 export default PokemonSearchBar;
