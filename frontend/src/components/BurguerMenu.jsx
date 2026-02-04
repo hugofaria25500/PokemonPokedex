@@ -9,28 +9,35 @@ import eventsIcon from "../resources/img/icons/pokemon_events_icon.png";
 import projectIcon from "../resources/img/icons/project_icon.png";
 import NavbarOption from "./NavbarOption.jsx";
 
-function BurguerMenu() {
+import "../css/BurguerMenu.css";
+
+function BurguerMenu(props) {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        
-        <div className="mobile-bar">
-            <NavbarOption icon={pokedexIcon} label="Pokédex" />
-            <div className="burguer-menu-container">
-                <img src={pokeballIcon} alt="Pokeball" onClick={() => setIsOpen()}/>
+        <>
+            <div className="mobile-bar">
+                <div className="navbar-option-conainter">
+                    <img src={props.icon} alt={props.option} />
+                    <a href="#">{props.option}</a>
+                </div>
+                <div className="burguer-menu-container">
+                    <img src={pokeballIcon} alt="Pokeball" onClick={() => setIsOpen()}/>
+                </div>
             </div>
-        </div>
-        
-        {/* MOBILE MENU */}
+
+            {/* MOBILE DROPDOWN MENU */}
             <nav className={`mobile-menu ${isOpen ? "active" : ""}`}>
                 <NavbarOption icon={homeIcon} label="Home" />
-                <NavbarOption icon={pokedexIcon} label="Pokédex" />
+                <NavbarOption icon={pokedexIcon} label="PokÃ©dex" />
                 <NavbarOption icon={tradingCardIcon} label="Trading Cards" disabled />
                 <NavbarOption icon={gamesIcon} label="Video Games" disabled />
                 <NavbarOption icon={pokemonTvIcon} label="Pokemon TV" disabled />
                 <NavbarOption icon={eventsIcon} label="Events" disabled />
                 <NavbarOption icon={projectIcon} label="Project" />
             </nav>
+
+        </>
     );
 }
 

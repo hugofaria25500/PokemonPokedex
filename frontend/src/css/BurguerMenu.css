@@ -1,0 +1,12 @@
+.mobile-bar {
+    color: white;
+    font-size: 16px;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.mobile-menu.active{
+    display: flex;
+}
