@@ -1,12 +1,28 @@
+import { NavLink } from "react-router-dom";
+
 import "../css/NavbarOption.css";
 
-function NavbarOption({ icon, label, disabled = false }) {
-    {/*NAVBAR OPTION BUILDING*/}
+function NavbarOption({ icon, label, path, disabled = false, onClick}) {
+
+    if (disabled) {
+        return (
+            <div className="navbar-option-container disabled">
+                <img className="navbar-icon" src={icon} alt={label} />
+                <span>{label}</span>
+            </div>
+        );
+    }
+
     return (
-        <div className={`navbar-option-container ${disabled ? 'disabled' : ''}`}>
+        <NavLink to={path}
+            onClick={onClick}
+            className={({ isActive }) =>
+                `navbar-option-container ${isActive ? "active" : ""}`
+            }>
+                
             <img className="navbar-icon" src={icon} alt={label} />
             <span>{label}</span>
-        </div>
+        </NavLink>
     );
 }
 

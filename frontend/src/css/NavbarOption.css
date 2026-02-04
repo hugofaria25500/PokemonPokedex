@@ -1,19 +1,15 @@
 /*NAVBAR OPTION*/
 .navbar-option-container {
+    width: auto;
     display: flex;
     align-items: center;
-    gap: 8px;
+    margin: 0 8px;
 
     padding: 8px 14px;
     border-radius: 30px;
 
     transition: background-color 0.2s ease;
-}
-
-/*NAVBAR OPTION - ANIMATION*/
-.navbar-option-container:hover {
-    background-color: rgba(163, 150, 150, 0.771);
-    cursor: pointer;
+    text-decoration: none;
 }
 
 /*NAVBAR ICON*/
@@ -23,11 +19,9 @@
 }
 
 /*NAVBAR OPTION LINK (TEXT)*/
-.navbar-option-container a {
-    text-decoration: none;
+.navbar-option-container span {
     color: #555;
     font-weight: 600;
-    font-size: 14px;
 }
 
 /*NAVBAR OPTION DISABLED)*/
@@ -35,4 +29,39 @@
     opacity: 0.4;
     cursor: default;
     pointer-events: none;
+}
+
+/*NAVBAR OPTION SELECTED)*/
+.navbar-option-container.active {
+    background-color: rgba(163, 150, 150, 0.7);
+    text-decoration: none;
+}
+
+/*NAVBAR OPTION - ANIMATION*/
+.navbar-option-container:hover {
+    background-color: rgba(163, 150, 150, 0.7);
+    cursor: pointer;
+}
+
+/*MEDIA QUERIES*/
+@media (max-width: 1100px) {
+
+    /*NAVBAR ICON*/
+    .navbar-icon {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 900px) {
+    /*NAVBAR OPTION*/
+    .navbar-option-container {
+        margin: 0 5px;
+    }
+
+    /*NAVBAR ICON*/
+    .navbar-icon {
+        width: 25px;
+        height: 25px;
+    }
 }
