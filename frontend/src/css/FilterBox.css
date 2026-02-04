@@ -27,3 +27,13 @@
 .refresh-container .refresh-icon:hover{
     transform: rotate(180deg) scale(1.2);
 }
+
+/*MEDIA QUERIES*/
+@media (max-width: 900px) {
+
+    /*FILTER BOX CONTAINER*/
+    .filter-box-container{
+        
+    }
+
+}

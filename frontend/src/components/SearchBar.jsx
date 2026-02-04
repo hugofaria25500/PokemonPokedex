@@ -5,16 +5,27 @@ import "../css/SearchBar.css";
 function SearchBar() {
     {/*SEARCH BAR CONTAINER COMPONENT*/}    
     return (
-        <div className="search-bar-container">
-            <input
-                type="text"
-                className="search-input"
-                placeholder="Search Pokémon..."
-            />
-            <div className="search-button-container">
-                <img className="navbar-icon" src={pokeballIcon} alt="Pokeball Icon" />
+        <>
+            <div className="search-bar-container">
+                <input
+                    type="text"
+                    className="search-input"
+                    placeholder="Search Pokémon..."
+                />
+                <div className="search-button-container">
+                    <img className="navbar-icon" src={pokeballIcon} alt="Pokeball Icon" />
+                </div>
             </div>
-        </div>
+            
+            <div className="">
+
+            </div>
+
+            <div className="">
+                
+            </div>
+        </>
+        
     );
 }
 
