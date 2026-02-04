@@ -2,8 +2,7 @@ import { NavLink } from "react-router-dom";
 
 import "../css/NavbarOption.css";
 
-function NavbarOption({ icon, label, path, disabled = false }) {
-    console.log(path);
+function NavbarOption({ icon, label, path, disabled = false, onClick}) {
 
     if (disabled) {
         return (
@@ -16,6 +15,7 @@ function NavbarOption({ icon, label, path, disabled = false }) {
 
     return (
         <NavLink to={path}
+            onClick={onClick}
             className={({ isActive }) =>
                 `navbar-option-container ${isActive ? "active" : ""}`
             }>

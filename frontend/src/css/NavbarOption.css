@@ -12,12 +12,6 @@
     text-decoration: none;
 }
 
-/*NAVBAR OPTION - ANIMATION*/
-.navbar-option-container:hover {
-    background-color: rgba(163, 150, 150, 0.7);
-    cursor: pointer;
-}
-
 /*NAVBAR ICON*/
 .navbar-icon {
     width: 35px;
@@ -26,12 +20,9 @@
 
 /*NAVBAR OPTION LINK (TEXT)*/
 .navbar-option-container span {
-    text-decoration: none;
     color: #555;
     font-weight: 600;
 }
-
-
 
 /*NAVBAR OPTION DISABLED)*/
 .navbar-option-container.disabled {
@@ -40,17 +31,20 @@
     pointer-events: none;
 }
 
+/*NAVBAR OPTION SELECTED)*/
 .navbar-option-container.active {
     background-color: rgba(163, 150, 150, 0.7);
     text-decoration: none;
 }
 
+/*NAVBAR OPTION - ANIMATION*/
+.navbar-option-container:hover {
+    background-color: rgba(163, 150, 150, 0.7);
+    cursor: pointer;
+}
+
 /*MEDIA QUERIES*/
 @media (max-width: 1100px) {
-    /*NAVBAR OPTION*/
-    .navbar-option-container {
-        margin: 0 4px;
-    }
 
     /*NAVBAR ICON*/
     .navbar-icon {
@@ -62,7 +56,7 @@
 @media (max-width: 900px) {
     /*NAVBAR OPTION*/
     .navbar-option-container {
-        margin: 0 3px;
+        margin: 0 5px;
     }
 
     /*NAVBAR ICON*/

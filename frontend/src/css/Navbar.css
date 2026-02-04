@@ -66,6 +66,7 @@
     /*DESKTOP NAVBAR*/
     .navbar-container {
         display: none;
+        box-shadow: none;
     }
 
     /*MOBILE CONTAINER*/
