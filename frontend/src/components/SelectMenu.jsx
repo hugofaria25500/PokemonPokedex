@@ -14,7 +14,7 @@ function SelectMenu({label, icon, options}) {
             {/*LOGIC TO OPEN/CLOSE THE SELECT OPTIONS*/}    
             <div className="select-trigger" onClick={() => setOpen(!open)}>
                 <div className="label-box">
-                    <div className="iconType">
+                    <div className="iconType" >
                         <img src={icon} alt={label} />
                     </div>
                     <span>{label}</span>

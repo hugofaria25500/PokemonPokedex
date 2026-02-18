@@ -1,7 +1,16 @@
 /*SEARCH BAR CONTAINER*/
 .search-bar-container {
-    width: 30%;
-    height: 50px;
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*SEARCH BAR*/
+.search-bar {
+    width: 500px;
+    height: 45px;
     margin: 14px 0;
     display: flex;
     justify-content: center;
@@ -19,7 +28,7 @@
     height: 40px;
     border: none;
     border-radius: 20px;
-    font-size: 16px;
+    font-size: 15px;
     padding-left: 30px;
 }
 
@@ -36,7 +45,7 @@
     align-items: center;
 }
 
-.search-button-container .navbar-icon{
+.search-button-container .search-bar-icon{
     width: 32px;
     height: 32px;
     cursor: pointer;
@@ -45,8 +54,55 @@
 }
 
 /*SEARCH BAR BUTTON - ANIMATION*/
-.search-button-container .navbar-icon:hover{
+.search-button-container .search-bar-icon:hover{
     transform: rotate(180deg) scale(1.2);
+}
+
+
+/*FILTER BUTTON CONTAINER*/
+.filter-button-container{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6px;
+    display: none;
+    cursor: pointer;
+}
+
+/*REFRESH BUTTON CONTAINER*/
+.refresh-button-container{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    cursor: pointer;
+}
+
+
+/*REFRESH AND FILTER ICON*/
+.filter-button-container #icon, .refresh-button-container #icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 25px;
+    transition: transform 0.5s ease;
+}
+
+ 
+.filter-button-container #icon.open {
+     transform: rotate(180deg);
+    transition: transform 0.5s ease;
+}
+
+
+.refresh-button-container #icon:hover {
+    transform: rotate(180deg) scale(1.2);
+    transition: transform 0.5s ease;
 }
 
 /*MEDIA QUERIES*/
@@ -64,5 +120,38 @@
     .search-bar-container {
         margin: 10px 0;
         height: 45px;
+        width: 60%;
     }
+
+    /*SEARCH BAR*/
+    .search-bar {
+        height: 40px;
+    }
+
+    .search-input {
+        font-size: 14px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 800px) {
+
+    /*FILTER BUTTON CONTAINER*/
+    .filter-button-container{
+        display: flex;
+    }
+
+    /*REFRESH BUTTON CONTAINER*/
+    .refresh-button-container{
+        display: flex;
+    }
+}
+
+@media (max-width: 600px) {
+
+    /*SEARCH BAR CONTAINER*/
+    .search-bar-container {
+        width: 80%;
+    }
+
 }

@@ -29,11 +29,24 @@
 }
 
 /*MEDIA QUERIES*/
-@media (max-width: 900px) {
+@media (max-width: 800px) {
 
     /*FILTER BOX CONTAINER*/
     .filter-box-container{
-        
+        display: none;
+        flex-direction: column;
+        height: 100px;
+        margin-top: 10px;
+        gap:5px 0px;
     }
 
+    /*FILTER BOX CONTAINER OPEN*/
+    .filter-box-container.open{
+        display: flex;
+    }
+
+    /*REFRESH BUTTON CONTAINER*/
+    .refresh-container{
+        display: none;
+    }
 }

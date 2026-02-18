@@ -1,3 +1,4 @@
+
 import SelectMenu from "./SelectMenu";
 import RefreshIcon from "../resources/img/icons/refresh_icon.png";
 import SortByIcon from "../resources/img/icons/sort_by_icon.png";
@@ -9,10 +10,11 @@ import { sortByFilterOptions, typeFilterOptions, generationFilterOptions, region
 
 import "../css/FilterBox.css";
 
-function FilterBox() {
+function FilterBox({ filterOpen }) {
+
     {/*CREATING THE FILTER SECTION BY PASSING THE SELECT MENU DYNAMICALLY*/}
     return (
-        <div className="filter-box-container">
+        <div className={`filter-box-container ${filterOpen ? "open" : ""}`}>
             <SelectMenu label="Sort By" icon={SortByIcon} options={sortByFilterOptions} />
             <SelectMenu label="Type" icon={typeIcon} options={typeFilterOptions} />
             <SelectMenu label="Generation" icon={generationIcon} options={generationFilterOptions} />
