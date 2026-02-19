@@ -7,3 +7,12 @@
     justify-content: center;
     align-items: center;
 }
+
+/*MEDIA QUERIES*/
+@media (max-width: 800px) {
+    
+    /*SEARCH BAR CONTAINER*/
+    .pokemon-search-bar-container {
+        margin-top: 0px;
+    }
+}

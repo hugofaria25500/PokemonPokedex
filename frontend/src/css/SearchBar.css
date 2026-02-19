@@ -154,4 +154,8 @@
         width: 80%;
     }
 
+    /*SEARCH BAR BUTTON*/
+    .search-button-container{
+        margin-right: 5px;
+    }
 }
