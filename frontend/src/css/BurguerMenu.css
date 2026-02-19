@@ -52,7 +52,7 @@
     display: none;
     flex-direction: column;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 2;
+    z-index: 3;
     border-radius: 0 0 10px 10px;
 }
 
@@ -63,4 +63,13 @@
 /* DROPDOWN MENU OPTIONS*/
 .mobile-menu .navbar-option-container {
     margin: 3px 10px;
+}
+
+/*MEDIA QUERIES*/
+@media (max-width: 600px) {
+
+    /*MOBILE CONTAINER*/
+    .mobile-bar-container {
+        padding: 10px 20px;
+    }
 }

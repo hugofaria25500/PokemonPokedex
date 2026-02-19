@@ -74,3 +74,12 @@
         display: flex;
     }
 }
+
+/*MEDIA QUERIES*/
+@media (max-width: 600px) {
+
+    /*NAVBAR CONTAINER*/
+    .navbar-wrapper {
+        height: 70px;
+    }
+}

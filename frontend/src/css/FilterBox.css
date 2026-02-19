@@ -1,6 +1,6 @@
 /*FILTER BOX CONTAINER*/
 .filter-box-container{
-    width: 100%;
+    width: 98%;
     height: 30px;
     display: flex;
     align-items: center;
@@ -26,4 +26,27 @@
 
 .refresh-container .refresh-icon:hover{
     transform: rotate(180deg) scale(1.2);
+}
+
+/*MEDIA QUERIES*/
+@media (max-width: 800px) {
+
+    /*FILTER BOX CONTAINER*/
+    .filter-box-container{
+        display: none;
+        flex-direction: column;
+        margin-top: 5px;
+        height: 100px;
+        gap:5px 0px;
+    }
+
+    /*FILTER BOX CONTAINER OPEN*/
+    .filter-box-container.open{
+        display: flex;
+    }
+
+    /*REFRESH BUTTON CONTAINER*/
+    .refresh-container{
+        display: none;
+    }
 }

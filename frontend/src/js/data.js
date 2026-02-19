@@ -193,44 +193,6 @@ export const pokemonDataMock = [
   }
 ];
 
-export const sortByFilterOptions = [
-  "Ascending",
-  "Descending",
-];
-
-export const typeFilterOptions = [
-  "All",
-  "Grass",
-  "Poison",
-  "Fire",
-  "Flying",
-  "Water", 
-];
-
-export const generationFilterOptions = [
-  "All",
-  "Generation 1",
-  "Generation 2",
-  "Generation 3",
-  "Generation 4",
-  "Generation 5",
-  "Generation 6",
-  "Generation 7",
-  "Generation 8",
-];
-
-export const regionFilterOptions = [
-  "All",
-  "Kanto",
-  "Johto",
-  "Hoenn",
-  "Sinnoh",
-  "Unova",
-  "Kalos",
-  "Alola",
-  "Galar",
-];
-
 export const selectedPokemon = {
   id: "001",
   name: "Bulbasaur",
