@@ -16,6 +16,34 @@
 
 /*CARD BASE*/
 .selected-pokemon-box {
-    width: 25%;
     display: flex;
+    margin-left: 10px;
+}
+
+/*MEDIA QUERIES*/
+@media (max-width: 1450px) {
+
+    /*CARD BASE*/
+    .selected-pokemon-box {
+        align-items: center;
+    }
+}
+
+@media (max-width: 1100px) {
+    
+    .pokemon-grid {
+        width: 90%;
+    }
+
+    /*CARD BASE*/
+    .selected-pokemon-box {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    
+    .pokemon-grid {
+        width: 95%;
+    }
 }

@@ -1,12 +1,11 @@
 /*POKEMON LIST*/
 .pokemon-list {
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px 10px;
-    align-items: flex-start;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 185px);
     overflow-y: auto;
-
+    gap:5px;
+    justify-content: center;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
 }
@@ -15,3 +14,22 @@
 .pokemon-list::-webkit-scrollbar {
   display: none;
 }
+
+
+/*MEDIA QUERIES*/
+@media (max-width: 1100px) {
+    
+    /*SEARCH BAR CONTAINER*/
+    .pokemon-list {
+        grid-template-columns: repeat(auto-fit, 160px);
+    }
+}
+
+@media (max-width: 800px) {
+    
+    /*SEARCH BAR CONTAINER*/
+    .pokemon-list {
+        grid-template-columns: repeat(auto-fit, 140px);
+    }
+}
+
