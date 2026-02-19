@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef} from "react";
 import SelectOption from "./SelectOption";
 import ArrowDownIcon from "../resources/img/icons/arrow_down_icon.png";
 
@@ -6,18 +6,35 @@ import "../css/SelectMenu.css"
 
 function SelectMenu({label, icon, options}) {
     {/*CREATING STATE TO MANIPULATE THE SELECT OPTIONS - OPEN/CLOSED */}    
+    const [labelState, setLabelState] = useState(label);
+    const [iconState, setIconState] = useState(icon);
     const [open, setOpen] = useState(false);
+    const selectRef = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (selectRef.current && !selectRef.current.contains(event.target)) {
+                setOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
 
     {/*SELECT MENU COMPONENT RESPONSIBLE TO LIST THE MENU OPTIONS*/}    
     return (
-        <div className="select-menu">
+        <div className="select-menu" ref={selectRef}>
             {/*LOGIC TO OPEN/CLOSE THE SELECT OPTIONS*/}    
             <div className="select-trigger" onClick={() => setOpen(!open)}>
                 <div className="label-box">
                     <div className="iconType" >
-                        <img src={icon} alt={label} />
+                        <img src={iconState} alt={label} />
                     </div>
-                    <span>{label}</span>
+                    <span>{labelState}</span>
                 </div>
 
                 {/*MANIPULATE THE ARROW ICON BASED ON IF SELECT OPTIONS ARE VISIBLE OR NOT*/}    
@@ -31,9 +48,9 @@ function SelectMenu({label, icon, options}) {
                 {options.map((option, index) => (
                     <SelectOption 
                         key={index}             
-                        label={option}
-                        icon=""
-                        onClick={() => {}} />
+                        label={option.label}
+                        icon={option.icon}
+                        onClick={() => {setLabelState(option.label); setIconState(option.icon); setOpen(false);}} />
                 ))}
             </div>
 

@@ -1,6 +1,6 @@
 /*FILTER BOX CONTAINER*/
 .filter-box-container{
-    width: 100%;
+    width: 98%;
     height: 30px;
     display: flex;
     align-items: center;
@@ -35,8 +35,8 @@
     .filter-box-container{
         display: none;
         flex-direction: column;
+        margin-top: 5px;
         height: 100px;
-        margin-top: 10px;
         gap:5px 0px;
     }
 
