@@ -21,7 +21,7 @@
 }
 
 /*MEDIA QUERIES*/
-@media (max-width: 1450px) {
+@media (max-width: 1400px) {
 
     /*CARD BASE*/
     .selected-pokemon-box {
