@@ -47,3 +47,15 @@
     width: 0;
   }
 }
+
+/*MEDIA QUERIES*/
+@media (max-width: 1600px) {
+
+    .stat-label {
+    font-size: 12px;
+  }
+
+  .stat-value {
+    font-size: 12px;
+  }
+}

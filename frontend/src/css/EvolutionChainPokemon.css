@@ -10,7 +10,7 @@
     width: 150px;
     height: 150px;
     top: -15px;
-    left: 40px;
+    left: 50px;
     filter: blur(20px);
     z-index: -1;
 }
@@ -41,6 +41,7 @@
 }
 
 .evolution-chain-pokemon-container .pokemon-info p {
+    font-size: 16px;
     margin: 0
 }
 
@@ -63,4 +64,31 @@
 .evolution-chain-pokemon-container .nextEvolution{
     width: 25px;
     height: 25px;
+}
+
+
+/*MEDIA QUERIES*/
+@media (max-width: 1600px) {
+    
+    /*EVOLUTION TYPE LOGO*/
+    .evolution-chain-pokemon-container #evolution-type-logo {
+        top: -15px;
+        left: 25px;
+    }
+
+    /*POKEMON INFO LABEL NAME*/
+    .evolution-chain-pokemon-container .pokemon-info p {
+        font-size: 15px;
+    }
+
+}
+
+/*MEDIA QUERIES*/
+@media (max-width: 1400px) {
+    
+    /*EVOLUTION TYPE LOGO*/
+    .evolution-chain-pokemon-container #evolution-type-logo {
+        top: -15px;
+        left: 15px;
+    }
 }
