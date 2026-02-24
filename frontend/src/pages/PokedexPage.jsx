@@ -3,8 +3,6 @@ import Navbar from "../components/Navbar.jsx";
 import PokemonSearchBar from "../components/PokemonSearchBar.jsx";
 import PokemonGrid from "../components/PokemonGrid.jsx";
 
-import "../css/App.css";
-
 function PokedexPage() {
     {/*POKEMON PAGE - INSTANTIATING COMPONETNS*/}    
     return (

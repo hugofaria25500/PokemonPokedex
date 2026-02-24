@@ -118,3 +118,19 @@
   transform: scale(1.05);
   box-shadow: 0 4px 10px rgba(0,0,0,0.4);
 }
+
+@media (max-width: 1100px) {
+  
+    /*POKEMON TYPES*/
+    .type-badge {
+        font-size: 10px !important;
+    }
+}
+
+@media (max-width: 800px) {
+  
+    /*POKEMON TYPES*/
+    .type-badge {
+        font-size: 9px !important;
+    }
+}

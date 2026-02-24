@@ -20,8 +20,7 @@ body {
 
 /*PAGE*/
 .page-container {
-    flex: 1;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 }

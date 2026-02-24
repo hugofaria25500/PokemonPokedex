@@ -1,6 +1,8 @@
 /*POKEMON SELECTED CARD*/
 .pokemon-selected-card {
-    flex: 1;            
+    display: flex;
+    width: 380px;
+    flex-direction: column;
     overflow-y: auto;   
     overflow-x: hidden;
 
@@ -67,7 +69,7 @@
 .card-base .frame-box #frame-logo {
     position: absolute;
     z-index: -1;
-    top: 10px;
+    top: -20px;
     width: 250px;
     height: 250px;
     opacity: 0.3;
@@ -218,4 +220,86 @@
     font-weight: 100;
 }
 
+/*MEDIA QUERIES*/
+@media (max-width: 1600px) {
+
+    /*POKEMON NAME LABEL*/
+    .card-base .label-box #pokemon-name-label {
+        font-size: 15px;
+    }
+
+    /*POKEMON ABOUT SECTION*/
+    .about h3 {
+        font-size: 14px;
+    }
+    
+    .about p {
+        font-size: 13px;
+    }
+
+    /*POKEMON BASE STATS SECTION*/
+    .base-stats h3 {
+        font-size: 14px;
+    }
+
+    /*POKEMON ABILITIES SECTION*/
+    .abilities h3 {
+        font-size: 14px;
+    }
+
+    /*POKEMON EVOLUTION CHAIN*/
+    .evolution-chain h3 {
+        font-size: 14px;
+    }
+
+    /*SEARCH BAR CONTAINER*/
+    .pokemon-selected-card {
+        width: 320px;
+        height: 100%;
+    }
+
+    /*FRAME*/
+    .card-base .frame-box{
+        height: 180px;
+    }
+
+    .card-base .frame-box #frame-logo {
+        top: 0px;    
+        width: 200px;
+        height: 200px;
+    }
+
+    .card-base .frame-box img {
+        width: 160px;
+        height: 160px;
+    }
+
+    
+}
+
+@media (max-width: 1400px) {
+    
+    /*SEARCH BAR CONTAINER*/
+    .pokemon-selected-card {
+        width: 300px;
+        height: 90%;
+    }
+
+    /*FRAME*/
+    .card-base .frame-box{
+        height: 180px;
+    }
+
+    .card-base .frame-box #frame-logo {
+        top: -10px;
+        left: 50px;    
+        width: 200px;
+        height: 200px;
+    }
+
+    .card-base .frame-box img {
+        width: 160px;
+        height: 160px;
+    }
+}
 
