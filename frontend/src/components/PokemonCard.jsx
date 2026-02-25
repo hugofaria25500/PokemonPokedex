@@ -1,11 +1,12 @@
 import "../css/PokemonTypes.css"
 import "../css/PokemonCard.css"
+import { typeUrl } from "../js/typesImage.js";
 
 function PokemonCard({ pokemon }) {
     {/*POKEMON CARD BUILDING*/}
     return (
         <div className="pokemon-card">
-            <img className="type-logo" src={pokemon.typeUrl} />
+            <img className="type-logo" src={typeUrl[pokemon.types[0].toLowerCase()]} />
             <div className="id-box">
                 <p>#{pokemon.id}</p>
             </div>
@@ -15,7 +16,7 @@ function PokemonCard({ pokemon }) {
             <div className="label-box">
                 <p>{pokemon.name}</p>
                 <div className="type-badge-box">
-                    {pokemon.type.map((type, index) => (
+                    {pokemon.types.map((type, index) => (
                       <p key={index} className={`type-badge ${type.toLowerCase()}-type-badge`}> {type}</p>
                     ))}
                 </div>
