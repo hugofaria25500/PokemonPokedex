@@ -4,15 +4,32 @@ import { getAllPokemons } from "../services/pokemonService";
 
 export function usePokemon(id) {
   const [pokemon, setPokemon] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  console.log("usePokemon called with id:", id); // Debug log
+
   useEffect(() => {
-    getPokemonById(id)
-      .then(setPokemon)
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
-  }, [id]);
+  if (!id) return;
+
+  const fetchData = async () => {
+
+      setLoading(true);
+      setError(null);
+
+    try {
+      const data = await getPokemonById(id);
+      setPokemon(data);
+
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchData();
+}, [id]);
 
   return { pokemon, loading, error };
 }

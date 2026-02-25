@@ -4,7 +4,7 @@ import ErrorBox from "../components/ErrorBox.jsx";
 
 import "../css/PokemonList.css"
 
-function PokemonList({ pokemons, loading, error }) {
+function PokemonList({ pokemons, loading, error, onSelect }) {
     {/*COMPONENT TO ITERATE EACH POKEMON AND PREPARE IT TO BUILD*/}
     if (loading) {
         return <LoadingSpinner />;
@@ -21,7 +21,7 @@ function PokemonList({ pokemons, loading, error }) {
     return (
         <div className="pokemon-list">
         {pokemons.map((pokemon) => (
-            <PokemonCard key={pokemon.id} pokemon={pokemon} />
+            <PokemonCard key={pokemon.id} pokemon={pokemon} onSelect={onSelect} />
         ))}
         </div>
     );
