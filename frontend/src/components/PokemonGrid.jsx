@@ -1,6 +1,6 @@
 import PokemonList from "./PokemonList";
 import PokemonSelected from "./PokemonSelected";
-import {selectedPokemon2}  from "../js/data.js";
+import {selectedPokemon}  from "../js/data.js";
 
 import "../css/PokemonGrid.css"
 
@@ -11,7 +11,7 @@ function PokemonGrid({ pokemons }) {
             <div className="pokemon-grid">
                 <PokemonList pokemons={pokemons} />
                 <div className="selected-pokemon-box">
-                    <PokemonSelected pokemon={selectedPokemon2} />
+                    <PokemonSelected pokemon={selectedPokemon} />
                 </div> 
             </div>
         </div>
