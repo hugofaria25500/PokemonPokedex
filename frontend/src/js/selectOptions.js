@@ -16,7 +16,7 @@ export const typeOptions = [
   { value: "normal", label: "Normal", icon: "/img/types/normal_type_logo.png" },
   { value: "fire", label: "Fire", icon: "/img/types/fire_type_logo.png" },
   { value: "water", label: "Water", icon: "/img/types/water_type_logo.png" },
-  { value: "electric", label: "Electric", icon: "/img/types/eletric_type_logo.png" },
+  { value: "electric", label: "Electric", icon: "/img/types/electric_type_logo.png" },
   { value: "grass", label: "Grass", icon: "/img/types/grass_type_logo.png" },
   { value: "ice", label: "Ice", icon: "/img/types/ice_type_logo.png" },
   { value: "fighting", label: "Fighting", icon: "/img/types/fighting_type_logo.png" },

@@ -1,4 +1,3 @@
-import { useAllPokemons } from "../hooks/usePokemon.js";
 import PokemonSearchBar from "../components/PokemonSearchBar.jsx";
 import PokemonGrid from "../components/PokemonGrid.jsx";
 
@@ -7,7 +6,7 @@ function PokedexPage() {
     return (
         <>
             <PokemonSearchBar />
-            <PokemonGrid pokemons={useAllPokemons().pokemonList} />
+            <PokemonGrid/>
         </>
     );
 }
