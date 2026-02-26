@@ -7,9 +7,9 @@ public class PokeApiPokemonResponse {
     private String name;
     private String imageUrl;
 
-    private List<TypeWrapper> types;
+    private List<TypeEntry> types;
 
-    public static class TypeWrapper {
+    public static class TypeEntry {
         private Type type;
 
         public Type getType() {
@@ -33,14 +33,14 @@ public class PokeApiPokemonResponse {
         }
     }
 
-    public PokeApiPokemonResponse() {
-    }
-    
-    public PokeApiPokemonResponse(long id, String name, String imageUrl, List<TypeWrapper> types) {
+    public PokeApiPokemonResponse(long id, String name, String imageUrl, List<TypeEntry> types) {
         this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;
         this.types = types;
+    }
+
+    public PokeApiPokemonResponse() {
     }
 
     public long getId() {
@@ -67,7 +67,7 @@ public class PokeApiPokemonResponse {
         this.imageUrl = imageUrl;
     }
 
-    public List<TypeWrapper> getTypes() {return types; }
+    public List<TypeEntry> getTypes() {return types; }
 
-    public void setTypes(List<TypeWrapper> types) {this.types = types; }
+    public void setTypes(List<TypeEntry> types) {this.types = types; }
 }

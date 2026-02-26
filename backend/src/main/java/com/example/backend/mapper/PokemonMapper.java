@@ -13,7 +13,7 @@ public class PokemonMapper {
     private static final String IMAGE_URL = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
     private static final String PNG_EXTENSION = ".png";
 
-    public PokemonDTO toDTO(PokeApiPokemonResponse response) {
+    public PokemonDTO toPokemonDTO(PokeApiPokemonResponse response) {
 
         PokemonDTO dto = new PokemonDTO();
         dto.setId(response.getId());
@@ -26,7 +26,7 @@ public class PokemonMapper {
         dto.setTypes(
                 response.getTypes()
                         .stream()
-                        .map(t -> t.getType().getName())
+                        .map(typeEntry -> typeEntry.getType().getName())
                         .toList()
         );
 

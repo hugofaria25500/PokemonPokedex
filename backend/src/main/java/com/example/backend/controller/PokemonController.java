@@ -21,8 +21,8 @@ public class PokemonController {
     }
 
     @GetMapping("/")
-    public ResponseEntity<List<PokemonDTO>> getAllPokemons() {
-        return ResponseEntity.ok(service.getAllPokemons());
+    public ResponseEntity<List<PokemonDTO>> getFirstPokemons() {
+        return ResponseEntity.ok(service.getFirstPokemons());
     }
 
     @GetMapping("/{id}")

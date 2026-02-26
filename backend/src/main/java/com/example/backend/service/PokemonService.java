@@ -31,12 +31,12 @@ public class PokemonService {
             throw new PokemonNotFoundException("Pokemon with id " + id + " not found");
         }
 
-        return mapper.toDTO(response);
+        return mapper.toPokemonDTO(response);
     }
 
     @Cacheable("pokemons")
-    public List<PokemonDTO> getAllPokemons() {
-        PokeApiPokemonListResponse listResponse = client.getPokemonAllPokemons();
+    public List<PokemonDTO> getFirstPokemons() {
+        PokeApiPokemonListResponse listResponse = client.getFirstPokemons();
 
         if (listResponse == null) {
             throw new PokemonNotFoundException("Pokemons not found");
@@ -48,10 +48,10 @@ public class PokemonService {
 
                     long id = extractIdFromUrl(entry.getUrl());
 
-                    PokeApiPokemonResponse detail =
+                    PokeApiPokemonResponse response =
                             client.getPokemonById(id);
 
-                    return mapper.toDTO(detail);
+                    return mapper.toPokemonDTO(response);
                 })
                 .toList();
     }
