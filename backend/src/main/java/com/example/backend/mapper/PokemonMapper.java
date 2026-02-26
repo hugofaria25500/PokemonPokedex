@@ -1,5 +1,6 @@
 package com.example.backend.mapper;
 
+import com.example.backend.client.response.PokeApiPokemonDetailResponse;
 import com.example.backend.client.response.PokeApiPokemonResponse;
 import com.example.backend.dto.PokemonDTO;
 import org.springframework.stereotype.Component;
@@ -30,6 +31,12 @@ public class PokemonMapper {
         );
 
         return dto;
+    }
+
+    public PokemonDTO toPokemonDetailDTO(PokeApiPokemonDetailResponse response) {
+
+
+        return null;
     }
 
     private String buildImageUrl(long id) {

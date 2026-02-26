@@ -24,7 +24,7 @@ function PokemonSelected({ selectedId }) {
         return <ErrorBox error={"ERROR: No pokemon found. Try searching for another pokemon."} />;
     }
 
-     {/*COMPONENT TO ITERATE EACH POKEMON AND PREPARE IT TO BUILD*/}
+    {/*COMPONENT TO ITERATE EACH POKEMON AND PREPARE IT TO BUILD*/}
     const mainType = pokemon?.types[0].toLowerCase();
     const barColor = typeColors[mainType] || typeColors["normal"];
     const imageTypePath = "/img/types/"+mainType+"_type_logo.png";

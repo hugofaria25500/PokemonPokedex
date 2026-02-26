@@ -4,6 +4,7 @@ import com.example.backend.client.PokemonClient;
 import com.example.backend.client.response.PokeApiPokemonListResponse;
 import com.example.backend.client.response.PokeApiPokemonResponse;
 import com.example.backend.dto.PokemonDTO;
+import com.example.backend.dto.PokemonDetailDTO;
 import com.example.backend.exception.PokemonNotFoundException;
 import com.example.backend.mapper.PokemonMapper;
 import org.springframework.cache.annotation.Cacheable;
@@ -54,6 +55,8 @@ public class PokemonService {
                 })
                 .toList();
     }
+
+
 
     private long extractIdFromUrl(String url) {
         String[] parts = url.split("/");

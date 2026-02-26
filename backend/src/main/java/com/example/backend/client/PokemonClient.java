@@ -2,6 +2,7 @@ package com.example.backend.client;
 
 import com.example.backend.client.response.PokeApiPokemonListResponse;
 import com.example.backend.client.response.PokeApiPokemonResponse;
+import com.example.backend.client.response.PokeApiPokemonSpecieResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
@@ -28,6 +29,14 @@ public class PokemonClient {
                 .uri("/pokemon?limit=50&offset=0")
                 .retrieve()
                 .bodyToMono(PokeApiPokemonListResponse.class)
+                .block();
+    }
+
+    public PokeApiPokemonSpecieResponse getPokemonSpecieById(long id) {
+        return webClient.get()
+                .uri("/pokemon-species/{id}", id)
+                .retrieve()
+                .bodyToMono(PokeApiPokemonSpecieResponse.class)
                 .block();
     }
 }
