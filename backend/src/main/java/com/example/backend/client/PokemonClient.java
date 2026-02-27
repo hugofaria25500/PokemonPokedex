@@ -48,7 +48,7 @@ public class PokemonClient {
 
     public PokeApiPokemonAbilitiesResponse getPokemonAbilitiesById(long id) {
         return webClient.get()
-                .uri("/pokemon-species/{id}", id)
+                .uri("/ability/{id}", id)
                 .retrieve()
                 .bodyToMono(PokeApiPokemonAbilitiesResponse.class)
                 .block();

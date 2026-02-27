@@ -1,10 +1,5 @@
 package com.example.backend.dto;
 
-import com.example.backend.entity.Abilities;
-import com.example.backend.entity.About;
-import com.example.backend.entity.EvolutionChain;
-import com.example.backend.entity.Stats;
-
 import java.util.List;
 
 public class PokemonDetailDTO {
@@ -15,23 +10,23 @@ public class PokemonDetailDTO {
 
     private List<String> types;
 
-    private About info;
+    private AboutDTO aboutDTO;
 
-    private Stats stats;
+    private StatsDTO statsDTO;
 
-    private List<Abilities> abilities;
+    private List<AbilitiesDTO> abilitiesDTO;
 
-    private List<EvolutionChain> evolutionChains;
+    private List<EvolutionChainDTO> evolutionChainDTOS;
 
-    public PokemonDetailDTO(long id, String name, String imageUrl, List<String> types, About info, Stats stats, List<Abilities> abilities, List<EvolutionChain> evolutionChains) {
+    public PokemonDetailDTO(long id, String name, String imageUrl, List<String> types, AboutDTO aboutDTO, StatsDTO statsDTO, List<AbilitiesDTO> abilitiesDTO, List<EvolutionChainDTO> evolutionChainDTOS) {
         this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;
         this.types = types;
-        this.info = info;
-        this.stats = stats;
-        this.abilities = abilities;
-        this.evolutionChains = evolutionChains;
+        this.aboutDTO = aboutDTO;
+        this.statsDTO = statsDTO;
+        this.abilitiesDTO = abilitiesDTO;
+        this.evolutionChainDTOS = evolutionChainDTOS;
     }
 
     public PokemonDetailDTO() {
@@ -69,35 +64,35 @@ public class PokemonDetailDTO {
         this.types = types;
     }
 
-    public About getInfo() {
-        return info;
+    public AboutDTO getAboutDTO() {
+        return aboutDTO;
     }
 
-    public void setInfo(About info) {
-        this.info = info;
+    public void setAboutDTO(AboutDTO aboutDTO) {
+        this.aboutDTO = aboutDTO;
     }
 
-    public Stats getStats() {
-        return stats;
+    public StatsDTO getStats() {
+        return statsDTO;
     }
 
-    public void setStats(Stats stats) {
-        this.stats = stats;
+    public void setStats(StatsDTO statsDTO) {
+        this.statsDTO = statsDTO;
     }
 
-    public List<Abilities> getAbilities() {
-        return abilities;
+    public List<AbilitiesDTO> getAbilitiesDTO() {
+        return abilitiesDTO;
     }
 
-    public void setAbilities(List<Abilities> abilities) {
-        this.abilities = abilities;
+    public void setAbilitiesDTO(List<AbilitiesDTO> abilitiesDTO) {
+        this.abilitiesDTO = abilitiesDTO;
     }
 
-    public List<EvolutionChain> getEvolutionChains() {
-        return evolutionChains;
+    public List<EvolutionChainDTO> getEvolutionChains() {
+        return evolutionChainDTOS;
     }
 
-    public void setEvolutionChains(List<EvolutionChain> evolutionChains) {
-        this.evolutionChains = evolutionChains;
+    public void setEvolutionChains(List<EvolutionChainDTO> evolutionChainDTOS) {
+        this.evolutionChainDTOS = evolutionChainDTOS;
     }
 }

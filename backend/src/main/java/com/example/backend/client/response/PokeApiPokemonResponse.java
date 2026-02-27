@@ -5,7 +5,6 @@ import java.util.List;
 public class PokeApiPokemonResponse {
     private long id;
     private String name;
-    private String imageUrl;
 
     private List<TypeEntry> types;
 
@@ -33,10 +32,9 @@ public class PokeApiPokemonResponse {
         }
     }
 
-    public PokeApiPokemonResponse(long id, String name, String imageUrl, List<TypeEntry> types) {
+    public PokeApiPokemonResponse(long id, String name, List<TypeEntry> types) {
         this.id = id;
         this.name = name;
-        this.imageUrl = imageUrl;
         this.types = types;
     }
 
@@ -57,14 +55,6 @@ public class PokeApiPokemonResponse {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
     }
 
     public List<TypeEntry> getTypes() {return types; }

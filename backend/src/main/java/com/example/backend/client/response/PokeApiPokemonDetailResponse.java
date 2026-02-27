@@ -8,7 +8,6 @@ public class PokeApiPokemonDetailResponse {
 
     private long id;
     private String name;
-    private String imageUrl;
 
     private List<TypeEntry> types;
 
@@ -21,12 +20,11 @@ public class PokeApiPokemonDetailResponse {
 
     private List<StatsEntry> stats;
 
-    private List<Ability> abilities;
+    private List<AbilityEntry> abilities;
 
-    public PokeApiPokemonDetailResponse(long id, String name, String imageUrl, List<TypeEntry> types, Description description, long height, long weight, List<StatsEntry> stats, List<Ability> abilities) {
+    public PokeApiPokemonDetailResponse(long id, String name, List<TypeEntry> types, Description description, long height, long weight, List<StatsEntry> stats, List<AbilityEntry> abilities) {
         this.id = id;
         this.name = name;
-        this.imageUrl = imageUrl;
         this.types = types;
         this.description = description;
         this.height = height;
@@ -109,6 +107,19 @@ public class PokeApiPokemonDetailResponse {
         }
     }
 
+    public static class AbilityEntry {
+
+        private Ability ability;
+
+        public Ability getAbility() {
+            return ability;
+        }
+
+        public void setAbility(Ability ability) {
+            this.ability = ability;
+        }
+    }
+
     public static class Ability {
 
         private String url;
@@ -136,14 +147,6 @@ public class PokeApiPokemonDetailResponse {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
     }
 
     public List<TypeEntry> getTypes() {
@@ -184,11 +187,11 @@ public class PokeApiPokemonDetailResponse {
         return stats;
     }
 
-    public List<Ability> getAbilities() {
+    public List<AbilityEntry> getAbilities() {
         return abilities;
     }
 
-    public void setAbilities(List<Ability> abilities) {
+    public void setAbilities(List<AbilityEntry> abilities) {
         this.abilities = abilities;
     }
 }
