@@ -1,6 +1,7 @@
 package com.example.backend.service;
 
 import com.example.backend.client.PokemonClient;
+import com.example.backend.client.response.PokeApiPokemonDetailResponse;
 import com.example.backend.client.response.PokeApiPokemonListResponse;
 import com.example.backend.client.response.PokeApiPokemonResponse;
 import com.example.backend.dto.PokemonDTO;
@@ -32,6 +33,17 @@ public class PokemonService {
         }
 
         return mapper.toPokemonDTO(response);
+    }
+
+    @Cacheable("selectedPokemon")
+    public PokemonDetailDTO getPokemonDetails(long id) {
+        PokeApiPokemonDetailResponse response = client.getPokemonDetailsById(id);
+
+        if (response == null) {
+            throw new PokemonNotFoundException("Pokemon with id " + id + " not found");
+        }
+
+        return mapper.toPokemonDetailDTO(response);
     }
 
     @Cacheable("pokemons")

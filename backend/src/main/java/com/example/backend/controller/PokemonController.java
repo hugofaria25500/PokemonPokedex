@@ -1,6 +1,7 @@
 package com.example.backend.controller;
 
 import com.example.backend.dto.PokemonDTO;
+import com.example.backend.dto.PokemonDetailDTO;
 import com.example.backend.service.PokemonService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +29,11 @@ public class PokemonController {
     @GetMapping("/{id}")
     public ResponseEntity<PokemonDTO> getPokemon(@PathVariable long id) {
         return ResponseEntity.ok(service.getPokemon(id));
+    }
+
+    @GetMapping("/details/{id}")
+    public ResponseEntity<PokemonDetailDTO> getPokemonDetails(@PathVariable long id) {
+        return ResponseEntity.ok(service.getPokemonDetails(id));
     }
 }
 

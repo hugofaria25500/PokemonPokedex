@@ -3,15 +3,17 @@ package com.example.backend.mapper;
 import com.example.backend.client.response.PokeApiPokemonDetailResponse;
 import com.example.backend.client.response.PokeApiPokemonResponse;
 import com.example.backend.dto.PokemonDTO;
+import com.example.backend.dto.PokemonDetailDTO;
+import com.example.backend.dto.StatsDTO;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 @Component
 public class PokemonMapper {
 
     private static final String IMAGE_URL = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
     private static final String PNG_EXTENSION = ".png";
+
+
 
     public PokemonDTO toPokemonDTO(PokeApiPokemonResponse response) {
 
@@ -33,10 +35,37 @@ public class PokemonMapper {
         return dto;
     }
 
-    public PokemonDTO toPokemonDetailDTO(PokeApiPokemonDetailResponse response) {
+    public PokemonDetailDTO toPokemonDetailDTO(PokeApiPokemonDetailResponse response) {
 
+        PokemonDetailDTO dto = new PokemonDetailDTO();
 
-        return null;
+        dto.setId(response.getId());
+
+        String name= response.getName();
+        dto.setName(name != null ? capitalizePokemonName(name) : "");
+
+        dto.setImageUrl(buildImageUrl(response.getId()));
+
+        StatsDTO statsDTO = new StatsDTO();
+
+        if (response.getStats() != null) { {
+            response.getStats().forEach(statsEntry -> {
+
+                switch (statsEntry.getStat().getName()) {
+                    case "hp" -> statsDTO.setHp(statsEntry.getValue());
+                    case "attack" -> statsDTO.setAttack(statsEntry.getValue());
+                    case "defense" -> statsDTO.setDefense(statsEntry.getValue());
+                    case "special-attack" -> statsDTO.setSpecialAttack(statsEntry.getValue());
+                    case "special-defense" -> statsDTO.setSpecialDefense(statsEntry.getValue());
+                    case "speed" -> statsDTO.setSpeed(statsEntry.getValue());
+                }
+            });
+        }}
+
+        dto.setStats(statsDTO);
+
+        return dto;
+
     }
 
     private String buildImageUrl(long id) {
