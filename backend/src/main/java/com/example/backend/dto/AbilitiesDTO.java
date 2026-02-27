@@ -1,17 +1,17 @@
-package com.example.backend.entity;
+package com.example.backend.dto;
 
-public class Abilities {
+public class AbilitiesDTO {
 
     private String name;
 
     private String description;
 
-    public Abilities(String name, String description) {
+    public AbilitiesDTO(String name, String description) {
         this.name = name;
         this.description = description;
     }
 
-    public Abilities() {
+    public AbilitiesDTO() {
     }
 
     public String getName() {

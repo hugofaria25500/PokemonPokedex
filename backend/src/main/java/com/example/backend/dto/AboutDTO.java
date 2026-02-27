@@ -1,20 +1,20 @@
-package com.example.backend.entity;
+package com.example.backend.dto;
 
-public class About {
+public class AboutDTO {
 
     private String description;
     private String region;
     private String height;
     private String weight;
 
-    public About(String description, String region, String height, String weight) {
+    public AboutDTO(String description, String region, String height, String weight) {
         this.description = description;
         this.region = region;
         this.height = height;
         this.weight = weight;
     }
 
-    public About() {
+    public AboutDTO() {
     }
 
     public String getDescription() {

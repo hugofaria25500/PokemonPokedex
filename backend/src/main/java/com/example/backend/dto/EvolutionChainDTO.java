@@ -1,18 +1,18 @@
-package com.example.backend.entity;
+package com.example.backend.dto;
 
 import com.example.backend.dto.PokemonDTO;
 
 import java.util.List;
 
-public class EvolutionChain {
+public class EvolutionChainDTO {
 
     private List<PokemonDTO> pokemonEvolutionList;
 
-    public EvolutionChain(List<PokemonDTO> pokemonEvolutionList) {
+    public EvolutionChainDTO(List<PokemonDTO> pokemonEvolutionList) {
         this.pokemonEvolutionList = pokemonEvolutionList;
     }
 
-    public EvolutionChain() {
+    public EvolutionChainDTO() {
     }
 
     public List<PokemonDTO> getPokemonEvolutionList() {
