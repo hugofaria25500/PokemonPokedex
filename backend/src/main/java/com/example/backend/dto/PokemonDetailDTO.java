@@ -16,9 +16,9 @@ public class PokemonDetailDTO {
 
     private List<AbilitiyDTO> abilitiyDTOList;
 
-    private List<EvolutionChainDTO> evolutionChainDTOS;
+    private List<EvolutionChainDTO> evolutionChainDTOList;
 
-    public PokemonDetailDTO(long id, String name, String imageUrl, List<String> types, AboutDTO aboutDTO, List<StatDTO> statDTOList, List<AbilitiyDTO> abilitiyDTOList, List<EvolutionChainDTO> evolutionChainDTOS) {
+    public PokemonDetailDTO(long id, String name, String imageUrl, List<String> types, AboutDTO aboutDTO, List<StatDTO> statDTOList, List<AbilitiyDTO> abilitiyDTOList, List<EvolutionChainDTO> evolutionChainDTOList) {
         this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;
@@ -26,7 +26,7 @@ public class PokemonDetailDTO {
         this.aboutDTO = aboutDTO;
         this.statDTOList = statDTOList;
         this.abilitiyDTOList = abilitiyDTOList;
-        this.evolutionChainDTOS = evolutionChainDTOS;
+        this.evolutionChainDTOList = evolutionChainDTOList;
     }
 
     public PokemonDetailDTO() {
@@ -88,19 +88,11 @@ public class PokemonDetailDTO {
         this.abilitiyDTOList = abilitiyDTOList;
     }
 
-    public List<EvolutionChainDTO> getEvolutionChainDTOS() {
-        return evolutionChainDTOS;
+    public List<EvolutionChainDTO> getEvolutionChainDTOList() {
+        return evolutionChainDTOList;
     }
 
-    public void setEvolutionChainDTOS(List<EvolutionChainDTO> evolutionChainDTOS) {
-        this.evolutionChainDTOS = evolutionChainDTOS;
-    }
-
-    public List<EvolutionChainDTO> getEvolutionChains() {
-        return evolutionChainDTOS;
-    }
-
-    public void setEvolutionChains(List<EvolutionChainDTO> evolutionChainDTOS) {
-        this.evolutionChainDTOS = evolutionChainDTOS;
+    public void setEvolutionChainDTOList(List<EvolutionChainDTO> evolutionChainDTOList) {
+        this.evolutionChainDTOList = evolutionChainDTOList;
     }
 }

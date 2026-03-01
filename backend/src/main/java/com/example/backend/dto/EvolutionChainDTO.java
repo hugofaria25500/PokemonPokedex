@@ -6,20 +6,20 @@ import java.util.List;
 
 public class EvolutionChainDTO {
 
-    private List<PokemonDTO> pokemonEvolutionList;
+    private List<EvolutionDTO> evolutionDTOList;
 
-    public EvolutionChainDTO(List<PokemonDTO> pokemonEvolutionList) {
-        this.pokemonEvolutionList = pokemonEvolutionList;
+    public EvolutionChainDTO(List<EvolutionDTO> evolutionDTOList) {
+        this.evolutionDTOList = evolutionDTOList;
     }
 
     public EvolutionChainDTO() {
     }
 
-    public List<PokemonDTO> getPokemonEvolutionList() {
-        return pokemonEvolutionList;
+    public List<EvolutionDTO> getEvolutionDTOList() {
+        return evolutionDTOList;
     }
 
-    public void setPokemonEvolutionList(List<PokemonDTO> pokemonEvolutionList) {
-        this.pokemonEvolutionList = pokemonEvolutionList;
+    public void setEvolutionDTOList(List<EvolutionDTO> evolutionDTOList) {
+        this.evolutionDTOList = evolutionDTOList;
     }
 }
