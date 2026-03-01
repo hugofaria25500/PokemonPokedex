@@ -3,7 +3,6 @@ package com.example.backend.client;
 import com.example.backend.client.response.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
 
 @Component
 public class PokemonClient {
@@ -51,6 +50,14 @@ public class PokemonClient {
                 .uri("/ability/{id}", id)
                 .retrieve()
                 .bodyToMono(PokeApiPokemonAbilitiesResponse.class)
+                .block();
+    }
+
+    public PokeApiPokemonEvolutionChainResponse getPokemonEvolutionChainById(long id) {
+        return webClient.get()
+                .uri("/evolution-chain/{id}", id)
+                .retrieve()
+                .bodyToMono(PokeApiPokemonEvolutionChainResponse.class)
                 .block();
     }
 }
