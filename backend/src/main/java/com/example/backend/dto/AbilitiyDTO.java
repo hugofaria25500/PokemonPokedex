@@ -1,17 +1,17 @@
 package com.example.backend.dto;
 
-public class AbilitiesDTO {
+public class AbilitiyDTO {
 
     private String name;
 
     private String description;
 
-    public AbilitiesDTO(String name, String description) {
+    public AbilitiyDTO(String name, String description) {
         this.name = name;
         this.description = description;
     }
 
-    public AbilitiesDTO() {
+    public AbilitiyDTO() {
     }
 
     public String getName() {
