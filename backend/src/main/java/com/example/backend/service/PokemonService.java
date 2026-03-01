@@ -4,6 +4,8 @@ import com.example.backend.client.PokemonClient;
 import com.example.backend.client.response.PokeApiPokemonDetailResponse;
 import com.example.backend.client.response.PokeApiPokemonListResponse;
 import com.example.backend.client.response.PokeApiPokemonResponse;
+import com.example.backend.client.response.PokeApiPokemonSpecieResponse;
+import com.example.backend.dto.AboutDTO;
 import com.example.backend.dto.PokemonDTO;
 import com.example.backend.dto.PokemonDetailDTO;
 import com.example.backend.exception.PokemonNotFoundException;
@@ -43,7 +45,9 @@ public class PokemonService {
             throw new PokemonNotFoundException("Pokemon with id " + id + " not found");
         }
 
-        return mapper.toPokemonDetailDTO(response);
+        PokeApiPokemonSpecieResponse specieResponse = client.getPokemonSpeciesById(extractIdFromUrl(response.getDescription().getUrl()));
+
+        return mapper.toPokemonDetailDTO(response, specieResponse);
     }
 
     @Cacheable("pokemons")
