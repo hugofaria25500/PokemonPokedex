@@ -2,14 +2,14 @@ package com.example.backend.service;
 
 import com.example.backend.client.PokemonClient;
 import com.example.backend.client.response.*;
-import com.example.backend.dto.AbilitiyDTO;
-import com.example.backend.dto.PokemonDTO;
-import com.example.backend.dto.PokemonDetailDTO;
+import com.example.backend.dto.*;
 import com.example.backend.exception.PokemonNotFoundException;
 import com.example.backend.mapper.PokemonMapper;
+import com.example.backend.utils.PokemonUtils;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -42,7 +42,9 @@ public class PokemonService {
             throw new PokemonNotFoundException("Pokemon with id " + id + " not found");
         }
 
-        PokeApiPokemonSpecieResponse specieResponse = client.getPokemonSpeciesById(extractIdFromUrl(response.getDescription().getUrl()));
+        PokeApiPokemonSpecieResponse specieResponse = client.getPokemonSpeciesById(PokemonUtils.extractIdFromUrl(response.getDescription().getUrl()));
+        long evolutionChainId = PokemonUtils.extractIdFromUrl(specieResponse.getEvolutionChain().getEvolutionChainUrl());
+
 
         List<AbilitiyDTO> abilitiyDTOList = response.getAbilities()
             .stream()
@@ -50,7 +52,7 @@ public class PokemonService {
 
                 PokeApiPokemonAbilitiesResponse abilitiesResponse =
                         client.getPokemonAbilitiesById(
-                                extractIdFromUrl(abilityEntry.getAbility().getUrl())
+                                PokemonUtils.extractIdFromUrl(abilityEntry.getAbility().getUrl())
                         );
 
                 String name = abilitiesResponse.getName();
@@ -66,7 +68,11 @@ public class PokemonService {
                 return new AbilitiyDTO(name, description);
             }).toList();
 
-        return mapper.toPokemonDetailDTO(response, specieResponse, abilitiyDTOList);
+        PokeApiPokemonEvolutionChainResponse evolutionResponse = client.getPokemonEvolutionChainById(evolutionChainId);
+
+        List<EvolutionChainDTO> evolutionChainDTOList = buildEvolutionList(evolutionResponse);
+
+        return mapper.toPokemonDetailDTO(response, specieResponse, abilitiyDTOList, evolutionChainDTOList);
     }
 
     @Cacheable("pokemons")
@@ -81,7 +87,7 @@ public class PokemonService {
                 .parallelStream()
                 .map(entry -> {
 
-                    long id = extractIdFromUrl(entry.getUrl());
+                    long id = PokemonUtils.extractIdFromUrl(entry.getUrl());
 
                     PokeApiPokemonResponse response =
                             client.getPokemonById(id);
@@ -91,11 +97,31 @@ public class PokemonService {
                 .toList();
     }
 
+    public static List<EvolutionChainDTO> buildEvolutionList(PokeApiPokemonEvolutionChainResponse evolutionChainResponse) {
 
+        List<EvolutionChainDTO> evolutionChainDTOList = new ArrayList<>();
+        List<EvolutionDTO> evolutionDTOList = new ArrayList<>();
 
-    private long extractIdFromUrl(String url) {
-        String[] parts = url.split("/");
-        return Long.parseLong(parts[parts.length - 1]);
+        if (evolutionChainResponse.getChainLink() == null) return null;
+
+        PokeApiPokemonEvolutionChainResponse.ChainLink chainLink = evolutionChainResponse.getChainLink();
+
+        long pokemonEvolutionId =  PokemonUtils.extractIdFromUrl(chainLink.getSpecies().getUrl());
+
+        EvolutionDTO firstEvolution = new EvolutionDTO(
+                pokemonEvolutionId,
+                chainLink.getSpecies().getName(),
+                PokemonUtils.buildImageUrl(pokemonEvolutionId)
+        );
+
+        evolutionDTOList.add(firstEvolution);
+        EvolutionChainDTO evolutionChainDTO = new EvolutionChainDTO();
+        evolutionChainDTO.setEvolutionDTOList(evolutionDTOList);
+        evolutionChainDTOList.add(evolutionChainDTO);
+
+        return evolutionChainDTOList;
     }
+
+
 }
 
