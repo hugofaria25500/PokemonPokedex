@@ -11,6 +11,9 @@ public class PokeApiPokemonSpecieResponse {
 
     private Generation generation;
 
+    @JsonProperty("evolution_chain")
+    private EvolutionChain evolutionChain;
+
     public static class DescriptionEntry {
         @JsonProperty("flavor_text")
         private String description;
@@ -60,6 +63,21 @@ public class PokeApiPokemonSpecieResponse {
         }
     }
 
+
+    public static class EvolutionChain {
+
+        @JsonProperty("url")
+        private String evolutionChainUrl;
+
+        public String getEvolutionChainUrl() {
+            return evolutionChainUrl;
+        }
+
+        public void setEvolutionChainUrl(String evolutionChainUrl) {
+            this.evolutionChainUrl = evolutionChainUrl;
+        }
+    }
+
     public List<DescriptionEntry> getDescriptions() {
         return descriptions;
     }
@@ -74,5 +92,13 @@ public class PokeApiPokemonSpecieResponse {
 
     public void setGeneration(Generation generation) {
         this.generation = generation;
+    }
+
+    public EvolutionChain getEvolutionChain() {
+        return evolutionChain;
+    }
+
+    public void setEvolutionChain(EvolutionChain evolutionChain) {
+        this.evolutionChain = evolutionChain;
     }
 }
