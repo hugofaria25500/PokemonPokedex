@@ -12,20 +12,20 @@ public class PokemonDetailDTO {
 
     private AboutDTO aboutDTO;
 
-    private StatsDTO statsDTO;
+    private List<StatDTO> statDTOList;
 
-    private List<AbilitiesDTO> abilitiesDTO;
+    private List<AbilitiyDTO> abilitiyDTOList;
 
     private List<EvolutionChainDTO> evolutionChainDTOS;
 
-    public PokemonDetailDTO(long id, String name, String imageUrl, List<String> types, AboutDTO aboutDTO, StatsDTO statsDTO, List<AbilitiesDTO> abilitiesDTO, List<EvolutionChainDTO> evolutionChainDTOS) {
+    public PokemonDetailDTO(long id, String name, String imageUrl, List<String> types, AboutDTO aboutDTO, List<StatDTO> statDTOList, List<AbilitiyDTO> abilitiyDTOList, List<EvolutionChainDTO> evolutionChainDTOS) {
         this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;
         this.types = types;
         this.aboutDTO = aboutDTO;
-        this.statsDTO = statsDTO;
-        this.abilitiesDTO = abilitiesDTO;
+        this.statDTOList = statDTOList;
+        this.abilitiyDTOList = abilitiyDTOList;
         this.evolutionChainDTOS = evolutionChainDTOS;
     }
 
@@ -72,20 +72,28 @@ public class PokemonDetailDTO {
         this.aboutDTO = aboutDTO;
     }
 
-    public StatsDTO getStats() {
-        return statsDTO;
+    public List<StatDTO> getStatDTOList() {
+        return statDTOList;
     }
 
-    public void setStats(StatsDTO statsDTO) {
-        this.statsDTO = statsDTO;
+    public void setStatDTOList(List<StatDTO> statDTOList) {
+        this.statDTOList = statDTOList;
     }
 
-    public List<AbilitiesDTO> getAbilitiesDTO() {
-        return abilitiesDTO;
+    public List<AbilitiyDTO> getAbilitiyDTOList() {
+        return abilitiyDTOList;
     }
 
-    public void setAbilitiesDTO(List<AbilitiesDTO> abilitiesDTO) {
-        this.abilitiesDTO = abilitiesDTO;
+    public void setAbilitiyDTOList(List<AbilitiyDTO> abilitiyDTOList) {
+        this.abilitiyDTOList = abilitiyDTOList;
+    }
+
+    public List<EvolutionChainDTO> getEvolutionChainDTOS() {
+        return evolutionChainDTOS;
+    }
+
+    public void setEvolutionChainDTOS(List<EvolutionChainDTO> evolutionChainDTOS) {
+        this.evolutionChainDTOS = evolutionChainDTOS;
     }
 
     public List<EvolutionChainDTO> getEvolutionChains() {

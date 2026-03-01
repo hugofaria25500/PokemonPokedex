@@ -1,11 +1,8 @@
 package com.example.backend.service;
 
 import com.example.backend.client.PokemonClient;
-import com.example.backend.client.response.PokeApiPokemonDetailResponse;
-import com.example.backend.client.response.PokeApiPokemonListResponse;
-import com.example.backend.client.response.PokeApiPokemonResponse;
-import com.example.backend.client.response.PokeApiPokemonSpecieResponse;
-import com.example.backend.dto.AboutDTO;
+import com.example.backend.client.response.*;
+import com.example.backend.dto.AbilitiyDTO;
 import com.example.backend.dto.PokemonDTO;
 import com.example.backend.dto.PokemonDetailDTO;
 import com.example.backend.exception.PokemonNotFoundException;
@@ -47,7 +44,29 @@ public class PokemonService {
 
         PokeApiPokemonSpecieResponse specieResponse = client.getPokemonSpeciesById(extractIdFromUrl(response.getDescription().getUrl()));
 
-        return mapper.toPokemonDetailDTO(response, specieResponse);
+        List<AbilitiyDTO> abilitiyDTOList = response.getAbilities()
+            .stream()
+            .map(abilityEntry -> {
+
+                PokeApiPokemonAbilitiesResponse abilitiesResponse =
+                        client.getPokemonAbilitiesById(
+                                extractIdFromUrl(abilityEntry.getAbility().getUrl())
+                        );
+
+                String name = abilitiesResponse.getName();
+
+                String description = abilitiesResponse.getDescriptions()
+                        .stream()
+                        .filter(entry -> "en".equals(entry.getLanguage().getName()))
+                        .filter(entry -> "platinum".equals(entry.getVersion().getName()))
+                        .map(entry -> entry.getDescription())
+                        .findFirst()
+                        .orElse("No description available");
+
+                return new AbilitiyDTO(name, description);
+            }).toList();
+
+        return mapper.toPokemonDetailDTO(response, specieResponse, abilitiyDTOList);
     }
 
     @Cacheable("pokemons")

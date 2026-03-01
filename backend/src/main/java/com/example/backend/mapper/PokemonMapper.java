@@ -3,11 +3,10 @@ package com.example.backend.mapper;
 import com.example.backend.client.response.PokeApiPokemonDetailResponse;
 import com.example.backend.client.response.PokeApiPokemonResponse;
 import com.example.backend.client.response.PokeApiPokemonSpecieResponse;
-import com.example.backend.dto.AboutDTO;
-import com.example.backend.dto.PokemonDTO;
-import com.example.backend.dto.PokemonDetailDTO;
-import com.example.backend.dto.StatsDTO;
+import com.example.backend.dto.*;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public class PokemonMapper {
@@ -37,7 +36,7 @@ public class PokemonMapper {
         return dto;
     }
 
-    public PokemonDetailDTO toPokemonDetailDTO(PokeApiPokemonDetailResponse response, PokeApiPokemonSpecieResponse specieResponse) {
+    public PokemonDetailDTO toPokemonDetailDTO(PokeApiPokemonDetailResponse response, PokeApiPokemonSpecieResponse specieResponse, List<AbilitiyDTO> abilitiyDTOList ) {
 
         //BASIC DETAILS
         PokemonDetailDTO pokemonDTO = new PokemonDetailDTO();
@@ -73,34 +72,20 @@ public class PokemonMapper {
             aboutDTO.setRegion(mapGenerationToRegion(specieResponse.getGeneration().getName()));
         }
 
-
-
         pokemonDTO.setAboutDTO(aboutDTO);
 
         //STATS DETAILS
-        StatsDTO statsDTO = new StatsDTO();
+        List<StatDTO> statDTOList = response.getStats()
+                .stream()
+                .map(statsEntry -> new StatDTO(statsEntry.getStat().getName(), statsEntry.getValue())).toList();
 
-        if (response.getStats() != null) { {
-            response.getStats().forEach(statsEntry -> {
 
-                switch (statsEntry.getStat().getName()) {
-                    case "hp" -> statsDTO.setHp(statsEntry.getValue());
-                    case "attack" -> statsDTO.setAttack(statsEntry.getValue());
-                    case "defense" -> statsDTO.setDefense(statsEntry.getValue());
-                    case "special-attack" -> statsDTO.setSpecialAttack(statsEntry.getValue());
-                    case "special-defense" -> statsDTO.setSpecialDefense(statsEntry.getValue());
-                    case "speed" -> statsDTO.setSpeed(statsEntry.getValue());
-                }
-            });
-        }}
-
-        pokemonDTO.setStats(statsDTO);
+        pokemonDTO.setStatDTOList(statDTOList);
 
         //ABILITIES DETAILS
+        pokemonDTO.setAbilitiyDTOList(abilitiyDTOList);
 
         //EVOLUTION CHAIN DETAILS
-
-
 
         return pokemonDTO;
 

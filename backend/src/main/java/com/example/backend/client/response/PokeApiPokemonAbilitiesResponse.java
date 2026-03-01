@@ -20,18 +20,14 @@ public class PokeApiPokemonAbilitiesResponse {
     }
 
     public static class DescriptionEntry {
-        private String language;
 
         @JsonProperty("flavor_text")
         private String description;
 
-        public String getLanguage() {
-            return language;
-        }
+        private Language language;
 
-        public void setLanguage(String language) {
-            this.language = language;
-        }
+        @JsonProperty("version_group")
+        private Version version;
 
         public String getDescription() {
             return description;
@@ -39,6 +35,46 @@ public class PokeApiPokemonAbilitiesResponse {
 
         public void setDescription(String description) {
             this.description = description;
+        }
+
+        public Language getLanguage() {
+            return language;
+        }
+
+        public void setLanguage(Language language) {
+            this.language = language;
+        }
+
+        public Version getVersion() {
+            return version;
+        }
+
+        public void setVersion(Version version) {
+            this.version = version;
+        }
+    }
+
+    public static class Language {
+        private String name;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+    }
+
+    public static class Version {
+        private String name;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
         }
     }
 
