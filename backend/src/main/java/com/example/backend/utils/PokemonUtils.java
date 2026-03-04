@@ -54,9 +54,17 @@ public class PokemonUtils {
         return pokemonName.substring(0,1).toUpperCase() + pokemonName.substring(1);
     }
 
+    public static String capitalizeText(String text) {
+        return text.substring(0,1).toUpperCase() + text.substring(1);
+    }
+
     public static String convertMeasurestoString(long measure) {
         String str = String.valueOf(measure);
-        str = new StringBuilder(str).insert(str.length() - 1, ".").toString();
+        if(str.length() == 1) {
+            str = new StringBuilder(str).insert(str.length() - 1, "0.").toString();
+        } else {
+            str = new StringBuilder(str).insert(str.length() - 1, ".").toString();
+        }
         return str;
     }
 

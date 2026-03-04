@@ -64,7 +64,7 @@ public class PokemonMapper {
             StringBuilder sb = new StringBuilder();
             specieResponse.getDescriptions().forEach(descriptionEntry -> {
                 if("red".equals(descriptionEntry.getVersion().getName()) || "gold".equals(descriptionEntry.getVersion().getName())) {
-                    sb.append(descriptionEntry.getDescription());
+                    sb.append(PokemonUtils.capitalizeText(descriptionEntry.getDescription().toLowerCase()));
                 }
             });
             aboutDTO.setDescription(PokemonUtils.cleanFlavorText(sb.toString()));
@@ -90,12 +90,4 @@ public class PokemonMapper {
         return pokemonDTO;
 
     }
-
-
-
-
-
-
-
-
 }
