@@ -1,9 +1,26 @@
 /*LOADING SPINNER*/
-.loading-spinner-container {
+.loading-spinner-container.pokemon-list {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    border: 2px solid black;
+    background-color: rgba(0,0,0,0.35);
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+.loading-spinner-container.selected-pokemon {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 380px;
+    background-color: rgba(0,0,0,0.35);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    border: 2px solid black;
+    box-sizing: border-box;
+    border-radius: 20px;
 }
 
 .loading-spinner-container img {

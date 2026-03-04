@@ -13,7 +13,7 @@ function PokemonSelected({ selectedId }) {
     const { detailedPokemon, loading, error } = usePokemonDetails(selectedId);
 
     if (loading) {
-        return <LoadingSpinner />;
+        return <LoadingSpinner type={"selected-pokemon"} />;
     }
 
     if (error) {

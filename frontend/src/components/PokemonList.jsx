@@ -7,7 +7,7 @@ import "../css/PokemonList.css"
 function PokemonList({ pokemons, loading, error, onSelect }) {
     {/*COMPONENT TO ITERATE EACH POKEMON AND PREPARE IT TO BUILD*/}
     if (loading) {
-        return <LoadingSpinner />;
+        return <LoadingSpinner type={"pokemon-list"} />;
     }
 
     if (error) {
