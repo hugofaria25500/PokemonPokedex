@@ -1,21 +1,28 @@
 import { useEffect, useState } from "react";
-import { getAllPokemons } from "../services/pokemonService";
+import { getPokemons } from "../services/pokemonService";
 
-export function useAllPokemons() {
+export function usePokemons() {
   const [pokemonList, setPokemonList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [offset, setOffset] = useState(0);
 
   const fetchAll = async () => {
+    if(loading) return;
+
     setLoading(true);
     try {
-      const data = await getAllPokemons();
-      setPokemonList(data);
+      const data = await getPokemons(offset);
+      setPokemonList(prev => offset === 0 ? data : [...prev, ...data]);
     } catch (err) {
       setError(err.message);
     } finally {
       setLoading(false);
     }
+  };
+
+  const loadMore = () => {
+    setOffset(prev => prev + 50);
   };
 
   /*
@@ -33,13 +40,14 @@ export function useAllPokemons() {
 
   useEffect(() => {
     fetchAll();
-  }, []);
+  }, [offset]);
 
   return {
     pokemonList,
     loading,
     error,
-    fetchAll
+    loadMore,
+    offset
     //fetchFiltered,
   };
 }
