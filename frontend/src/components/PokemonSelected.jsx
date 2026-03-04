@@ -29,8 +29,6 @@ function PokemonSelected({ selectedId }) {
     const barColor = typeColors[mainType] || typeColors["normal"];
     const imageTypePath = "/img/types/"+mainType+"_type_logo.png";
 
-    console.log(detailedPokemon.abilities)
-
     {/*MAIN COMPONENT TO CONSTRUCT THE SELECTED POKEMON*/}
     return (
         <div className="pokemon-selected-card">
@@ -74,12 +72,12 @@ function PokemonSelected({ selectedId }) {
                     <div className="body-stats-container">
                     
                     <div className="height-container">
-                        <h3>{detailedPokemon?.about?.height}</h3>
+                        <h3>{detailedPokemon?.about?.height}m</h3>
                         <p>Height</p>
                     </div>
 
                     <div className="weight-container">
-                        <h3>{detailedPokemon?.about?.weight}</h3>
+                        <h3>{detailedPokemon?.about?.weight}kg</h3>
                         <p>Weight</p>
                     </div>
                     
@@ -92,20 +90,16 @@ function PokemonSelected({ selectedId }) {
             
                 <h3>Base Stats</h3>
 
-                <StatBar label="HP" value={detailedPokemon?.stats?.hp} color={barColor} />
-                <StatBar label="Attack" value={detailedPokemon?.stats?.attack} color={barColor} />
-                <StatBar label="Defense" value={detailedPokemon?.stats?.defense} color={barColor} />
-                <StatBar label="Sp. Atk" value={detailedPokemon?.stats?.specialAttack} color={barColor} />
-                <StatBar label="Sp. Def" value={detailedPokemon?.stats?.specialDefense} color={barColor} />
-                <StatBar label="Speed" value={detailedPokemon?.stats?.speed} color={barColor} />
-
+                {detailedPokemon?.statList?.map((stat, index) => (
+                    <StatBar key={index} label={stat?.name} value={stat?.value} color={barColor} />
+                ))}
             </div>
 
             {/*LIST OF ABILITIES OF THE POKEMON*/}    
             <div className="abilities">
                 <h3>Abilities</h3>
 
-                {detailedPokemon?.abilities?.map((ability, index) => (
+                {detailedPokemon?.abilityList?.map((ability, index) => (
                     <AbilityBox key={index} ability={ability} color={barColor} />
                 ))}
             </div>
@@ -113,7 +107,7 @@ function PokemonSelected({ selectedId }) {
             {/*EVOLUTION CHAIN OF THE POKEMON - ITERATING THE EVOLUTION CHAIN ARRAY'S*/}    
             <div className="evolution-chain">
                 <h3>Evolution Chain</h3>
-                {detailedPokemon?.evolutionChain?.map((evolution, index) => (
+                {detailedPokemon?.evolutionChainList?.map((evolution, index) => (
                     <EvolutionChainBox key={index} evolutionChain={evolution} />
                 ))}
             </div>

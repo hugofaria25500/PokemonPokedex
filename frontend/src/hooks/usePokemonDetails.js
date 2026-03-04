@@ -18,6 +18,8 @@ export function usePokemonDetails(id) {
       const data = await getPokemonDetailsById(id);
       setDetailedPokemon(data);
 
+      console.log(data)
+
     } catch (err) {
       setError(err.message);
     } finally {

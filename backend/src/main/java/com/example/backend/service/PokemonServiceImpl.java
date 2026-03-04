@@ -112,7 +112,7 @@ public class PokemonServiceImpl implements PokemonService{
         if (chainLink.getEvolvesTo() == null || chainLink.getEvolvesTo().isEmpty()) {
 
             EvolutionChainDTO chain = new EvolutionChainDTO();
-            chain.setEvolutionDTOList(new ArrayList<>(currentPath));
+            chain.setEvolutionList(new ArrayList<>(currentPath));
             evolutionChains.add(chain);
             return;
         }

@@ -1,25 +1,23 @@
 package com.example.backend.dto;
 
-import com.example.backend.dto.PokemonDTO;
-
 import java.util.List;
 
 public class EvolutionChainDTO {
 
-    private List<EvolutionDTO> evolutionDTOList;
+    private List<EvolutionDTO> evolutionList;
 
-    public EvolutionChainDTO(List<EvolutionDTO> evolutionDTOList) {
-        this.evolutionDTOList = evolutionDTOList;
+    public EvolutionChainDTO(List<EvolutionDTO> evolutionList) {
+        this.evolutionList = evolutionList;
     }
 
     public EvolutionChainDTO() {
     }
 
-    public List<EvolutionDTO> getEvolutionDTOList() {
-        return evolutionDTOList;
+    public List<EvolutionDTO> getEvolutionList() {
+        return evolutionList;
     }
 
-    public void setEvolutionDTOList(List<EvolutionDTO> evolutionDTOList) {
-        this.evolutionDTOList = evolutionDTOList;
+    public void setEvolutionList(List<EvolutionDTO> evolutionList) {
+        this.evolutionList = evolutionList;
     }
 }
