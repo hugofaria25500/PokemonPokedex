@@ -5,7 +5,8 @@ export async function getPokemonById(id) {
     throw new Error("Error fetching Pokémon with ID: " + id);
   }
 
-  return response.json();
+  const data = await response.json();
+  return data;
 }
 
 export async function getAllPokemons() {
@@ -15,7 +16,8 @@ export async function getAllPokemons() {
     throw new Error("Error fetching all Pokémons");
   }
 
-  return response.json();
+  const data = await response.json();
+  return data;
 }
 
 export async function getPokemonDetailsById(id) {
@@ -25,6 +27,7 @@ export async function getPokemonDetailsById(id) {
     throw new Error("Error fetching Pokémon with ID: " + id);
   }
 
-  return response.json();
+  const data = await response.json();
+  return data;
 }
 

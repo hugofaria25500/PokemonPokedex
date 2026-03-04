@@ -6,8 +6,6 @@ export function usePokemonDetails(id) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  console.log("usePokemonDetails called with id:", id); // Debug log
-
   useEffect(() => {
   if (!id) return;
 
