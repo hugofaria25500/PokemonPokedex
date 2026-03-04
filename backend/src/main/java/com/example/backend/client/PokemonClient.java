@@ -60,5 +60,13 @@ public class PokemonClient {
                 .bodyToMono(PokeApiPokemonEvolutionChainResponse.class)
                 .block();
     }
+
+    public PokeApiPokemonEvolutionResponse getPokemonEvolutionById(long id) {
+        return webClient.get()
+                .uri("/pokemon/{id}", id)
+                .retrieve()
+                .bodyToMono(PokeApiPokemonEvolutionResponse.class)
+                .block();
+    }
 }
 

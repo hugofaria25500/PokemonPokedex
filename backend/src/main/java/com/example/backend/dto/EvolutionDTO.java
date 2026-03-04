@@ -8,13 +8,16 @@ public class EvolutionDTO {
     private String name;
     private String imageUrl;
 
-    public EvolutionDTO(long id, String name, String imageUrl) {
+    private List<String> types;
+
+    public EvolutionDTO() {
+    }
+
+    public EvolutionDTO(long id, String name, String imageUrl, List<String> types) {
         this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;
-    }
-
-    public EvolutionDTO() {
+        this.types = types;
     }
 
     public long getId() {
@@ -39,5 +42,13 @@ public class EvolutionDTO {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public List<String> getTypes() {
+        return types;
+    }
+
+    public void setTypes(List<String> types) {
+        this.types = types;
     }
 }

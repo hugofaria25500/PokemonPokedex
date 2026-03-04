@@ -1,8 +1,11 @@
 package com.example.backend.utils;
 
+import com.example.backend.client.PokemonClient;
 import com.example.backend.client.response.PokeApiPokemonEvolutionChainResponse;
+import com.example.backend.client.response.PokeApiPokemonEvolutionResponse;
 import com.example.backend.dto.EvolutionChainDTO;
 import com.example.backend.dto.EvolutionDTO;
+import com.example.backend.mapper.PokemonMapper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,10 +53,6 @@ public class PokemonUtils {
         return IMAGE_URL + id + PNG_EXTENSION;
     }
 
-    public static String capitalizePokemonName(String pokemonName) {
-        return pokemonName.substring(0,1).toUpperCase() + pokemonName.substring(1);
-    }
-
     public static String capitalizeText(String text) {
         return text.substring(0,1).toUpperCase() + text.substring(1);
     }
@@ -61,40 +60,10 @@ public class PokemonUtils {
     public static String convertMeasurestoString(long measure) {
         String str = String.valueOf(measure);
         if(str.length() == 1) {
-            str = new StringBuilder(str).insert(str.length() - 1, "0.").toString();
+            str = new StringBuilder(str).insert(0, "0.").toString();
         } else {
             str = new StringBuilder(str).insert(str.length() - 1, ".").toString();
         }
         return str;
-    }
-
-    public static void buildEvolutionList (PokeApiPokemonEvolutionChainResponse.ChainLink chainLink, List<EvolutionDTO> currentPath, List<EvolutionChainDTO> evolutionChains) {
-
-        if (chainLink == null) return;
-
-        currentPath.add(buildEvolutionPokemonDTOFromCurrentChainLink(chainLink));
-
-        if (chainLink.getEvolvesTo() == null || chainLink.getEvolvesTo().isEmpty()) {
-
-            EvolutionChainDTO chain = new EvolutionChainDTO();
-            chain.setEvolutionDTOList(new ArrayList<>(currentPath));
-            evolutionChains.add(chain);
-            return;
-        }
-
-        for (PokeApiPokemonEvolutionChainResponse.ChainLink next : chainLink.getEvolvesTo()) {
-            buildEvolutionList(next, new ArrayList<>(currentPath), evolutionChains);
-        }
-    }
-
-    private static EvolutionDTO buildEvolutionPokemonDTOFromCurrentChainLink(PokeApiPokemonEvolutionChainResponse.ChainLink chainLink) {
-
-        if(chainLink.getSpecies() == null) return null;
-
-        String name = capitalizePokemonName(chainLink.getSpecies().getName());
-        long id = extractIdFromUrl(chainLink.getSpecies().getUrl());
-        String imageUrl = buildImageUrl(id);
-
-        return new EvolutionDTO(id, name, imageUrl);
     }
 }

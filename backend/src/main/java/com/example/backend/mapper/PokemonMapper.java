@@ -1,6 +1,7 @@
 package com.example.backend.mapper;
 
 import com.example.backend.client.response.PokeApiPokemonDetailResponse;
+import com.example.backend.client.response.PokeApiPokemonEvolutionResponse;
 import com.example.backend.client.response.PokeApiPokemonResponse;
 import com.example.backend.client.response.PokeApiPokemonSpecieResponse;
 import com.example.backend.dto.*;
@@ -18,7 +19,27 @@ public class PokemonMapper {
         dto.setId(response.getId());
 
         String name= response.getName();
-        dto.setName(PokemonUtils.capitalizePokemonName(name));
+        dto.setName(PokemonUtils.capitalizeText(name));
+
+        dto.setImageUrl(PokemonUtils.buildImageUrl(response.getId()));
+
+        dto.setTypes(
+                response.getTypes()
+                        .stream()
+                        .map(typeEntry -> typeEntry.getType().getName())
+                        .toList()
+        );
+
+        return dto;
+    }
+
+    public EvolutionDTO toPokemonEvolutionDTO(PokeApiPokemonEvolutionResponse response) {
+
+        EvolutionDTO dto = new EvolutionDTO();
+        dto.setId(response.getId());
+
+        String name= response.getName();
+        dto.setName(PokemonUtils.capitalizeText(name));
 
         dto.setImageUrl(PokemonUtils.buildImageUrl(response.getId()));
 
@@ -43,7 +64,7 @@ public class PokemonMapper {
         pokemonDTO.setId(response.getId());
 
         String name= response.getName();
-        pokemonDTO.setName(name != null ? PokemonUtils.capitalizePokemonName(name) : "");
+        pokemonDTO.setName(name != null ? PokemonUtils.capitalizeText(name) : "");
 
         pokemonDTO.setImageUrl(PokemonUtils.buildImageUrl(response.getId()));
 
@@ -88,6 +109,5 @@ public class PokemonMapper {
         pokemonDTO.setEvolutionChainDTOList(evolutionChainDTOList);
 
         return pokemonDTO;
-
     }
 }
