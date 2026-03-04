@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { getPokemonById } from "../services/pokemonService";
+import { getPokemonDetailsById } from "../services/pokemonService";
 
-export function usePokemon(id) {
-  const [pokemon, setPokemon] = useState(null);
+export function usePokemonDetails(id) {
+  const [detailedPokemon, setDetailedPokemon] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  console.log("usePokemon called with id:", id); // Debug log
+  console.log("usePokemonDetails called with id:", id); // Debug log
 
   useEffect(() => {
   if (!id) return;
@@ -17,8 +17,8 @@ export function usePokemon(id) {
       setError(null);
 
     try {
-      const data = await getPokemonById(id);
-      setPokemon(data);
+      const data = await getPokemonDetailsById(id);
+      setDetailedPokemon(data);
 
     } catch (err) {
       setError(err.message);
@@ -30,5 +30,5 @@ export function usePokemon(id) {
   fetchData();
 }, [id]);
 
-  return { pokemon, loading, error };
+  return { detailedPokemon, loading, error };
 }

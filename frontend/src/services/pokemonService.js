@@ -18,3 +18,13 @@ export async function getAllPokemons() {
   return response.json();
 }
 
+export async function getPokemonDetailsById(id) {
+  const response = await fetch(`http://localhost:8080/api/pokemon/details/${id}`);
+
+  if (!response.ok) {
+    throw new Error("Error fetching Pokémon with ID: " + id);
+  }
+
+  return response.json();
+}
+
