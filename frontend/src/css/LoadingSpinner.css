@@ -1,8 +1,9 @@
+/*LOADING SPINNER*/
 .loading-spinner-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 380px;
 }
 
 .loading-spinner-container img {
@@ -21,4 +22,19 @@
 	100% {
 		transform: rotate(360deg);
 	}
+}
+
+/*MEDIA QUERIES*/
+@media (max-width: 1600px) {
+    /*LOADING SPINNER*/
+    .loading-spinner-container {
+        width: 320px;
+    }
+}
+
+@media (max-width: 1400px) {
+    /*LOADING SPINNER*/
+    .loading-spinner-container {
+        width: 300px;
+    }
 }
