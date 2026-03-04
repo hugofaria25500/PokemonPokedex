@@ -9,8 +9,8 @@ export async function getPokemonById(id) {
   return data;
 }
 
-export async function getAllPokemons() {
-  const response = await fetch(`http://localhost:8080/api/pokemon/`);
+export async function getPokemons(offset) {
+  const response = await fetch(`http://localhost:8080/api/pokemon/?offset=${offset}&limit=50`);
 
   if (!response.ok) {
     throw new Error("Error fetching all Pokémons");

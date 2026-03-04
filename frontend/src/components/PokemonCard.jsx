@@ -5,7 +5,7 @@ import { typeUrl } from "../js/typesImage.js";
 function PokemonCard({ pokemon, onSelect }) {
     {/*POKEMON CARD BUILDING*/}
     return (
-        <div className="pokemon-card" onClick={() => onSelect(pokemon.id)}>
+        <div id={`pokemon-${pokemon.id}`} className="pokemon-card" onClick={() => onSelect(pokemon.id)}>
             <img className="type-logo" src={typeUrl[pokemon.types[0].toLowerCase()]} />
             <div className="id-box">
                 <p>#{pokemon.id}</p>
