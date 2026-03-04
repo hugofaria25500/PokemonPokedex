@@ -44,14 +44,15 @@
 /*MEDIA QUERIES*/
 @media (max-width: 1600px) {
     /*LOADING SPINNER*/
-    .loading-spinner-container {
+    .loading-spinner-container.selected-pokemon{
         width: 320px;
     }
 }
 
 @media (max-width: 1400px) {
     /*LOADING SPINNER*/
-    .loading-spinner-container {
+    .loading-spinner-container.selected-pokemon {
         width: 300px;
+        height: 90%;
     }
 }
