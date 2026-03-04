@@ -10,23 +10,23 @@ public class PokemonDetailDTO {
 
     private List<String> types;
 
-    private AboutDTO aboutDTO;
+    private AboutDTO about;
 
-    private List<StatDTO> statDTOList;
+    private List<StatDTO> statList;
 
-    private List<AbilitiyDTO> abilitiyDTOList;
+    private List<AbilitiyDTO> abilityList;
 
-    private List<EvolutionChainDTO> evolutionChainDTOList;
+    private List<EvolutionChainDTO> evolutionChainList;
 
-    public PokemonDetailDTO(long id, String name, String imageUrl, List<String> types, AboutDTO aboutDTO, List<StatDTO> statDTOList, List<AbilitiyDTO> abilitiyDTOList, List<EvolutionChainDTO> evolutionChainDTOList) {
+    public PokemonDetailDTO(long id, String name, String imageUrl, List<String> types, AboutDTO about, List<StatDTO> statList, List<AbilitiyDTO> abilityList, List<EvolutionChainDTO> evolutionChainList) {
         this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;
         this.types = types;
-        this.aboutDTO = aboutDTO;
-        this.statDTOList = statDTOList;
-        this.abilitiyDTOList = abilitiyDTOList;
-        this.evolutionChainDTOList = evolutionChainDTOList;
+        this.about = about;
+        this.statList = statList;
+        this.abilityList = abilityList;
+        this.evolutionChainList = evolutionChainList;
     }
 
     public PokemonDetailDTO() {
@@ -64,35 +64,35 @@ public class PokemonDetailDTO {
         this.types = types;
     }
 
-    public AboutDTO getAboutDTO() {
-        return aboutDTO;
+    public AboutDTO getAbout() {
+        return about;
     }
 
-    public void setAboutDTO(AboutDTO aboutDTO) {
-        this.aboutDTO = aboutDTO;
+    public void setAbout(AboutDTO about) {
+        this.about = about;
     }
 
-    public List<StatDTO> getStatDTOList() {
-        return statDTOList;
+    public List<StatDTO> getStatList() {
+        return statList;
     }
 
-    public void setStatDTOList(List<StatDTO> statDTOList) {
-        this.statDTOList = statDTOList;
+    public void setStatList(List<StatDTO> statList) {
+        this.statList = statList;
     }
 
-    public List<AbilitiyDTO> getAbilitiyDTOList() {
-        return abilitiyDTOList;
+    public List<AbilitiyDTO> getAbilityList() {
+        return abilityList;
     }
 
-    public void setAbilitiyDTOList(List<AbilitiyDTO> abilitiyDTOList) {
-        this.abilitiyDTOList = abilitiyDTOList;
+    public void setAbilityList(List<AbilitiyDTO> abilityList) {
+        this.abilityList = abilityList;
     }
 
-    public List<EvolutionChainDTO> getEvolutionChainDTOList() {
-        return evolutionChainDTOList;
+    public List<EvolutionChainDTO> getEvolutionChainList() {
+        return evolutionChainList;
     }
 
-    public void setEvolutionChainDTOList(List<EvolutionChainDTO> evolutionChainDTOList) {
-        this.evolutionChainDTOList = evolutionChainDTOList;
+    public void setEvolutionChainList(List<EvolutionChainDTO> evolutionChainList) {
+        this.evolutionChainList = evolutionChainList;
     }
 }
