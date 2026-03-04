@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { useAllPokemons } from "../hooks/useAllPokemons.js";
+import { usePokemons } from "../hooks/usePokemons.js";
 import PokemonList from "./PokemonList";
 import PokemonSelected from "./PokemonSelected";
 
 import "../css/PokemonGrid.css"
 
 function PokemonGrid() {
-    const {pokemonList,loading,error} = useAllPokemons();
+    const {pokemonList, loading, error, loadMore, offset} = usePokemons();
 
     const [selectedId, setSelectedId] = useState(1);
 
@@ -14,7 +14,7 @@ function PokemonGrid() {
     return (
         <div className="pokemon-grid-container">
             <div className="pokemon-grid">
-                <PokemonList pokemons={pokemonList} loading={loading} error={error} onSelect={setSelectedId} />
+                <PokemonList pokemons={pokemonList} loading={loading} error={error} onSelect={setSelectedId} loadMore={loadMore} offset={offset} />
                 <div className="selected-pokemon-box">
                     <PokemonSelected selectedId={selectedId} />
                 </div> 
