@@ -92,7 +92,7 @@ public class PokemonMapper {
             aboutDTO.setRegion(PokemonUtils.mapGenerationToRegion(specieResponse.getGeneration().getName()));
         }
 
-        pokemonDTO.setAboutDTO(aboutDTO);
+        pokemonDTO.setAbout(aboutDTO);
 
         //STATS DETAILS
         List<StatDTO> statDTOList = response.getStats()
@@ -100,13 +100,13 @@ public class PokemonMapper {
                 .map(statsEntry -> new StatDTO(statsEntry.getStat().getName(), statsEntry.getValue())).toList();
 
 
-        pokemonDTO.setStatDTOList(statDTOList);
+        pokemonDTO.setStatList(statDTOList);
 
         //ABILITIES DETAILS
-        pokemonDTO.setAbilitiyDTOList(abilitiyDTOList);
+        pokemonDTO.setAbilityList(abilitiyDTOList);
 
         //EVOLUTION CHAIN DETAILS
-        pokemonDTO.setEvolutionChainDTOList(evolutionChainDTOList);
+        pokemonDTO.setEvolutionChainList(evolutionChainDTOList);
 
         return pokemonDTO;
     }
