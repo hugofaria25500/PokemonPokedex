@@ -82,8 +82,8 @@ public class PokemonServiceImpl implements PokemonService{
 
     @Override
     @Cacheable("pokemons")
-    public List<PokemonDTO> getFirstPokemons() {
-        PokeApiPokemonListResponse listResponse = client.getFirstPokemons();
+    public List<PokemonDTO> getPokemons(long offset) {
+        PokeApiPokemonListResponse listResponse = client.getPokemons(offset);
 
         if (listResponse == null) {
             throw new PokemonNotFoundException("Pokemons not found");

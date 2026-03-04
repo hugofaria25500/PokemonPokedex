@@ -13,9 +13,9 @@ public class PokemonClient {
         this.webClient = webClient;
     }
 
-    public PokeApiPokemonListResponse getFirstPokemons() {
+    public PokeApiPokemonListResponse getPokemons(long offset) {
         return webClient.get()
-                .uri("/pokemon?limit=50&offset=0")
+                .uri("/pokemon?limit=50&offset={offset}", offset)
                 .retrieve()
                 .bodyToMono(PokeApiPokemonListResponse.class)
                 .block();

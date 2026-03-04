@@ -8,5 +8,5 @@ import java.util.List;
 public interface PokemonService {
     public PokemonDTO getPokemon(long id);
     public PokemonDetailDTO getPokemonDetails(long id);
-    public List<PokemonDTO> getFirstPokemons();
+    public List<PokemonDTO> getPokemons(long offset);
 }
