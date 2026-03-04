@@ -69,8 +69,9 @@ public class PokemonService {
             }).toList();
 
         PokeApiPokemonEvolutionChainResponse evolutionResponse = client.getPokemonEvolutionChainById(evolutionChainId);
+        List<EvolutionChainDTO> evolutionChainDTOList = new ArrayList<>();
 
-        List<EvolutionChainDTO> evolutionChainDTOList = buildEvolutionList(evolutionResponse);
+        PokemonUtils.buildEvolutionList(evolutionResponse.getChainLink(),new ArrayList<>(),evolutionChainDTOList);
 
         return mapper.toPokemonDetailDTO(response, specieResponse, abilitiyDTOList, evolutionChainDTOList);
     }
@@ -96,32 +97,5 @@ public class PokemonService {
                 })
                 .toList();
     }
-
-    public static List<EvolutionChainDTO> buildEvolutionList(PokeApiPokemonEvolutionChainResponse evolutionChainResponse) {
-
-        List<EvolutionChainDTO> evolutionChainDTOList = new ArrayList<>();
-        List<EvolutionDTO> evolutionDTOList = new ArrayList<>();
-
-        if (evolutionChainResponse.getChainLink() == null) return null;
-
-        PokeApiPokemonEvolutionChainResponse.ChainLink chainLink = evolutionChainResponse.getChainLink();
-
-        long pokemonEvolutionId =  PokemonUtils.extractIdFromUrl(chainLink.getSpecies().getUrl());
-
-        EvolutionDTO firstEvolution = new EvolutionDTO(
-                pokemonEvolutionId,
-                chainLink.getSpecies().getName(),
-                PokemonUtils.buildImageUrl(pokemonEvolutionId)
-        );
-
-        evolutionDTOList.add(firstEvolution);
-        EvolutionChainDTO evolutionChainDTO = new EvolutionChainDTO();
-        evolutionChainDTO.setEvolutionDTOList(evolutionDTOList);
-        evolutionChainDTOList.add(evolutionChainDTO);
-
-        return evolutionChainDTOList;
-    }
-
-
 }
 

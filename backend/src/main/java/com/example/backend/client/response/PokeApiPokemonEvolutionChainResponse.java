@@ -18,6 +18,7 @@ public class PokeApiPokemonEvolutionChainResponse {
 
     public static class ChainLink {
         private Species species;
+        @JsonProperty("evolves_to")
         private List<ChainLink> evolvesTo;
 
         public Species getSpecies() {

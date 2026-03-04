@@ -59,4 +59,34 @@ public class PokemonUtils {
         str = new StringBuilder(str).insert(str.length() - 1, ".").toString();
         return str;
     }
+
+    public static void buildEvolutionList (PokeApiPokemonEvolutionChainResponse.ChainLink chainLink, List<EvolutionDTO> currentPath, List<EvolutionChainDTO> evolutionChains) {
+
+        if (chainLink == null) return;
+
+        currentPath.add(buildEvolutionPokemonDTOFromCurrentChainLink(chainLink));
+
+        if (chainLink.getEvolvesTo() == null || chainLink.getEvolvesTo().isEmpty()) {
+
+            EvolutionChainDTO chain = new EvolutionChainDTO();
+            chain.setEvolutionDTOList(new ArrayList<>(currentPath));
+            evolutionChains.add(chain);
+            return;
+        }
+
+        for (PokeApiPokemonEvolutionChainResponse.ChainLink next : chainLink.getEvolvesTo()) {
+            buildEvolutionList(next, new ArrayList<>(currentPath), evolutionChains);
+        }
+    }
+
+    private static EvolutionDTO buildEvolutionPokemonDTOFromCurrentChainLink(PokeApiPokemonEvolutionChainResponse.ChainLink chainLink) {
+
+        if(chainLink.getSpecies() == null) return null;
+
+        String name = capitalizePokemonName(chainLink.getSpecies().getName());
+        long id = extractIdFromUrl(chainLink.getSpecies().getUrl());
+        String imageUrl = buildImageUrl(id);
+
+        return new EvolutionDTO(id, name, imageUrl);
+    }
 }
