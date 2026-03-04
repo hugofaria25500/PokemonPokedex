@@ -33,7 +33,7 @@ function PokemonSelected({ selectedId }) {
     return (
         <div className="pokemon-selected-card">
             {/*POKEMON VISUAL CARD*/}
-            <img className="type-logo" src={detailedPokemon?.typeUrl} />
+            <img className="type-logo" src={imageTypePath} />
             <div className="card-base">
 
                 <div className="id-box">
