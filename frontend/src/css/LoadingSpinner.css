@@ -1,0 +1,57 @@
+/*LOADING SPINNER*/
+.loading-spinner-container.pokemon-list {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    border: 2px solid black;
+    background-color: rgba(0,0,0,0.35);
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+.loading-spinner-container.selected-pokemon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 380px;
+    background-color: rgba(0,0,0,0.35);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    border: 2px solid black;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+.loading-spinner-container img {
+    width: 80px;
+    height: 80px;
+    animation: rotate-animation 1s linear infinite;
+}
+
+@keyframes rotate-animation {
+	0% {
+	    transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/*MEDIA QUERIES*/
+@media (max-width: 1600px) {
+    /*LOADING SPINNER*/
+    .loading-spinner-container {
+        width: 320px;
+    }
+}
+
+@media (max-width: 1400px) {
+    /*LOADING SPINNER*/
+    .loading-spinner-container {
+        width: 300px;
+    }
+}

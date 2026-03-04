@@ -1,0 +1,20 @@
+export const typeUrl = {
+    fire: "/img/types/fire_type_logo.png",
+    water: "/img/types/water_type_logo.png",
+    grass: "/img/types/grass_type_logo.png",
+    electric: "/img/types/electric_type_logo.png",
+    psychic: "/img/types/psychic_type_logo.png",
+    ice: "/img/types/ice_type_logo.png",
+    dragon: "/img/types/dragon_type_logo.png",
+    dark: "/img/types/dark_type_logo.png",
+    fairy: "/img/types/fairy_type_logo.png",
+    normal: "/img/types/normal_type_logo.png",
+    bug: "/img/types/bug_type_logo.png",
+    rock: "/img/types/rock_type_logo.png",
+    ghost: "/img/types/ghost_type_logo.png",
+    fighting: "/img/types/fighting_type_logo.png",
+    steel: "/img/types/steel_type_logo.png",
+    poison: "/img/types/poison_type_logo.png",
+    ground: "/img/types/ground_type_logo.png",
+    flying: "/img/types/flying_type_logo.png"
+}

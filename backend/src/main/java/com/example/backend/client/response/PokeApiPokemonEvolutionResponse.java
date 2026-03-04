@@ -2,11 +2,12 @@ package com.example.backend.client.response;
 
 import java.util.List;
 
-public class PokeApiPokemonResponse {
+public class PokeApiPokemonEvolutionResponse {
+
     private long id;
     private String name;
 
-    private List<TypeEntry> types;
+    private List<PokeApiPokemonEvolutionResponse.TypeEntry> types;
 
     public static class TypeEntry {
         private Type type;
@@ -32,13 +33,13 @@ public class PokeApiPokemonResponse {
         }
     }
 
-    public PokeApiPokemonResponse(long id, String name, List<TypeEntry> types) {
+    public PokeApiPokemonEvolutionResponse(long id, String name, List<PokeApiPokemonEvolutionResponse.TypeEntry> types) {
         this.id = id;
         this.name = name;
         this.types = types;
     }
 
-    public PokeApiPokemonResponse() {
+    public PokeApiPokemonEvolutionResponse() {
     }
 
     public long getId() {

@@ -14,7 +14,6 @@ function App() {
             {/*MAPPING THE APP ROUTES - NAVIGATION*/}    
             <BrowserRouter>
                 <Routes>
-
                     <Route path="/" element={
                         <Layout>
                             <HomePage />

@@ -12,6 +12,11 @@
     border: 1px solid rgba(0,0,0,0.1);
     position: relative;
     overflow: hidden;
+    cursor: pointer;
+}
+
+.pokemon-card:hover {
+    transform: scale(1.05);
 }
 
 /*POKEMON BACKGROUND TYPE LOGO*/

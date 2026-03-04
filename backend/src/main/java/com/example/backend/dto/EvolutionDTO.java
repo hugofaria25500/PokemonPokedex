@@ -1,20 +1,23 @@
 package com.example.backend.dto;
 
-public class AbilitiesDTO {
+import java.util.List;
+
+public class EvolutionDTO {
 
     private long id;
-
     private String name;
-
     private String imageUrl;
 
-    public AbilitiesDTO() {
+    private List<String> types;
+
+    public EvolutionDTO() {
     }
 
-    public AbilitiesDTO(long id, String name, String imageUrl) {
+    public EvolutionDTO(long id, String name, String imageUrl, List<String> types) {
         this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;
+        this.types = types;
     }
 
     public long getId() {
@@ -39,5 +42,13 @@ public class AbilitiesDTO {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public List<String> getTypes() {
+        return types;
+    }
+
+    public void setTypes(List<String> types) {
+        this.types = types;
     }
 }

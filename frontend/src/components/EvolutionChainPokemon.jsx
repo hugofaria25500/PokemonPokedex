@@ -3,7 +3,7 @@ import "../css/EvolutionChainPokemon.css"
 
 function EvolutionChainPokemon (props) {
 
-    const mainType = props.evolutionPokemon.type[0].toLowerCase();
+    const mainType = props.evolutionPokemon.types[0].toLowerCase();
     const imageTypePath = "/img/types/"+mainType+"_type_logo.png";
 
     {/*POKEMON EVOLUTION COMPONENT BUILDING*/}
