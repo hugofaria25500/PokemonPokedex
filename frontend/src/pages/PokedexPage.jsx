@@ -15,7 +15,6 @@ function PokedexPage() {
     {/*POKEMON PAGE - INSTANTIATING COMPONETNS*/}    
     return (
         <>
-        <pre>{JSON.stringify(filterOptions, null, 2)}</pre>
             <PokemonSearchBar filterOptions={filterOptions} setFilterOptions={setFilterOptions} />
             <PokemonGrid filterOptions={filterOptions} />
         </>

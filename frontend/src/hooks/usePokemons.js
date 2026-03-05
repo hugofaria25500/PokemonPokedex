@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { getPokemons } from "../services/pokemonService";
 
 export function usePokemons({filters = {}}) {
@@ -36,7 +36,7 @@ export function usePokemons({filters = {}}) {
     fetchAll();
   }, [offset, filters.searchTerm, filters.type, filters.generation, filters.sort]);
 
-   useEffect(() => {
+  useEffect(() => {
     setOffset(0);
     setPokemonList([]);
   }, [filters.searchTerm, filters.type, filters.generation, filters.sort]);

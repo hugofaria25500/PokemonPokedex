@@ -82,7 +82,7 @@ public class PokemonServiceImpl implements PokemonService{
 
     @Override
     @Cacheable("pokemons")
-    public List<PokemonDTO> getPokemons(long offset) {
+    public List<PokemonDTO> getPokemons(long offset, String searchTerm, String type, long generation, String sort) {
         PokeApiPokemonListResponse listResponse = client.getPokemons(offset);
 
         if (listResponse == null) {
