@@ -10,8 +10,9 @@ import java.util.List;
 public interface PokemonService {
     PokemonDTO getPokemon(long id);
     PokemonDetailDTO getPokemonDetails(long id);
-    List<PokemonDTO> getPokemons(long offset, String searchTerm, String type, long generation, String sort);
+    List<PokemonDTO> getPokemons(long offset, String searchTerm, String type, String region, String sort);
     List<BasicPokemonDTO> getPokemonsByType(String type);
     List<BasicPokemonDTO> getBasicPokemons();
-    List<BasicPokemonDTO> getBasicPokemonsByRegion();
+    List<BasicPokemonDTO> getBasicPokemonsByRegion(String region);
+    List<BasicPokemonDTO> getFilteredPokemons(long offset, String searchTerm, String type, String region, String sort);
 }

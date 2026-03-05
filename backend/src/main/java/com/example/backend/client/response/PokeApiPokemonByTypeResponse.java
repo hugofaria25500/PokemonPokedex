@@ -1,9 +1,12 @@
 package com.example.backend.client.response;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class PokeApiPokemonByTypeResponse {
 
+    @JsonProperty("pokemon")
     private List<PokemonEntry> entryList;
 
     public PokeApiPokemonByTypeResponse(List<PokemonEntry> entryList) {
@@ -14,6 +17,20 @@ public class PokeApiPokemonByTypeResponse {
     }
 
     public static class PokemonEntry {
+
+        private Pokemon pokemon;
+
+        public Pokemon getPokemon() {
+            return pokemon;
+        }
+
+        public void setPokemon(Pokemon pokemon) {
+            this.pokemon = pokemon;
+        }
+    }
+
+    public static class Pokemon {
+
         private String name;
 
         private String url;

@@ -38,6 +38,24 @@ public class PokemonUtils {
         };
     }
 
+    public static long mapRegionToGenerationId(String region) {
+
+        if (region == null) return 0;
+
+        return switch (region.toLowerCase()) {
+            case "Kanto" -> 1;
+            case "Johto" -> 2;
+            case "Hoenn" -> 3;
+            case "Sinnoh" -> 4;
+            case "Unova" -> 5;
+            case "Kalos" -> 6;
+            case "Alola" -> 7;
+            case "Galar" -> 8;
+            case "Paldea" -> 9;
+            default -> 0;
+        };
+    }
+
     public static String cleanFlavorText(String text) {
 
         if (text == null) return "";

@@ -82,7 +82,7 @@ public class PokemonServiceImpl implements PokemonService{
 
     @Override
     @Cacheable("pokemons")
-    public List<PokemonDTO> getPokemons(long offset, String searchTerm, String type, long generation, String sort) {
+    public List<PokemonDTO> getPokemons(long offset, String searchTerm, String type, String region, String sort) {
         PokeApiPokemonListResponse listResponse = client.getPokemons(offset);
 
         if (listResponse == null) {
@@ -103,6 +103,40 @@ public class PokemonServiceImpl implements PokemonService{
                 .toList();
     }
 
+    @Override
+    public List<BasicPokemonDTO> getPokemonsByType(String type) {
+        PokeApiPokemonByTypeResponse apiResponse = client.getBasicPokemonListByType(type);
+
+        return apiResponse.getEntryList()
+                .stream().map(entry -> new BasicPokemonDTO(entry.getPokemon().getName(), entry.getPokemon().getUrl()))
+                .toList();
+    }
+
+    @Override
+    public List<BasicPokemonDTO> getBasicPokemonsByRegion(String region) {
+        long id = PokemonUtils.mapRegionToGenerationId(region);
+        PokeApiPokemonByRegionResponse apiResponse = client.getBasicPokemonListByRegion(id);
+
+        return apiResponse.getEntryList()
+                .stream().map(entry -> new BasicPokemonDTO(entry.getPokemon().getName(), entry.getPokemon().getUrl()))
+                .toList();
+    }
+
+    @Override
+    public List<BasicPokemonDTO> getBasicPokemons() {
+        PokeApiBasicPokemonsResponse apiResponse = client.getBasicPokemonList();
+
+        return apiResponse.getEntryList()
+                .stream().map(entry -> new BasicPokemonDTO(entry.getPokemon().getName(), entry.getPokemon().getUrl()))
+                .toList();
+    }
+
+    @Override
+    public List<BasicPokemonDTO> getFilteredPokemons(long offset, String searchTerm, String type, String region, String sort) {
+        return !type.isEmpty() ? getPokemonsByType(type) : null;
+    }
+
+    /*AUXILIARY METHODS*/
     public void buildEvolutionList (PokeApiPokemonEvolutionChainResponse.ChainLink chainLink, List<EvolutionDTO> currentPath, List<EvolutionChainDTO> evolutionChains) {
 
         if (chainLink == null) return;
@@ -129,5 +163,9 @@ public class PokemonServiceImpl implements PokemonService{
         PokeApiPokemonEvolutionResponse evolutionResponse = client.getPokemonEvolutionById(id);
         return mapper.toPokemonEvolutionDTO(evolutionResponse);
     }
+
+
+
+
 }
 

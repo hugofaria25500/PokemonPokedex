@@ -1,5 +1,6 @@
 package com.example.backend.controller;
 
+import com.example.backend.dto.BasicPokemonDTO;
 import com.example.backend.dto.PokemonDTO;
 import com.example.backend.dto.PokemonDetailDTO;
 import com.example.backend.service.PokemonService;
@@ -23,10 +24,10 @@ public class PokemonController {
             @RequestParam(defaultValue = "0") Long offset,
             @RequestParam(required = false) String searchTerm,
             @RequestParam(required = false) String type,
-            @RequestParam(required = false, defaultValue = "0") Long generation,
+            @RequestParam(required = false) String region,
             @RequestParam(required = false) String sort
     ) {
-        return ResponseEntity.ok(service.getPokemons(offset, searchTerm, type, generation, sort));
+        return ResponseEntity.ok(service.getPokemons(offset, searchTerm, type, region, sort));
     }
 
     @GetMapping("/{id}")
@@ -37,6 +38,19 @@ public class PokemonController {
     @GetMapping("/details/{id}")
     public ResponseEntity<PokemonDetailDTO> getPokemonDetails(@PathVariable long id) {
         return ResponseEntity.ok(service.getPokemonDetails(id));
+    }
+
+    @GetMapping("/filtered")
+    public ResponseEntity<List<BasicPokemonDTO>> getFilteredPokemons(
+            @RequestParam(defaultValue = "0") Long offset,
+            @RequestParam(required = false) String searchTerm,
+            @RequestParam(required = false) String type,
+            @RequestParam(required = false) String region,
+            @RequestParam(required = false) String sort
+    ) {
+
+        System.out.println("Type:" + type);
+        return ResponseEntity.ok(service.getFilteredPokemons(offset, searchTerm, type, region, sort));
     }
 }
 

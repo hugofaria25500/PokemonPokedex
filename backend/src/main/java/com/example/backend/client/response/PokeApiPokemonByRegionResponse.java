@@ -17,6 +17,20 @@ public class PokeApiPokemonByRegionResponse {
     }
 
     public static class PokemonEntry {
+
+        private Pokemon pokemon;
+
+        public Pokemon getPokemon() {
+            return pokemon;
+        }
+
+        public void setPokemon(Pokemon pokemon) {
+            this.pokemon = pokemon;
+        }
+    }
+
+    public static class Pokemon {
+
         private String name;
 
         private String url;
