@@ -8,6 +8,8 @@ export async function getPokemons(offset, searchTerm, type, generation, sort) {
     if (generation) params.append("generation", generation);
     if (sort) params.append("sort", sort);
 
+    console.log("Fetching Pokémons with params:", params.toString());
+
     const response = await fetch(`http://localhost:8080/api/pokemon/?${params.toString()}`);
 
     if (!response.ok) {
