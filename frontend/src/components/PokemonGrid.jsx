@@ -5,8 +5,8 @@ import PokemonSelected from "./PokemonSelected";
 
 import "../css/PokemonGrid.css"
 
-function PokemonGrid() {
-    const {pokemonList, loading, error, loadMore, offset} = usePokemons();
+function PokemonGrid({filterOptions}) {
+    const {pokemonList, loading, error, loadMore, offset} = usePokemons(filterOptions);
 
     const [selectedId, setSelectedId] = useState(1);
 

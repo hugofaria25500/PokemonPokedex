@@ -9,16 +9,16 @@ import { sortOptions, typeOptions, regionOptions } from "../js/selectOptions";
 
 import "../css/FilterBox.css";
 
-function FilterBox({ filterOpen }) {
+function FilterBox({ filterOpen, filterOptions, setFilterOptions }) {
 
     {/*CREATING THE FILTER SECTION BY PASSING THE SELECT MENU DYNAMICALLY*/}
     return (
         <div className={`filter-box-container ${filterOpen ? "open" : ""}`}>
-            <SelectMenu label="Sort By" icon={SortByIcon} options={sortOptions} />
-            <SelectMenu label="Type" icon={typeIcon} options={typeOptions} />
-            <SelectMenu label="Region" icon={regionIcon} options={regionOptions} />
+            <SelectMenu label="Sort By" icon={SortByIcon} options={sortOptions} value={filterOptions.sort} onSelect={(value) => setFilterOptions(prev => ({ ...prev, sort: value }))} />
+            <SelectMenu label="Type" icon={typeIcon} options={typeOptions} value={filterOptions.type} onSelect={(value) => setFilterOptions(prev => ({ ...prev, type: value }))} />
+            <SelectMenu label="Region" icon={regionIcon} options={regionOptions} value={filterOptions.generation} onSelect={(value) => setFilterOptions(prev => ({ ...prev, generation: value }))} />
             <div className="refresh-container">
-                <img className="refresh-icon" src={RefreshIcon} alt="Refresh" />
+                <img className="refresh-icon" src={RefreshIcon} alt="Refresh" onClick={() => setFilterOptions(prev => ({ ...prev, searchTerm: "", type: null, generation: null, sort: null }))} />
             </div>
         </div>
     );  

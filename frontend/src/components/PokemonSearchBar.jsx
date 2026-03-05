@@ -5,7 +5,7 @@ import FilterBox from "./FilterBox";
 
 import "../css/PokemonSearchBar.css";
 
-function PokemonSearchBar() {
+function PokemonSearchBar({filterOptions, setFilterOptions}) {
 
     {/*CREATING STATE TO MANIPULATE THE FILTER OPTIONS - OPEN/CLOSED */}    
     const [filterOpen, setFilterOpen] = useState(false);
@@ -13,8 +13,8 @@ function PokemonSearchBar() {
     {/*SEARCH BAR COMPONENT - HIGH LEVEL*/}
     return (
         <div className="pokemon-search-bar-container">
-            <SearchBar filterOpen={filterOpen} setFilterOpen={setFilterOpen} />
-            <FilterBox filterOpen={filterOpen} />
+            <SearchBar filterOpen={filterOpen} setFilterOpen={setFilterOpen} filterOptions={filterOptions} setFilterOptions={setFilterOptions}/>
+            <FilterBox filterOpen={filterOpen} filterOptions={filterOptions} setFilterOptions={setFilterOptions}/>
         </div>
     );
 }
