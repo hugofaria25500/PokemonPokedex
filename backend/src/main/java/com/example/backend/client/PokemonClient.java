@@ -68,5 +68,29 @@ public class PokemonClient {
                 .bodyToMono(PokeApiPokemonEvolutionResponse.class)
                 .block();
     }
+
+    public PokeApiPokemonByTypeResponse getBasicPokemonListByType(String type) {
+        return webClient.get()
+                .uri("/type/{type}", type)
+                .retrieve()
+                .bodyToMono(PokeApiPokemonByTypeResponse.class)
+                .block();
+    }
+
+    public PokeApiPokemonByRegionResponse getBasicPokemonListByRegion(long id) {
+        return webClient.get()
+                .uri("/generation/{id}", id)
+                .retrieve()
+                .bodyToMono(PokeApiPokemonByRegionResponse.class)
+                .block();
+    }
+
+    public PokeApiBasicPokemonsResponse getBasicPokemonList() {
+        return webClient.get()
+                .uri("/pokemon/?limit=2000")
+                .retrieve()
+                .bodyToMono(PokeApiBasicPokemonsResponse.class)
+                .block();
+    }
 }
 
