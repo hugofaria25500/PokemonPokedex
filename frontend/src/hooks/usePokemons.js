@@ -1,18 +1,25 @@
 import { useEffect, useState } from "react";
 import { getPokemons } from "../services/pokemonService";
 
-export function usePokemons() {
+export function usePokemons({filters = {}}) {
   const [pokemonList, setPokemonList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [offset, setOffset] = useState(0);
+
+  const {
+    searchTerm = "",
+    type = null,
+    generation = null,
+    sort = null
+  } = filters;
 
   const fetchAll = async () => {
     if(loading) return;
 
     setLoading(true);
     try {
-      const data = await getPokemons(offset);
+      const data = await getPokemons(offset, searchTerm, type, generation, sort);
       setPokemonList(prev => offset === 0 ? data : [...prev, ...data]);
     } catch (err) {
       setError(err.message);
@@ -25,22 +32,14 @@ export function usePokemons() {
     setOffset(prev => prev + 50);
   };
 
-  /*
-  const fetchFiltered = async (filters) => {
-    setLoading(true);
-    try {
-      const data = await getFilteredPokemons(filters);
-      setPokemonList(data);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };*/
-
   useEffect(() => {
     fetchAll();
-  }, [offset]);
+  }, [offset, filters.searchTerm, filters.type, filters.generation, filters.sort]);
+
+   useEffect(() => {
+    setOffset(0);
+    setPokemonList([]);
+  }, [filters.searchTerm, filters.type, filters.generation, filters.sort]);
 
   return {
     pokemonList,
@@ -48,6 +47,5 @@ export function usePokemons() {
     error,
     loadMore,
     offset
-    //fetchFiltered,
   };
 }
