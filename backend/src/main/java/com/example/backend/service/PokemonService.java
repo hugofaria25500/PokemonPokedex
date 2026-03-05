@@ -6,7 +6,7 @@ import com.example.backend.dto.PokemonDetailDTO;
 import java.util.List;
 
 public interface PokemonService {
-    public PokemonDTO getPokemon(long id);
-    public PokemonDetailDTO getPokemonDetails(long id);
-    public List<PokemonDTO> getPokemons(long offset);
+    PokemonDTO getPokemon(long id);
+    PokemonDetailDTO getPokemonDetails(long id);
+    List<PokemonDTO> getPokemons(long offset);
 }
