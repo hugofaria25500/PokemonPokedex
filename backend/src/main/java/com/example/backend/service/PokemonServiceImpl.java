@@ -82,25 +82,37 @@ public class PokemonServiceImpl implements PokemonService{
 
     @Override
     @Cacheable("pokemons")
-    public List<PokemonDTO> getPokemons(long offset, String searchTerm, String type, String region, String sort) {
+    public List<PokemonDTO> getPokemons(int offset, String searchTerm, String type, String region, String sort) {
         PokeApiPokemonListResponse listResponse = client.getPokemons(offset);
 
         if (listResponse == null) {
             throw new PokemonNotFoundException("Pokemons not found");
         }
 
-        return listResponse.getResults()
-                .parallelStream()
+        if((searchTerm == null || searchTerm.isEmpty()) && (type == null || type.isEmpty()) && (region == null || region.isEmpty()) && (sort == null || sort.isEmpty())) {
+            return listResponse.getResults()
+                    .parallelStream()
+                    .map(entry -> {
+
+                        long id = PokemonUtils.extractIdFromUrl(entry.getUrl());
+
+                        PokeApiPokemonResponse response =
+                                client.getPokemonById(id);
+
+                        return mapper.toPokemonDTO(response);
+                    })
+                    .toList();
+        }
+
+        return getFilteredPokemons(offset, searchTerm, type, region, sort)
+                .stream()
                 .map(entry -> {
-
                     long id = PokemonUtils.extractIdFromUrl(entry.getUrl());
-
                     PokeApiPokemonResponse response =
                             client.getPokemonById(id);
 
                     return mapper.toPokemonDTO(response);
-                })
-                .toList();
+                }).toList();
     }
 
     @Override
@@ -131,9 +143,11 @@ public class PokemonServiceImpl implements PokemonService{
                 .toList();
     }
 
+    @Cacheable("filteredPokemons")
     @Override
-    public List<BasicPokemonDTO> getFilteredPokemons(long offset, String searchTerm, String type, String region, String sort) {
-        return !type.isEmpty() ? getPokemonsByType(type) : null;
+    public List<BasicPokemonDTO> getFilteredPokemons(int offset, String searchTerm, String type, String region, String sort) {
+        List<BasicPokemonDTO> totalList = !type.isEmpty() ? getPokemonsByType(type) : null;
+        return totalList != null ? totalList.subList(offset, offset+50) : null;
     }
 
     /*AUXILIARY METHODS*/

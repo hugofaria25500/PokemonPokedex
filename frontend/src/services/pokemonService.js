@@ -3,10 +3,14 @@ export async function getPokemons(offset, searchTerm, type, generation, sort) {
 
     params.append("offset", offset);
 
+    /*
     if (searchTerm) params.append("search", searchTerm);
     if (type) params.append("type", type);
     if (generation) params.append("generation", generation);
-    if (sort) params.append("sort", sort);
+    if (sort) params.append("sort", sort);*/
+
+
+    if (type) params.append("type", type);
 
     console.log("Fetching Pokémons with params:", params.toString());
 

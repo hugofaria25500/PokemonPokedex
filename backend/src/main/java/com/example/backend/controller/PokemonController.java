@@ -21,7 +21,7 @@ public class PokemonController {
 
     @GetMapping("/")
     public ResponseEntity<List<PokemonDTO>> getPokemons(
-            @RequestParam(defaultValue = "0") Long offset,
+            @RequestParam(defaultValue = "0") int offset,
             @RequestParam(required = false) String searchTerm,
             @RequestParam(required = false) String type,
             @RequestParam(required = false) String region,
@@ -42,7 +42,7 @@ public class PokemonController {
 
     @GetMapping("/filtered")
     public ResponseEntity<List<BasicPokemonDTO>> getFilteredPokemons(
-            @RequestParam(defaultValue = "0") Long offset,
+            @RequestParam(defaultValue = "0") int offset,
             @RequestParam(required = false) String searchTerm,
             @RequestParam(required = false) String type,
             @RequestParam(required = false) String region,
