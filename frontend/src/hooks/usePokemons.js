@@ -34,13 +34,7 @@ export function usePokemons(filters = {}) {
 
   useEffect(() => {
     fetchAll();
-  }, [
-    offset,
-    filters.searchTerm,
-    filters.type,
-    filters.generation,
-    filters.sort
-  ]);
+  }, [offset]);
 
   useEffect(() => {
     setOffset(0);
