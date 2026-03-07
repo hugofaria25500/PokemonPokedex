@@ -6,6 +6,7 @@ export function usePokemons(filters = {}) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [offset, setOffset] = useState(0);
+  const [resetTrigger, setResetTrigger] = useState(0);
 
   const {
     searchTerm = "",
@@ -35,6 +36,7 @@ export function usePokemons(filters = {}) {
    useEffect(() => {
     setOffset(0);
     setPokemonList([]);
+    setResetTrigger(prev => prev + 1);
   }, [
     filters.searchTerm,
     filters.type,
@@ -44,7 +46,7 @@ export function usePokemons(filters = {}) {
 
   useEffect(() => {
     fetchAll();
-  }, [offset]);
+  }, [offset, resetTrigger]);
 
   return {
     pokemonList,

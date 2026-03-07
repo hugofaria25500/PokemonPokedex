@@ -12,8 +12,6 @@ export async function getPokemons(offset, searchTerm, type, generation, sort) {
 
     if (type) params.append("type", type);
 
-    console.log("Fetching Pokémons with params:", params.toString());
-
     const response = await fetch(`http://localhost:8080/api/pokemon/?${params.toString()}`);
 
     if (!response.ok) {

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { usePokemons } from "../hooks/usePokemons.js";
 import PokemonList from "./PokemonList";
 import PokemonSelected from "./PokemonSelected";
