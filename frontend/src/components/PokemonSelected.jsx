@@ -12,10 +12,6 @@ function PokemonSelected({ selectedId }) {
 
     const { detailedPokemon, loading, error } = usePokemonDetails(selectedId);
 
-    if (!selectedId) {
-        return <ErrorBox type={"selected-pokemon"} error={"No pokemon selected. Please select a pokemon from the list."} />;
-    }
-
     if (loading) {
         return <LoadingSpinner type={"selected-pokemon"} />;
     }

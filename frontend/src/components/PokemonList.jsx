@@ -13,9 +13,7 @@ function PokemonList({ pokemons, loading, error, loadMore, offset, onSelect }) {
         if (offset === 0) return;
 
         const pokemon = pokemons[offset];
-
         if (!pokemon) return;
-
         const element = document.getElementById(`pokemon-${pokemon.id}`);
 
         if (element) {

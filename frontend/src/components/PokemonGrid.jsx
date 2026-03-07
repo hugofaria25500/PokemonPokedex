@@ -8,7 +8,7 @@ import "../css/PokemonGrid.css"
 function PokemonGrid({filters}) {
     const {pokemonList, loading, error, loadMore, offset} = usePokemons(filters);
 
-    const [selectedId, setSelectedId] = useState(null);
+    const [selectedId, setSelectedId] = useState(1);
 
     {/*SIMPLE COMPONENT TO THE POKEMON LIST COMPONENT*/}
     return (
