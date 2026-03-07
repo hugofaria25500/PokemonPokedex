@@ -32,11 +32,7 @@ export function usePokemons(filters = {}) {
     }
   };
 
-  useEffect(() => {
-    fetchAll();
-  }, [offset]);
-
-  useEffect(() => {
+   useEffect(() => {
     setOffset(0);
     setPokemonList([]);
   }, [
@@ -45,6 +41,10 @@ export function usePokemons(filters = {}) {
     filters.generation,
     filters.sort
   ]);
+
+  useEffect(() => {
+    fetchAll();
+  }, [offset]);
 
   return {
     pokemonList,
