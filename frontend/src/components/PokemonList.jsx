@@ -29,11 +29,11 @@ function PokemonList({ pokemons, loading, error, loadMore, offset, onSelect }) {
     }
 
     if (error) {
-        return <ErrorBox error={error} />;
+        return <ErrorBox type={"pokemon-list"} error={error} />;
     }
 
     if (pokemons.length === 0) {
-        return <ErrorBox error={"ERROR: No pokemons found. Try searching for another name."} />;
+        return <ErrorBox type={"pokemon-list"} error={"ERROR: No pokemons found. Try searching for another name."} />;
     }
 
     return (

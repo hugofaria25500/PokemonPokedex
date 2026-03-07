@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePokemons } from "../hooks/usePokemons.js";
 import PokemonList from "./PokemonList";
 import PokemonSelected from "./PokemonSelected";
@@ -8,7 +8,7 @@ import "../css/PokemonGrid.css"
 function PokemonGrid({filters}) {
     const {pokemonList, loading, error, loadMore, offset} = usePokemons(filters);
 
-    const [selectedId, setSelectedId] = useState(1);
+    const [selectedId, setSelectedId] = useState(null);
 
     {/*SIMPLE COMPONENT TO THE POKEMON LIST COMPONENT*/}
     return (
