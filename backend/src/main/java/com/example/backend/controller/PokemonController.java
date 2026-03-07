@@ -48,8 +48,6 @@ public class PokemonController {
             @RequestParam(required = false) String region,
             @RequestParam(required = false) String sort
     ) {
-
-        System.out.println("Type:" + type);
         return ResponseEntity.ok(service.getFilteredPokemons(offset, searchTerm, type, region, sort));
     }
 }

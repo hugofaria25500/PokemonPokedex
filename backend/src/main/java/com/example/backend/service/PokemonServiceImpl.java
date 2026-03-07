@@ -18,6 +18,8 @@ public class PokemonServiceImpl implements PokemonService{
 
     private final PokemonMapper mapper;
 
+    private int pokemonListSize = -1;
+
     public PokemonServiceImpl(PokemonClient client, PokemonMapper mapper) {
         this.client = client;
         this.mapper = mapper;
@@ -90,7 +92,8 @@ public class PokemonServiceImpl implements PokemonService{
         }
 
         if((searchTerm == null || searchTerm.isEmpty()) && (type == null || type.isEmpty()) && (region == null || region.isEmpty()) && (sort == null || sort.isEmpty())) {
-            return listResponse.getResults()
+
+            List<PokemonDTO> firstPokemons = listResponse.getResults()
                     .parallelStream()
                     .map(entry -> {
 
@@ -102,9 +105,15 @@ public class PokemonServiceImpl implements PokemonService{
                         return mapper.toPokemonDTO(response);
                     })
                     .toList();
+
+            if(!firstPokemons.isEmpty() && PokemonUtils.POKEMON_LIMIT - PokemonUtils.LIMIT == offset) {
+                firstPokemons.get(firstPokemons.size()-1).setLast(true);
+            }
+
+            return firstPokemons;
         }
 
-        return getFilteredPokemons(offset, searchTerm, type, region, sort)
+        List<PokemonDTO> filteredPokemons = getFilteredPokemons(offset, searchTerm, type, region, sort)
                 .stream()
                 .map(entry -> {
                     long id = PokemonUtils.extractIdFromUrl(entry.getUrl());
@@ -113,6 +122,13 @@ public class PokemonServiceImpl implements PokemonService{
 
                     return mapper.toPokemonDTO(response);
                 }).toList();
+
+        if(!filteredPokemons.isEmpty() && getPokemonListSize() < offset + PokemonUtils.LIMIT) {
+            filteredPokemons.get(getPokemonListSize()-offset-1).setLast(true);
+        }
+        setPokemonListSize(-1);
+
+        return filteredPokemons;
     }
 
     @Override
@@ -146,8 +162,13 @@ public class PokemonServiceImpl implements PokemonService{
     @Cacheable("filteredPokemons")
     @Override
     public List<BasicPokemonDTO> getFilteredPokemons(int offset, String searchTerm, String type, String region, String sort) {
-        List<BasicPokemonDTO> totalList = !type.isEmpty() ? getPokemonsByType(type) : null;
-        return totalList != null ? totalList.subList(offset, offset+50) : null;
+        List<BasicPokemonDTO> totalList = !type.isEmpty() ? getPokemonsByType(type) : new ArrayList<>();
+        setPokemonListSize(!totalList.isEmpty() ? totalList.size() : -1);
+
+        if(!totalList.isEmpty() && totalList.size() < offset + PokemonUtils.LIMIT) {
+            return totalList.subList(offset, totalList.size());
+        }
+        return !totalList.isEmpty() ? totalList.subList(offset, offset+PokemonUtils.LIMIT) : new ArrayList<>();
     }
 
     /*AUXILIARY METHODS*/
@@ -178,8 +199,12 @@ public class PokemonServiceImpl implements PokemonService{
         return mapper.toPokemonEvolutionDTO(evolutionResponse);
     }
 
+    public int getPokemonListSize() {
+        return pokemonListSize;
+    }
 
-
-
+    public void setPokemonListSize(int pokemonListSize) {
+        this.pokemonListSize = pokemonListSize;
+    }
 }
 

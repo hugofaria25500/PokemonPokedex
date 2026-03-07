@@ -15,6 +15,10 @@ public class PokemonUtils {
     private static final String IMAGE_URL = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
     private static final String PNG_EXTENSION = ".png";
 
+    public static int POKEMON_LIMIT = 1350;
+
+    public static int LIMIT = 50;
+
     public static long extractIdFromUrl(String url) {
         String[] parts = url.split("/");
         return Long.parseLong(parts[parts.length - 1]);
