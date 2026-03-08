@@ -14,6 +14,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 public class PokemonServiceImpl implements PokemonService {
@@ -158,7 +159,7 @@ public class PokemonServiceImpl implements PokemonService {
         PokeApiPokemonByRegionResponse apiResponse = client.getBasicPokemonListByRegion(id);
 
         return apiResponse.getEntryList()
-                .stream().map(entry -> new BasicPokemonDTO(entry.getPokemon().getName(), entry.getPokemon().getUrl()))
+                .stream().map(entry -> new BasicPokemonDTO(entry.getName(), entry.getUrl()))
                 .toList();
     }
 
@@ -166,17 +167,43 @@ public class PokemonServiceImpl implements PokemonService {
     @Override
     public List<BasicPokemonDTO> getFilteredPokemons(int offset, String searchTerm, String type, String region, String sort) {
 
-        List<BasicPokemonDTO> typeList = !type.isEmpty() ? getBasicPokemonsByType(type) : new ArrayList<>();
-        List<BasicPokemonDTO> regionList = !region.isEmpty() ? getBasicPokemonsByRegion(region) : new ArrayList<>();
+        List<BasicPokemonDTO> allPokemonsList = getBasicPokemons();
+
+        System.out.println("OFFSET:" + offset);
+        System.out.println("searchTerm:" + searchTerm);
+        System.out.println("type:" + type);
+        System.out.println("region:" + region);
+
+        String term = searchTerm == null ? "" : searchTerm.toLowerCase();
+        List<BasicPokemonDTO> typeList = type != null && !type.isEmpty() ? getBasicPokemonsByType(type) : new ArrayList<>();
+        List<BasicPokemonDTO> regionList = region != null && !region.isEmpty() ? getBasicPokemonsByRegion(region) : new ArrayList<>();
+        String newSort = sort != null && !sort.isEmpty()? sort : "id-asc";
+        System.out.println("sort:" + newSort);
+
+        Set<String> typeNames = typeList.stream()
+                .map(BasicPokemonDTO::getName)
+                .collect(Collectors.toSet());
 
         Set<String> regionNames = regionList.stream()
                 .map(BasicPokemonDTO::getName)
                 .collect(Collectors.toSet());
 
-        List<BasicPokemonDTO> finalList = typeList.stream()
-                .filter(p -> regionNames.contains(p.getName()))
-                .filter(p -> p.getName().toLowerCase().contains(searchTerm.toLowerCase()))
-                .sorted(buildComparatorBasesOnSort(sort))
+        Stream<BasicPokemonDTO> stream = allPokemonsList.stream();
+
+        if (!typeNames.isEmpty()) {
+            stream = stream.filter(p -> typeNames.contains(p.getName()));
+        }
+
+        if (!regionNames.isEmpty()) {
+            stream = stream.filter(p -> regionNames.contains(p.getName()));
+        }
+
+        if (searchTerm != null && !searchTerm.isBlank()) {
+            stream = stream.filter(p -> p.getName().contains(term));
+        }
+
+        List<BasicPokemonDTO> finalList = stream
+                .sorted(buildComparatorBasedOnSort(newSort))
                 .toList();
 
         setPokemonListSize(!finalList.isEmpty() ? finalList.size() : -1);
@@ -223,19 +250,21 @@ public class PokemonServiceImpl implements PokemonService {
         this.pokemonListSize = pokemonListSize;
     }
 
-    private Comparator<BasicPokemonDTO> buildComparatorBasesOnSort(String sort) {
+    private Comparator<BasicPokemonDTO> buildComparatorBasedOnSort(String sort) {
 
-        switch (sort) {
-            case "id-desc":
-                return Comparator.comparing((BasicPokemonDTO p) -> PokemonUtils.extractIdFromUrl(p.getUrl())).reversed();
-            case "name-asc":
-                return Comparator.comparing(BasicPokemonDTO::getName);
+        Comparator<BasicPokemonDTO> byId =
+                Comparator.comparingLong(p -> PokemonUtils.extractIdFromUrl(p.getUrl()));
 
-            case "name-desc":
-                return Comparator.comparing(BasicPokemonDTO::getName).reversed();
-            default:
-                return Comparator.comparing(p -> PokemonUtils.extractIdFromUrl(p.getUrl()));
-        }
+        Comparator<BasicPokemonDTO> byName =
+                Comparator.comparing(BasicPokemonDTO::getName);
+
+        return switch (sort) {
+            case "id-desc" -> byId.reversed();
+            case "name-asc" -> byName;
+            case "name-desc" -> byName.reversed();
+            default -> byId;
+        };
+
     }
 }
 
