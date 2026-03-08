@@ -134,6 +134,15 @@ public class PokemonServiceImpl implements PokemonService {
         return filteredPokemons;
     }
 
+    @Cacheable("basicPokemons")
+    @Override
+    public List<BasicPokemonDTO> getBasicPokemons() {
+        PokeApiBasicPokemonResponse apiBasicPokemonResponse = client.getBasicPokemonList();
+
+        return apiBasicPokemonResponse.getEntryList()
+                .stream().map(entry -> new BasicPokemonDTO(entry.getName(), entry.getUrl()))
+                .toList();
+    }
     @Override
     public List<BasicPokemonDTO> getBasicPokemonsByType(String type) {
         PokeApiPokemonByTypeResponse apiResponse = client.getBasicPokemonListByType(type);

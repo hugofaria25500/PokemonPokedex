@@ -11,7 +11,7 @@ public interface PokemonService {
     PokemonDTO getPokemon(long id);
     PokemonDetailDTO getPokemonDetails(long id);
     List<PokemonDTO> getPokemons(int offset, String searchTerm, String type, String region, String sort);
-    List<BasicPokemonDTO> getPokemonsByType(String type);
+    List<BasicPokemonDTO> getBasicPokemonsByType(String type);
     List<BasicPokemonDTO> getBasicPokemons();
     List<BasicPokemonDTO> getBasicPokemonsByRegion(String region);
     List<BasicPokemonDTO> getFilteredPokemons(int offset, String searchTerm, String type, String region, String sort);
