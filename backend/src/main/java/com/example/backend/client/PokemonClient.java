@@ -84,13 +84,5 @@ public class PokemonClient {
                 .bodyToMono(PokeApiPokemonByRegionResponse.class)
                 .block();
     }
-
-    public PokeApiBasicPokemonsResponse getBasicPokemonList() {
-        return webClient.get()
-                .uri("/pokemon/?limit=2000")
-                .retrieve()
-                .bodyToMono(PokeApiBasicPokemonsResponse.class)
-                .block();
-    }
 }
 
