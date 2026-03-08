@@ -47,15 +47,15 @@ public class PokemonUtils {
         if (region == null) return 0;
 
         return switch (region.toLowerCase()) {
-            case "Kanto" -> 1;
-            case "Johto" -> 2;
-            case "Hoenn" -> 3;
-            case "Sinnoh" -> 4;
-            case "Unova" -> 5;
-            case "Kalos" -> 6;
-            case "Alola" -> 7;
-            case "Galar" -> 8;
-            case "Paldea" -> 9;
+            case "kanto" -> 1;
+            case "johto" -> 2;
+            case "hoenn" -> 3;
+            case "sinnoh" -> 4;
+            case "unova" -> 5;
+            case "kalos" -> 6;
+            case "alola" -> 7;
+            case "galar" -> 8;
+            case "paldea" -> 9;
             default -> 0;
         };
     }
