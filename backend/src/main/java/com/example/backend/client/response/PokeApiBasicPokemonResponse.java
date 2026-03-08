@@ -4,16 +4,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-public class PokeApiPokemonByRegionResponse {
+public class PokeApiBasicPokemonResponse {
 
-    @JsonProperty("pokemon_species")
+    @JsonProperty("results")
     private List<PokemonEntry> entryList;
 
-    public PokeApiPokemonByRegionResponse (List<PokemonEntry> entryList) {
+    public PokeApiBasicPokemonResponse (List<PokemonEntry> entryList) {
         this.entryList = entryList;
     }
 
-    public PokeApiPokemonByRegionResponse () {
+    public PokeApiBasicPokemonResponse () {
     }
 
     public static class PokemonEntry {
