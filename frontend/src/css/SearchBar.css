@@ -84,7 +84,7 @@
 
 
 /*REFRESH AND FILTER ICON*/
-.filter-button-container #icon, .refresh-button-container #icon {
+.filter-button-container #icon{
     width: 24px;
     height: 24px;
     cursor: pointer;
@@ -93,7 +93,13 @@
     transition: transform 0.5s ease;
 }
 
- 
+.refresh-button-container #icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
 .filter-button-container #icon.open {
     transform: rotate(180deg);
     transition: transform 0.5s ease;

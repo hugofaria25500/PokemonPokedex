@@ -1,4 +1,4 @@
-import NextEvolutionIcon from "../resources/img/icons/arrow_down_icon.png";
+import NextEvolutionIcon from "../resources/img/icons/arrow_down_white_icon.png";
 import "../css/EvolutionChainPokemon.css"
 
 function EvolutionChainPokemon (props) {
