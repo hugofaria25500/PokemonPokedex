@@ -18,6 +18,7 @@ public class PokemonClient {
                 .uri("/pokemon?limit=50&offset={offset}", offset)
                 .retrieve()
                 .bodyToMono(PokeApiPokemonListResponse.class)
+                .retry(3)
                 .block();
     }
 
@@ -26,6 +27,7 @@ public class PokemonClient {
                 .uri("/pokemon/{id}", id)
                 .retrieve()
                 .bodyToMono(PokeApiPokemonResponse.class)
+                .retry(3)
                 .block();
     }
 
@@ -34,6 +36,7 @@ public class PokemonClient {
                 .uri("/pokemon/{id}", id)
                 .retrieve()
                 .bodyToMono(PokeApiPokemonDetailResponse.class)
+                .retry(3)
                 .block();
     }
 
@@ -42,6 +45,7 @@ public class PokemonClient {
                 .uri("/pokemon-species/{id}", id)
                 .retrieve()
                 .bodyToMono(PokeApiPokemonSpecieResponse.class)
+                .retry(3)
                 .block();
     }
 
@@ -50,6 +54,7 @@ public class PokemonClient {
                 .uri("/ability/{id}", id)
                 .retrieve()
                 .bodyToMono(PokeApiPokemonAbilitiesResponse.class)
+                .retry(3)
                 .block();
     }
 
@@ -58,6 +63,7 @@ public class PokemonClient {
                 .uri("/evolution-chain/{id}", id)
                 .retrieve()
                 .bodyToMono(PokeApiPokemonEvolutionChainResponse.class)
+                .retry(3)
                 .block();
     }
 
@@ -66,6 +72,7 @@ public class PokemonClient {
                 .uri("/pokemon/{id}", id)
                 .retrieve()
                 .bodyToMono(PokeApiPokemonEvolutionResponse.class)
+                .retry(3)
                 .block();
     }
 
@@ -74,6 +81,7 @@ public class PokemonClient {
                 .uri("/type/{type}", type)
                 .retrieve()
                 .bodyToMono(PokeApiPokemonByTypeResponse.class)
+                .retry(3)
                 .block();
     }
 
@@ -82,6 +90,7 @@ public class PokemonClient {
                 .uri("/generation/{id}", id)
                 .retrieve()
                 .bodyToMono(PokeApiPokemonByRegionResponse.class)
+                .retry(3)
                 .block();
     }
 
@@ -90,6 +99,7 @@ public class PokemonClient {
                 .uri("/pokemon/?limit=2000")
                 .retrieve()
                 .bodyToMono(PokeApiBasicPokemonResponse.class)
+                .retry(3)
                 .block();
     }
 }
