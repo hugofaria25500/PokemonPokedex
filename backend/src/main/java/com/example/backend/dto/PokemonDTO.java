@@ -4,7 +4,7 @@ import java.util.List;
 
 public class PokemonDTO {
 
-    private long id;
+    private String id;
     private String name;
     private String imageUrl;
 
@@ -15,14 +15,14 @@ public class PokemonDTO {
     public PokemonDTO() {
     }
 
-    public PokemonDTO(long id, String name, String imageUrl, List<String> types) {
+    public PokemonDTO(String id, String name, String imageUrl, List<String> types) {
         this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;
         this.types = types;
     }
 
-    public PokemonDTO(long id, String name, String imageUrl, List<String> types, boolean isLast) {
+    public PokemonDTO(String id, String name, String imageUrl, List<String> types, boolean isLast) {
         this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;
@@ -30,11 +30,11 @@ public class PokemonDTO {
         this.isLast = isLast;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId( String id) {
         this.id = id;
     }
 

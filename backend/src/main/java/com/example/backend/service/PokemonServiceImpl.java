@@ -169,16 +169,10 @@ public class PokemonServiceImpl implements PokemonService {
 
         List<BasicPokemonDTO> allPokemonsList = getBasicPokemons();
 
-        System.out.println("OFFSET:" + offset);
-        System.out.println("searchTerm:" + searchTerm);
-        System.out.println("type:" + type);
-        System.out.println("region:" + region);
-
         String term = searchTerm == null ? "" : searchTerm.toLowerCase();
         List<BasicPokemonDTO> typeList = type != null && !type.isEmpty() ? getBasicPokemonsByType(type) : new ArrayList<>();
         List<BasicPokemonDTO> regionList = region != null && !region.isEmpty() ? getBasicPokemonsByRegion(region) : new ArrayList<>();
         String newSort = sort != null && !sort.isEmpty()? sort : "id-asc";
-        System.out.println("sort:" + newSort);
 
         Set<String> typeNames = typeList.stream()
                 .map(BasicPokemonDTO::getName)
