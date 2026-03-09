@@ -8,14 +8,14 @@ function PokedexPage() {
     const [draftFilters, setDraftFilters] = useState({
         searchTerm: "",
         type: null,
-        generation: null,
+        region: null,
         sort: null
     });
 
     const [filters, setFilters] = useState({
         searchTerm: "",
         type: null,
-        generation: null,
+        region: null,
         sort: null
     });
 

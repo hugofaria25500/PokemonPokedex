@@ -11,7 +11,7 @@ export function usePokemons(filters = {}) {
   const {
     searchTerm = "",
     type = null,
-    generation = null,
+    region = null,
     sort = null
   } = filters;
 
@@ -24,7 +24,7 @@ export function usePokemons(filters = {}) {
 
     setLoading(true);
     try {
-      const data = await getPokemons(offset, searchTerm, type, generation, sort);
+      const data = await getPokemons(offset, searchTerm, type, region, sort);
       setPokemonList(prev => offset === 0 ? data : [...prev, ...data]);
     } catch (err) {
       setError(err.message);
@@ -40,7 +40,7 @@ export function usePokemons(filters = {}) {
   }, [
     filters.searchTerm,
     filters.type,
-    filters.generation,
+    filters.region,
     filters.sort
   ]);
 

@@ -1,17 +1,11 @@
-export async function getPokemons(offset, searchTerm, type, generation, sort) {
+export async function getPokemons(offset, searchTerm, type, region, sort) {
     const params = new URLSearchParams();
 
     params.append("offset", offset);
-
-    /*
-    if (searchTerm) params.append("search", searchTerm);
+    if (searchTerm) params.append("searchTerm", searchTerm);
+    if (region) params.append("region", region);
+    if (sort) params.append("sort", sort);
     if (type) params.append("type", type);
-    if (generation) params.append("generation", generation);
-    if (sort) params.append("sort", sort);*/
-
-
-    if (type) params.append("type", type);
-
     const response = await fetch(`http://localhost:8080/api/pokemon/?${params.toString()}`);
 
     if (!response.ok) {

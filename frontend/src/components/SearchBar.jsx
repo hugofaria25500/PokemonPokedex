@@ -33,7 +33,7 @@ function SearchBar({ filterOpen, setFilterOpen, filters, setFilters, onSearch })
             </div>
 
             <div className="refresh-button-container">
-                <img id="icon" src={refreshIcon} alt="Refresh Icon" />
+                <img id="icon" src={refreshIcon} alt="Refresh Icon" onClick={() => setFilters(prev => ({ ...prev, searchTerm: "", type: null, region: null, sort: null }))}/>
             </div>
         </div>
         
