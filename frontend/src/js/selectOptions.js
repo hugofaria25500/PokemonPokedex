@@ -1,7 +1,6 @@
 import sortIcon from "../resources/img/icons/sort_icon.png";
 import sortAZIcon from "../resources/img/icons/sort_az_icon.png";
 import regionIcon from "../resources/img/icons/region_icon.png";
-import generationIcon from "../resources/img/icons/generation_icon.png";
 
 /*SORT OPTIONS*/
 export const sortOptions = [
@@ -31,19 +30,6 @@ export const typeOptions = [
   { value: "dark", label: "Dark", icon: "/img/types/dark_type_logo.png" },
   { value: "steel", label: "Steel", icon: "/img/types/steel_type_logo.png" },
   { value: "fairy", label: "Fairy", icon: "/img/types/fairy_type_logo.png" },
-];
-
-/*GENERATION OPTIONS*/
-export const generationOptions = [
-  { value: 1, label: "Generation I", icon:generationIcon},
-  { value: 2, label: "Generation II", icon:generationIcon},
-  { value: 3, label: "Generation III", icon:generationIcon},
-  { value: 4, label: "Generation IV", icon:generationIcon},
-  { value: 5, label: "Generation V", icon:generationIcon},
-  { value: 6, label: "Generation VI", icon:generationIcon},
-  { value: 7, label: "Generation VII", icon:generationIcon},
-  { value: 8, label: "Generation VIII", icon:generationIcon},
-  { value: 9, label: "Generation IX", icon:generationIcon},
 ];
 
 /*REGION OPTIONS*/

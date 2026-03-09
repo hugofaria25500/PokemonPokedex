@@ -1,6 +1,6 @@
 import StatBar from "./StatBar";
 import AbilityBox from "./AbilityBox";
-import { typeColors } from "../js/data";
+import { typeColors } from "../js/typeColors.js";
 import { usePokemonDetails } from "../hooks/usePokemonDetails.js";
 import LoadingSpinner from "../components/LoadingSpinner.jsx";
 import ErrorBox from "../components/ErrorBox.jsx";
