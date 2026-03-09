@@ -14,7 +14,7 @@ function PokemonGrid({filters}) {
     return (
         <div className="pokemon-grid-container">
             <div className="pokemon-grid">
-                <PokemonList pokemons={pokemonList} loading={loading} error={error} onSelect={setSelectedId} loadMore={loadMore} offset={offset} />
+                <PokemonList pokemons={pokemonList} loading={loading} error={error} onSelect={setSelectedId} selectedId={selectedId} loadMore={loadMore} offset={offset} />
                 <div className="selected-pokemon-box">
                     <PokemonSelected selectedId={selectedId} />
                 </div> 
