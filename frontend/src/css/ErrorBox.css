@@ -1,15 +1,35 @@
-.error-box {
+.error-box.pokemon-list {
+    flex: 1;
     background-color: rgba(0,0,0,0.4);
     color: white;
-    width: 100%;
     height: auto;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 20px;   
+    border: 2px solid black;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    box-sizing: border-box;
 }
+
+.error-box.selected-pokemon {
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    width: 380px;
+    height: auto;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;   
+    border: 2px solid black;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    box-sizing: border-box;
+}
+
 
 .error-box p {
     font-size: 20px;
@@ -26,4 +46,20 @@
 .error-box .pokemmon-image-container img {
     width: 50px;
     height: 50px;
+}
+
+/*MEDIA QUERIES*/
+@media (max-width: 1600px) {
+    /*ERROR BOX*/
+    .error-box.selected-pokemon{
+        width: 320px;
+    }
+}
+
+@media (max-width: 1400px) {
+    /*ERROR BOX*/
+    .error-box.selected-pokemon {
+        width: 300px;
+        height: 90%;
+    }
 }

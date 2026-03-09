@@ -4,12 +4,17 @@ import ArrowDownIcon from "../resources/img/icons/arrow_down_icon.png";
 
 import "../css/SelectMenu.css"
 
-function SelectMenu({label, icon, options}) {
+function SelectMenu({label, icon, options, value, onSelect}) {
     {/*CREATING STATE TO MANIPULATE THE SELECT OPTIONS - OPEN/CLOSED */}    
     const [labelState, setLabelState] = useState(label);
     const [iconState, setIconState] = useState(icon);
     const [open, setOpen] = useState(false);
     const selectRef = useRef(null);
+
+    if (value === null && labelState !== label) {
+        setLabelState(label);
+        setIconState(icon);
+    }
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -50,7 +55,13 @@ function SelectMenu({label, icon, options}) {
                         key={index}             
                         label={option.label}
                         icon={option.icon}
-                        onClick={() => {setLabelState(option.label); setIconState(option.icon); setOpen(false);}} />
+                        onClick={() => {
+                                onSelect(option.value);
+                                setLabelState(option.label); 
+                                setIconState(option.icon); 
+                                setOpen(false);
+                            }
+                        }/>
                 ))}
             </div>
 

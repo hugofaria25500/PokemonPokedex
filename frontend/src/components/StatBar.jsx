@@ -1,6 +1,6 @@
 import "../css/StatBar.css";
 
-function StatBar({ label, value, max = 150, color}) {
+function StatBar({ label, value, max = 200, color}) {
     {/*CALCULATING THE PERCENTAGE AMOUNT OF THE BAR*/}    
     const percentage = Math.min((value / max) * 100, 100);
 

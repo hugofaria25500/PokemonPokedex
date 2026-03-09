@@ -17,11 +17,11 @@ function PokemonSelected({ selectedId }) {
     }
 
     if (error) {
-        return <ErrorBox error={error} />;
+        return <ErrorBox type={"selected-pokemon"} error={error} />;
     }
 
     if (!detailedPokemon) {
-        return <ErrorBox error={"ERROR: No pokemon found. Try searching for another pokemon."} />;
+        return <ErrorBox type={"selected-pokemon"} error={"ERROR: No pokemon found. Try searching for another pokemon."} />;
     }
 
     {/*COMPONENT TO ITERATE EACH POKEMON AND PREPARE IT TO BUILD*/}

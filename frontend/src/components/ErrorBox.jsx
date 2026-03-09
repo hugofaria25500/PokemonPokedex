@@ -1,9 +1,9 @@
 import "../css/ErrorBox.css";
 import pokemonIcon from "../resources/img/icons/app_icon.png";
 
-function ErrorBox({ error }) {
+function ErrorBox({type, error }) {
     return (
-        <div className="error-box">
+        <div className={`error-box ${type === "pokemon-list" ? "pokemon-list" : "selected-pokemon"}`}>
             <p>{error}</p>
             <div className="pokemmon-image-container"> 
                 <img src={pokemonIcon} alt="Pokemon Icon" className="pokemon-icon" />

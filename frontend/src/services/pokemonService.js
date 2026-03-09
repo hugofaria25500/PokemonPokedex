@@ -1,24 +1,20 @@
-export async function getPokemonById(id) {
-  const response = await fetch(`http://localhost:8080/api/pokemon/${id}`);
+export async function getPokemons(offset, searchTerm, type, region, sort) {
+    const params = new URLSearchParams();
 
-  if (!response.ok) {
-    throw new Error("Error fetching Pokémon with ID: " + id);
+    params.append("offset", offset);
+    if (searchTerm) params.append("searchTerm", searchTerm);
+    if (region) params.append("region", region);
+    if (sort) params.append("sort", sort);
+    if (type) params.append("type", type);
+    const response = await fetch(`http://localhost:8080/api/pokemon/?${params.toString()}`);
+
+    if (!response.ok) {
+      throw new Error("Error fetching all Pokémons");
+    }
+
+    const data = await response.json();
+    return data;
   }
-
-  const data = await response.json();
-  return data;
-}
-
-export async function getPokemons(offset) {
-  const response = await fetch(`http://localhost:8080/api/pokemon/?offset=${offset}&limit=50`);
-
-  if (!response.ok) {
-    throw new Error("Error fetching all Pokémons");
-  }
-
-  const data = await response.json();
-  return data;
-}
 
 export async function getPokemonDetailsById(id) {
   const response = await fetch(`http://localhost:8080/api/pokemon/details/${id}`);

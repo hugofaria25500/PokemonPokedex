@@ -10,13 +10,19 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
-public class PokemonServiceImpl implements PokemonService{
+public class PokemonServiceImpl implements PokemonService {
     private final PokemonClient client;
 
     private final PokemonMapper mapper;
+
+    private int pokemonListSize = -1;
 
     public PokemonServiceImpl(PokemonClient client, PokemonMapper mapper) {
         this.client = client;
@@ -82,27 +88,133 @@ public class PokemonServiceImpl implements PokemonService{
 
     @Override
     @Cacheable("pokemons")
-    public List<PokemonDTO> getPokemons(long offset) {
+    public List<PokemonDTO> getPokemons(int offset, String searchTerm, String type, String region, String sort) {
         PokeApiPokemonListResponse listResponse = client.getPokemons(offset);
 
         if (listResponse == null) {
             throw new PokemonNotFoundException("Pokemons not found");
         }
 
-        return listResponse.getResults()
-                .parallelStream()
+        if((searchTerm == null || searchTerm.isEmpty()) && (type == null || type.isEmpty()) && (region == null || region.isEmpty()) && (sort == null || sort.isEmpty())) {
+
+            List<PokemonDTO> firstPokemons = listResponse.getResults()
+                    .parallelStream()
+                    .map(entry -> {
+
+                        long id = PokemonUtils.extractIdFromUrl(entry.getUrl());
+
+                        PokeApiPokemonResponse response =
+                                client.getPokemonById(id);
+
+                        return mapper.toPokemonDTO(response);
+                    })
+                    .toList();
+
+            if(!firstPokemons.isEmpty() && PokemonUtils.POKEMON_LIMIT - PokemonUtils.LIMIT == offset) {
+                firstPokemons.get(firstPokemons.size()-1).setLast(true);
+            }
+
+            return firstPokemons;
+        }
+
+        List<PokemonDTO> filteredPokemons = getFilteredPokemons(offset, searchTerm, type, region, sort)
+                .stream()
                 .map(entry -> {
-
                     long id = PokemonUtils.extractIdFromUrl(entry.getUrl());
-
                     PokeApiPokemonResponse response =
                             client.getPokemonById(id);
 
                     return mapper.toPokemonDTO(response);
-                })
+                }).toList();
+
+        if(!filteredPokemons.isEmpty() && getPokemonListSize() < offset + PokemonUtils.LIMIT) {
+            filteredPokemons.get(getPokemonListSize()-offset-1).setLast(true);
+        }
+        setPokemonListSize(-1);
+
+        return filteredPokemons;
+    }
+
+    @Cacheable("basicPokemons")
+    @Override
+    public List<BasicPokemonDTO> getBasicPokemons() {
+        PokeApiBasicPokemonResponse apiBasicPokemonResponse = client.getBasicPokemonList();
+
+        return apiBasicPokemonResponse.getEntryList()
+                .stream().map(entry -> new BasicPokemonDTO(entry.getName(), entry.getUrl()))
+                .toList();
+    }
+    @Override
+    public List<BasicPokemonDTO> getBasicPokemonsByType(String type) {
+        PokeApiPokemonByTypeResponse apiResponse = client.getBasicPokemonListByType(type);
+
+        return apiResponse.getEntryList()
+                .stream().map(entry -> new BasicPokemonDTO(entry.getPokemon().getName(), entry.getPokemon().getUrl()))
                 .toList();
     }
 
+    @Override
+    public List<BasicPokemonDTO> getBasicPokemonsByRegion(String region) {
+        long id = PokemonUtils.mapRegionToGenerationId(region);
+        PokeApiPokemonByRegionResponse apiResponse = client.getBasicPokemonListByRegion(id);
+
+        return apiResponse.getEntryList()
+                .stream().map(entry -> new BasicPokemonDTO(entry.getName(), entry.getUrl()))
+                .toList();
+    }
+
+    @Cacheable("filteredPokemons")
+    @Override
+    public List<BasicPokemonDTO> getFilteredPokemons(int offset, String searchTerm, String type, String region, String sort) {
+
+        List<BasicPokemonDTO> allPokemonsList = getBasicPokemons();
+
+        System.out.println("OFFSET:" + offset);
+        System.out.println("searchTerm:" + searchTerm);
+        System.out.println("type:" + type);
+        System.out.println("region:" + region);
+
+        String term = searchTerm == null ? "" : searchTerm.toLowerCase();
+        List<BasicPokemonDTO> typeList = type != null && !type.isEmpty() ? getBasicPokemonsByType(type) : new ArrayList<>();
+        List<BasicPokemonDTO> regionList = region != null && !region.isEmpty() ? getBasicPokemonsByRegion(region) : new ArrayList<>();
+        String newSort = sort != null && !sort.isEmpty()? sort : "id-asc";
+        System.out.println("sort:" + newSort);
+
+        Set<String> typeNames = typeList.stream()
+                .map(BasicPokemonDTO::getName)
+                .collect(Collectors.toSet());
+
+        Set<String> regionNames = regionList.stream()
+                .map(BasicPokemonDTO::getName)
+                .collect(Collectors.toSet());
+
+        Stream<BasicPokemonDTO> stream = allPokemonsList.stream();
+
+        if (!typeNames.isEmpty()) {
+            stream = stream.filter(p -> typeNames.contains(p.getName()));
+        }
+
+        if (!regionNames.isEmpty()) {
+            stream = stream.filter(p -> regionNames.contains(p.getName()));
+        }
+
+        if (searchTerm != null && !searchTerm.isBlank()) {
+            stream = stream.filter(p -> p.getName().contains(term));
+        }
+
+        List<BasicPokemonDTO> finalList = stream
+                .sorted(buildComparatorBasedOnSort(newSort))
+                .toList();
+
+        setPokemonListSize(!finalList.isEmpty() ? finalList.size() : -1);
+
+        if(!finalList.isEmpty() && finalList.size() < offset + PokemonUtils.LIMIT) {
+            return finalList.subList(offset, finalList.size());
+        }
+        return !finalList.isEmpty() ? finalList.subList(offset, offset+PokemonUtils.LIMIT) : new ArrayList<>();
+    }
+
+    /*AUXILIARY METHODS*/
     public void buildEvolutionList (PokeApiPokemonEvolutionChainResponse.ChainLink chainLink, List<EvolutionDTO> currentPath, List<EvolutionChainDTO> evolutionChains) {
 
         if (chainLink == null) return;
@@ -128,6 +240,31 @@ public class PokemonServiceImpl implements PokemonService{
         long id = PokemonUtils.extractIdFromUrl(chainLink.getSpecies().getUrl());
         PokeApiPokemonEvolutionResponse evolutionResponse = client.getPokemonEvolutionById(id);
         return mapper.toPokemonEvolutionDTO(evolutionResponse);
+    }
+
+    public int getPokemonListSize() {
+        return pokemonListSize;
+    }
+
+    public void setPokemonListSize(int pokemonListSize) {
+        this.pokemonListSize = pokemonListSize;
+    }
+
+    private Comparator<BasicPokemonDTO> buildComparatorBasedOnSort(String sort) {
+
+        Comparator<BasicPokemonDTO> byId =
+                Comparator.comparingLong(p -> PokemonUtils.extractIdFromUrl(p.getUrl()));
+
+        Comparator<BasicPokemonDTO> byName =
+                Comparator.comparing(BasicPokemonDTO::getName);
+
+        return switch (sort) {
+            case "id-desc" -> byId.reversed();
+            case "name-asc" -> byName;
+            case "name-desc" -> byName.reversed();
+            default -> byId;
+        };
+
     }
 }
 

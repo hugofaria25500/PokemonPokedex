@@ -15,6 +15,10 @@ public class PokemonUtils {
     private static final String IMAGE_URL = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
     private static final String PNG_EXTENSION = ".png";
 
+    public static int POKEMON_LIMIT = 1350;
+
+    public static int LIMIT = 50;
+
     public static long extractIdFromUrl(String url) {
         String[] parts = url.split("/");
         return Long.parseLong(parts[parts.length - 1]);
@@ -35,6 +39,24 @@ public class PokemonUtils {
             case "generation-viii"-> "Galar";
             case "generation-ix"  -> "Paldea";
             default -> "Unknown";
+        };
+    }
+
+    public static long mapRegionToGenerationId(String region) {
+
+        if (region == null) return 0;
+
+        return switch (region.toLowerCase()) {
+            case "kanto" -> 1;
+            case "johto" -> 2;
+            case "hoenn" -> 3;
+            case "sinnoh" -> 4;
+            case "unova" -> 5;
+            case "kalos" -> 6;
+            case "alola" -> 7;
+            case "galar" -> 8;
+            case "paldea" -> 9;
+            default -> 0;
         };
     }
 

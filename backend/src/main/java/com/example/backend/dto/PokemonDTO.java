@@ -10,6 +10,8 @@ public class PokemonDTO {
 
     private List<String> types;
 
+    private boolean isLast;
+
     public PokemonDTO() {
     }
 
@@ -18,6 +20,14 @@ public class PokemonDTO {
         this.name = name;
         this.imageUrl = imageUrl;
         this.types = types;
+    }
+
+    public PokemonDTO(long id, String name, String imageUrl, List<String> types, boolean isLast) {
+        this.id = id;
+        this.name = name;
+        this.imageUrl = imageUrl;
+        this.types = types;
+        this.isLast = isLast;
     }
 
     public long getId() {
@@ -50,5 +60,13 @@ public class PokemonDTO {
 
     public void setTypes(List<String> types) {
         this.types = types;
+    }
+
+    public boolean isLast() {
+        return isLast;
+    }
+
+    public void setLast(boolean last) {
+        isLast = last;
     }
 }

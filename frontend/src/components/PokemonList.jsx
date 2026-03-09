@@ -12,11 +12,15 @@ function PokemonList({ pokemons, loading, error, loadMore, offset, onSelect }) {
     useEffect(() => {
         if (offset === 0) return;
 
-        const element = document.getElementById(`pokemon-${offset}`);
+        const pokemon = pokemons[offset];
+        if (!pokemon) return;
+        const element = document.getElementById(`pokemon-${pokemon.id}`);
+
         if (element) {
             element.scrollIntoView({ behavior: "auto" });
         }
-    }, [pokemons, offset]);
+
+    }, [pokemons]);
 
     const handleLoadMore = () => {
         if (loading) return;
@@ -29,11 +33,11 @@ function PokemonList({ pokemons, loading, error, loadMore, offset, onSelect }) {
     }
 
     if (error) {
-        return <ErrorBox error={error} />;
+        return <ErrorBox type={"pokemon-list"} error={error} />;
     }
 
     if (pokemons.length === 0) {
-        return <ErrorBox error={"ERROR: No pokemons found. Try searching for another name."} />;
+        return <ErrorBox type={"pokemon-list"} error={"ERROR: No pokemons found. Try searching for another name."} />;
     }
 
     return (
@@ -41,9 +45,11 @@ function PokemonList({ pokemons, loading, error, loadMore, offset, onSelect }) {
             {pokemons.map((pokemon) => (
                 <PokemonCard key={pokemon.id} pokemon={pokemon} onSelect={onSelect} />
             ))}
-            <div className="load-more-container" onClick={handleLoadMore}>
-                <img src={LoadIcon} alt="Load More" />
-            </div>
+            {!pokemons[pokemons.length-1].last ? (
+                <div className="load-more-container" onClick={handleLoadMore}>
+                    <img src={LoadIcon} alt="Load More" />
+                </div>
+            ) : null}
         </div>
     );
 
