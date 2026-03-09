@@ -39,16 +39,5 @@ public class PokemonController {
     public ResponseEntity<PokemonDetailDTO> getPokemonDetails(@PathVariable long id) {
         return ResponseEntity.ok(service.getPokemonDetails(id));
     }
-
-    @GetMapping("/filtered")
-    public ResponseEntity<List<BasicPokemonDTO>> getFilteredPokemons(
-            @RequestParam(defaultValue = "0") int offset,
-            @RequestParam(required = false) String searchTerm,
-            @RequestParam(required = false) String type,
-            @RequestParam(required = false) String region,
-            @RequestParam(required = false) String sort
-    ) {
-        return ResponseEntity.ok(service.getFilteredPokemons(offset, searchTerm, type, region, sort));
-    }
 }
 
