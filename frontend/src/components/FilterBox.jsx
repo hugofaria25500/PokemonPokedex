@@ -1,6 +1,6 @@
 
 import SelectMenu from "./SelectMenu";
-import RefreshIcon from "../resources/img/icons/refresh_icon.png";
+import DeleteIcon from "../resources/img/icons/delete_icon.png";
 import SortByIcon from "../resources/img/icons/sort_by_icon.png";
 import typeIcon from "../resources/img/icons/type_icon.png";
 import regionIcon from "../resources/img/icons/region_icon.png";
@@ -18,7 +18,7 @@ function FilterBox({ filterOpen, filters, setFilters }) {
             <SelectMenu label="Type" icon={typeIcon} options={typeOptions} value={filters.type} onSelect={(value) => setFilters(prev => ({ ...prev, type: value }))} />
             <SelectMenu label="Region" icon={regionIcon} options={regionOptions} value={filters.region} onSelect={(value) => setFilters(prev => ({ ...prev, region: value }))} />
             <div className="refresh-container">
-                <img className="refresh-icon" src={RefreshIcon} alt="Refresh" onClick={() => setFilters(prev => ({ ...prev, searchTerm: "", type: null, region: null, sort: null }))} />
+                <img className="refresh-icon" src={DeleteIcon} alt="Refresh" onClick={() => setFilters(prev => ({ ...prev, searchTerm: "", type: null, region: null, sort: null }))} />
             </div>
         </div>
     );  
