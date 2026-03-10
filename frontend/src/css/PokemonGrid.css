@@ -7,6 +7,7 @@
     display: flex;
     justify-content: center;
     overflow: hidden;
+    
 }
 
 .pokemon-grid {
@@ -19,6 +20,18 @@
     display: flex;
     margin-left: 10px;
 }
+
+/*CARD BASE MOBILE*/
+.selected-pokemon-box-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black
+}
+
 
 /*MEDIA QUERIES*/
 @media (max-width: 1400px) {
@@ -39,6 +52,32 @@
     .selected-pokemon-box {
         display: none;
     }
+
+    /*CARD BASE MOBILE*/
+    .selected-pokemon-box-overlay {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }   
+
+    .selected-pokemon-box-overlay .close-container{
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 50px;
+    } 
+
+    .selected-pokemon-box-overlay .close-container img{
+        width: 35px;
+        height: 35px;
+        background-color: white;
+        border-radius: 25px;
+        border: 1px solid white;
+        cursor: pointer;
+    } 
 }
 
 @media (max-width: 800px) {

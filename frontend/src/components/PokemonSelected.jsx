@@ -8,7 +8,7 @@ import ErrorBox from "../components/ErrorBox.jsx";
 import "../css/PokemonSelected.css";
 import EvolutionChainBox from "./EvolutionChainBox";
 
-function PokemonSelected({ selectedId }) {
+function PokemonSelected({ selectedId, type }) {
 
     const { detailedPokemon, loading, error } = usePokemonDetails(selectedId);
 
@@ -31,7 +31,7 @@ function PokemonSelected({ selectedId }) {
 
     {/*MAIN COMPONENT TO CONSTRUCT THE SELECTED POKEMON*/}
     return (
-        <div className="pokemon-selected-card">
+        <div className={`pokemon-selected-card ${type}`}>
             {/*POKEMON VISUAL CARD*/}
             <img className="type-logo" src={imageTypePath} />
             <div className="card-base">

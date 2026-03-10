@@ -1,4 +1,4 @@
-import NextEvolutionIcon from "../resources/img/icons/arrow_down_white_icon.png";
+import NextEvolutionIcon from "../resources/img/icons/arrow_down_icon.png";
 import "../css/EvolutionChainPokemon.css"
 
 function EvolutionChainPokemon (props) {
@@ -9,8 +9,8 @@ function EvolutionChainPokemon (props) {
     {/*POKEMON EVOLUTION COMPONENT BUILDING*/}
     return (
         <div className="evolution-chain-pokemon-container">
-            <img id="evolution-type-logo" src={imageTypePath} alt="" />
             <div className="frame-pokemon-image">
+                <img id="evolution-type-logo" src={imageTypePath} alt="" />
                 <img className="pokemon-image" src={props.evolutionPokemon.imageUrl} alt={props.evolutionPokemon.name} />
             </div>
             <div className="pokemon-info">
