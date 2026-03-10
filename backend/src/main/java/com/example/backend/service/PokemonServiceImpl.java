@@ -6,6 +6,8 @@ import com.example.backend.dto.*;
 import com.example.backend.exception.PokemonNotFoundException;
 import com.example.backend.mapper.PokemonMapper;
 import com.example.backend.utils.PokemonUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,9 @@ public class PokemonServiceImpl implements PokemonService {
     private final PokemonClient client;
 
     private final PokemonMapper mapper;
+
+    private static final Logger logger = LoggerFactory.getLogger(PokemonServiceImpl.class);
+
 
     private int pokemonListSize = -1;
 
@@ -38,7 +43,9 @@ public class PokemonServiceImpl implements PokemonService {
             throw new PokemonNotFoundException("Pokemon with id " + id + " not found");
         }
 
-        return mapper.toPokemonDTO(response);
+        PokemonDTO pokemonDTO = mapper.toPokemonDTO(response);
+        logger.info("getPokemon Response: "+pokemonDTO.toString());
+        return pokemonDTO;
     }
 
     @Override
@@ -83,7 +90,10 @@ public class PokemonServiceImpl implements PokemonService {
 
         buildEvolutionList(evolutionResponse.getChainLink(),new ArrayList<>(),evolutionChainDTOList);
 
-        return mapper.toPokemonDetailDTO(response, specieResponse, abilitiyDTOList, evolutionChainDTOList);
+        PokemonDetailDTO pokemonDetailDTO = mapper.toPokemonDetailDTO(response, specieResponse, abilitiyDTOList, evolutionChainDTOList);
+        logger.info("getPokemonDetails Response: "+pokemonDetailDTO.toString());
+
+        return pokemonDetailDTO;
     }
 
     @Override
@@ -114,6 +124,7 @@ public class PokemonServiceImpl implements PokemonService {
                 firstPokemons.get(firstPokemons.size()-1).setLast(true);
             }
 
+            logger.info("getPokemons Response: " + firstPokemons);
             return firstPokemons;
         }
 
@@ -132,6 +143,7 @@ public class PokemonServiceImpl implements PokemonService {
         }
         setPokemonListSize(-1);
 
+        logger.info("getPokemons Response: " + filteredPokemons);
         return filteredPokemons;
     }
 
@@ -140,17 +152,22 @@ public class PokemonServiceImpl implements PokemonService {
     public List<BasicPokemonDTO> getBasicPokemons() {
         PokeApiBasicPokemonResponse apiBasicPokemonResponse = client.getBasicPokemonList();
 
-        return apiBasicPokemonResponse.getEntryList()
+        List<BasicPokemonDTO> basicPokemonDTOList = apiBasicPokemonResponse.getEntryList()
                 .stream().map(entry -> new BasicPokemonDTO(entry.getName(), entry.getUrl()))
                 .toList();
+        logger.info("getBasicPokemons Response: " + basicPokemonDTOList);
+        return basicPokemonDTOList;
     }
     @Override
     public List<BasicPokemonDTO> getBasicPokemonsByType(String type) {
         PokeApiPokemonByTypeResponse apiResponse = client.getBasicPokemonListByType(type);
 
-        return apiResponse.getEntryList()
+        List<BasicPokemonDTO> basicPokemonDTOList = apiResponse.getEntryList()
                 .stream().map(entry -> new BasicPokemonDTO(entry.getPokemon().getName(), entry.getPokemon().getUrl()))
                 .toList();
+
+        logger.info("getBasicPokemonsByType Response: " + basicPokemonDTOList);
+        return basicPokemonDTOList;
     }
 
     @Override
@@ -158,9 +175,12 @@ public class PokemonServiceImpl implements PokemonService {
         long id = PokemonUtils.mapRegionToGenerationId(region);
         PokeApiPokemonByRegionResponse apiResponse = client.getBasicPokemonListByRegion(id);
 
-        return apiResponse.getEntryList()
+        List<BasicPokemonDTO> basicPokemonDTOList = apiResponse.getEntryList()
                 .stream().map(entry -> new BasicPokemonDTO(entry.getName(), entry.getUrl()))
                 .toList();
+
+        logger.info("getBasicPokemonsByRegion Response: " + basicPokemonDTOList);
+        return basicPokemonDTOList;
     }
 
     @Cacheable("filteredPokemons")
@@ -203,9 +223,14 @@ public class PokemonServiceImpl implements PokemonService {
         setPokemonListSize(!finalList.isEmpty() ? finalList.size() : -1);
 
         if(!finalList.isEmpty() && finalList.size() < offset + PokemonUtils.LIMIT) {
-            return finalList.subList(offset, finalList.size());
+            finalList = finalList.subList(offset, finalList.size());
+            logger.info("getFilteredPokemons Response: " + finalList);
+            return finalList;
         }
-        return !finalList.isEmpty() ? finalList.subList(offset, offset+PokemonUtils.LIMIT) : new ArrayList<>();
+
+        finalList = !finalList.isEmpty() ? finalList.subList(offset, offset+PokemonUtils.LIMIT) : new ArrayList<>();
+        logger.info("getFilteredPokemons Response: " + finalList);
+        return finalList;
     }
 
     /*AUXILIARY METHODS*/
