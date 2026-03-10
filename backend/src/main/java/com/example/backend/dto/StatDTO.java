@@ -29,4 +29,12 @@ public class StatDTO {
     public void setValue(long value) {
         this.value = value;
     }
+
+    @Override
+    public String toString() {
+        return "StatDTO{" +
+                "name='" + name + '\'' +
+                ", value=" + value +
+                '}';
+    }
 }

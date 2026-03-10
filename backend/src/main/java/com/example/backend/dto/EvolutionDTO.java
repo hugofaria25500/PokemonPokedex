@@ -51,4 +51,14 @@ public class EvolutionDTO {
     public void setTypes(List<String> types) {
         this.types = types;
     }
+
+    @Override
+    public String toString() {
+        return "EvolutionDTO{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", types=" + types +
+                '}';
+    }
 }

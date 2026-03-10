@@ -29,4 +29,12 @@ public class BasicPokemonDTO {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    @Override
+    public String toString() {
+        return "BasicPokemonDTO{" +
+                "name='" + name + '\'' +
+                ", url='" + url + '\'' +
+                '}';
+    }
 }

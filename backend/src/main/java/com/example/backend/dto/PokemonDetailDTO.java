@@ -95,4 +95,18 @@ public class PokemonDetailDTO {
     public void setEvolutionChainList(List<EvolutionChainDTO> evolutionChainList) {
         this.evolutionChainList = evolutionChainList;
     }
+
+    @Override
+    public String toString() {
+        return "PokemonDetailDTO{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", types=" + types +
+                ", about=" + about +
+                ", statList=" + statList +
+                ", abilityList=" + abilityList +
+                ", evolutionChainList=" + evolutionChainList +
+                '}';
+    }
 }

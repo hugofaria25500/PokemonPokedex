@@ -69,4 +69,15 @@ public class PokemonDTO {
     public void setLast(boolean last) {
         isLast = last;
     }
+
+    @Override
+    public String toString() {
+        return "PokemonDTO{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", types=" + types +
+                ", isLast=" + isLast +
+                '}';
+    }
 }

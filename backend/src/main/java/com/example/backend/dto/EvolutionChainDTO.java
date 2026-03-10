@@ -20,4 +20,11 @@ public class EvolutionChainDTO {
     public void setEvolutionList(List<EvolutionDTO> evolutionList) {
         this.evolutionList = evolutionList;
     }
+
+    @Override
+    public String toString() {
+        return "EvolutionChainDTO{" +
+                "evolutionList=" + evolutionList +
+                '}';
+    }
 }
