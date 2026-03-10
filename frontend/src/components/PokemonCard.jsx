@@ -2,10 +2,16 @@ import "../css/PokemonTypes.css"
 import "../css/PokemonCard.css"
 import { typeUrl } from "../js/typesImage.js";
 
-function PokemonCard({ pokemon, onSelect }) {
+function PokemonCard({ pokemon, onSelect, selectedId , setSelectedPokemonOpen}) {
+
+    const handleClcick = () => {
+        onSelect(pokemon.id);
+        setSelectedPokemonOpen(true);
+    }
+
     {/*POKEMON CARD BUILDING*/}
     return (
-        <div id={`pokemon-${pokemon.id}`} className="pokemon-card" onClick={() => onSelect(pokemon.id)}>
+        <div id={`pokemon-${pokemon.id}`} className={`pokemon-card ${selectedId == pokemon.id ? "selected" : ""}`} onClick={handleClcick}>
             <img className="type-logo" src={typeUrl[pokemon.types[0].toLowerCase()]} />
             <div className="id-box">
                 <p>#{pokemon.id}</p>

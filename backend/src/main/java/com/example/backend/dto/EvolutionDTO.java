@@ -4,7 +4,7 @@ import java.util.List;
 
 public class EvolutionDTO {
 
-    private long id;
+    private String id;
     private String name;
     private String imageUrl;
 
@@ -13,18 +13,18 @@ public class EvolutionDTO {
     public EvolutionDTO() {
     }
 
-    public EvolutionDTO(long id, String name, String imageUrl, List<String> types) {
+    public EvolutionDTO(String id, String name, String imageUrl, List<String> types) {
         this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;
         this.types = types;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -50,5 +50,15 @@ public class EvolutionDTO {
 
     public void setTypes(List<String> types) {
         this.types = types;
+    }
+
+    @Override
+    public String toString() {
+        return "EvolutionDTO{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", types=" + types +
+                '}';
     }
 }

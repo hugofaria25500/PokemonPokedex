@@ -4,7 +4,7 @@ import java.util.List;
 
 public class PokemonDetailDTO {
 
-    private long id;
+    private String id;
     private String name;
     private String imageUrl;
 
@@ -18,7 +18,7 @@ public class PokemonDetailDTO {
 
     private List<EvolutionChainDTO> evolutionChainList;
 
-    public PokemonDetailDTO(long id, String name, String imageUrl, List<String> types, AboutDTO about, List<StatDTO> statList, List<AbilitiyDTO> abilityList, List<EvolutionChainDTO> evolutionChainList) {
+    public PokemonDetailDTO(String id, String name, String imageUrl, List<String> types, AboutDTO about, List<StatDTO> statList, List<AbilitiyDTO> abilityList, List<EvolutionChainDTO> evolutionChainList) {
         this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;
@@ -32,11 +32,11 @@ public class PokemonDetailDTO {
     public PokemonDetailDTO() {
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -94,5 +94,19 @@ public class PokemonDetailDTO {
 
     public void setEvolutionChainList(List<EvolutionChainDTO> evolutionChainList) {
         this.evolutionChainList = evolutionChainList;
+    }
+
+    @Override
+    public String toString() {
+        return "PokemonDetailDTO{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", types=" + types +
+                ", about=" + about +
+                ", statList=" + statList +
+                ", abilityList=" + abilityList +
+                ", evolutionChainList=" + evolutionChainList +
+                '}';
     }
 }

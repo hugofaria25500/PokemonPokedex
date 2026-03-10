@@ -16,7 +16,7 @@ public class PokemonMapper {
     public PokemonDTO toPokemonDTO(PokeApiPokemonResponse response) {
 
         PokemonDTO dto = new PokemonDTO();
-        dto.setId(response.getId());
+        dto.setId(PokemonUtils.buildId(response.getId()));
 
         String name= response.getName();
         dto.setName(PokemonUtils.capitalizeText(name));
@@ -36,7 +36,7 @@ public class PokemonMapper {
     public EvolutionDTO toPokemonEvolutionDTO(PokeApiPokemonEvolutionResponse response) {
 
         EvolutionDTO dto = new EvolutionDTO();
-        dto.setId(response.getId());
+        dto.setId(PokemonUtils.buildId(response.getId()));
 
         String name= response.getName();
         dto.setName(PokemonUtils.capitalizeText(name));
@@ -61,7 +61,7 @@ public class PokemonMapper {
         //BASIC DETAILS
         PokemonDetailDTO pokemonDTO = new PokemonDetailDTO();
 
-        pokemonDTO.setId(response.getId());
+        pokemonDTO.setId(PokemonUtils.buildId(response.getId()));
 
         String name= response.getName();
         pokemonDTO.setName(name != null ? PokemonUtils.capitalizeText(name) : "");

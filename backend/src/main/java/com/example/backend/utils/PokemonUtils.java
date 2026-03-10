@@ -24,6 +24,10 @@ public class PokemonUtils {
         return Long.parseLong(parts[parts.length - 1]);
     }
 
+    public static String buildId(long id) {
+        return String.format("%04d", id);
+    }
+
     public static String mapGenerationToRegion(String generation) {
 
         if (generation == null) return "Unknown";

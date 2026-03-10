@@ -1,6 +1,6 @@
 import pokeballIcon from "../resources/img/icons/pokeball_icon.png";
 import filterIcon from "../resources/img/icons/arrow_down_icon.png";
-import refreshIcon from "../resources/img/icons/refresh_icon.png";
+import DeleteIcon from "../resources/img/icons/delete_icon.png";
 
 import "../css/SearchBar.css";
 
@@ -33,7 +33,7 @@ function SearchBar({ filterOpen, setFilterOpen, filters, setFilters, onSearch })
             </div>
 
             <div className="refresh-button-container">
-                <img id="icon" src={refreshIcon} alt="Refresh Icon" onClick={() => setFilters(prev => ({ ...prev, searchTerm: "", type: null, region: null, sort: null }))}/>
+                <img id="icon" src={DeleteIcon} alt="Refresh Icon" onClick={() => setFilters(prev => ({ ...prev, searchTerm: "", type: null, region: null, sort: null }))}/>
             </div>
         </div>
         

@@ -9,8 +9,8 @@ function EvolutionChainPokemon (props) {
     {/*POKEMON EVOLUTION COMPONENT BUILDING*/}
     return (
         <div className="evolution-chain-pokemon-container">
-            <img id="evolution-type-logo" src={imageTypePath} alt="" />
             <div className="frame-pokemon-image">
+                <img id="evolution-type-logo" src={imageTypePath} alt="" />
                 <img className="pokemon-image" src={props.evolutionPokemon.imageUrl} alt={props.evolutionPokemon.name} />
             </div>
             <div className="pokemon-info">

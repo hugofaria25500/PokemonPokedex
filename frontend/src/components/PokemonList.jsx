@@ -7,7 +7,7 @@ import ErrorBox from "../components/ErrorBox.jsx";
 import LoadIcon from "../resources/img/icons/plus_icon.png";
 import "../css/PokemonList.css"
 
-function PokemonList({ pokemons, loading, error, loadMore, offset, onSelect }) {
+function PokemonList({ pokemons, loading, error, loadMore, offset, onSelect, setSelectedPokemonOpen, selectedId }) {
 
     useEffect(() => {
         if (offset === 0) return;
@@ -43,7 +43,7 @@ function PokemonList({ pokemons, loading, error, loadMore, offset, onSelect }) {
     return (
         <div className="pokemon-list">
             {pokemons.map((pokemon) => (
-                <PokemonCard key={pokemon.id} pokemon={pokemon} onSelect={onSelect} />
+                <PokemonCard key={pokemon.id} pokemon={pokemon} setSelectedPokemonOpen={setSelectedPokemonOpen} onSelect={onSelect} selectedId={selectedId} />
             ))}
             {!pokemons[pokemons.length-1].last ? (
                 <div className="load-more-container" onClick={handleLoadMore}>
