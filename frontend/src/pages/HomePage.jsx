@@ -1,12 +1,14 @@
+import HeroSection from "../components/HeroSection";
+import FeatureSection from "../components/FeatureSection";
+import Logo from "../components/Logo";
+
 function HomePage() {
     return (
-        <>
-            <h3>HomePage</h3>
-
-            <div className="homepage-container">
-                
-            </div>
-        </>
+        <div className="homepage-container">
+            <HeroSection />
+            <FeatureSection />
+            <Logo />
+        </div>
     );
 }
 
