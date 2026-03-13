@@ -1,0 +1,18 @@
+.feature-container {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+
+/*MEDIA QUERIES*/
+@media (max-width: 1600px) {
+    .feature-container {
+        display: none;
+    }
+}
