@@ -34,6 +34,11 @@ public class PokemonServiceImpl implements PokemonService {
         this.mapper = mapper;
     }
 
+    /**
+     * Get pokemon dto by id
+     * @param id
+     * @return PokemonDTO
+     */
     @Override
     @Cacheable("pokemon")
     public PokemonDTO getPokemon(long id) {
@@ -48,6 +53,11 @@ public class PokemonServiceImpl implements PokemonService {
         return pokemonDTO;
     }
 
+    /**
+     * Get pokemon details dto by id
+     * @param id
+     * @return PokemonDetailDTO
+     */
     @Override
     @Cacheable("selectedPokemon")
     public PokemonDetailDTO getPokemonDetails(long id) {
@@ -96,6 +106,15 @@ public class PokemonServiceImpl implements PokemonService {
         return pokemonDetailDTO;
     }
 
+    /**
+     * Get filtered pokemons by params
+     * @param offset
+     * @param searchTerm
+     * @param type
+     * @param region
+     * @param sort
+     * @return List<PokemonDTO>
+     */
     @Override
     @Cacheable("pokemons")
     public List<PokemonDTO> getPokemons(int offset, String searchTerm, String type, String region, String sort) {
@@ -147,6 +166,10 @@ public class PokemonServiceImpl implements PokemonService {
         return filteredPokemons;
     }
 
+    /**
+     * Get all basic pokemon dto
+     * @return List<PokemonDTO>
+     */
     @Cacheable("basicPokemons")
     @Override
     public List<BasicPokemonDTO> getBasicPokemons() {
@@ -158,6 +181,12 @@ public class PokemonServiceImpl implements PokemonService {
         logger.info("getBasicPokemons Response: " + basicPokemonDTOList);
         return basicPokemonDTOList;
     }
+
+    /**
+     * Get all basic pokemon dto by type
+     * @param type
+     * @return List<PokemonDTO>
+     */
     @Override
     public List<BasicPokemonDTO> getBasicPokemonsByType(String type) {
         PokeApiPokemonByTypeResponse apiResponse = client.getBasicPokemonListByType(type);
@@ -170,6 +199,11 @@ public class PokemonServiceImpl implements PokemonService {
         return basicPokemonDTOList;
     }
 
+    /**
+     * Get all basic pokemon dto by region
+     * @param region
+     * @return List<PokemonDTO>
+     */
     @Override
     public List<BasicPokemonDTO> getBasicPokemonsByRegion(String region) {
         long id = PokemonUtils.mapRegionToGenerationId(region);
@@ -183,6 +217,15 @@ public class PokemonServiceImpl implements PokemonService {
         return basicPokemonDTOList;
     }
 
+    /**
+     * Get filtered pokemons by params
+     * @param offset
+     * @param searchTerm
+     * @param type
+     * @param region
+     * @param sort
+     * @return List<PokemonDTO>
+     */
     @Cacheable("filteredPokemons")
     @Override
     public List<BasicPokemonDTO> getFilteredPokemons(int offset, String searchTerm, String type, String region, String sort) {
@@ -233,7 +276,13 @@ public class PokemonServiceImpl implements PokemonService {
         return finalList;
     }
 
-    /*AUXILIARY METHODS*/
+    /**
+     * Get pokemon evolution list
+     * Recursive method to get evolution pokemons list of children elements
+     * @param chainLink
+     * @param currentPath
+     * @param evolutionChains
+     */
     public void buildEvolutionList (PokeApiPokemonEvolutionChainResponse.ChainLink chainLink, List<EvolutionDTO> currentPath, List<EvolutionChainDTO> evolutionChains) {
 
         if (chainLink == null) return;
@@ -253,6 +302,12 @@ public class PokemonServiceImpl implements PokemonService {
         }
     }
 
+    /**
+     * Get current pokemon evolution dto and add it to a list in order to track pokemon evolution elements
+     * Complementary method for buildEvolutionList()
+     * @param chainLink
+     * @return EvolutionDTO
+     */
     private EvolutionDTO buildEvolutionPokemonDTOFromCurrentChainLink(PokeApiPokemonEvolutionChainResponse.ChainLink chainLink) {
         if(chainLink.getSpecies() == null) return null;
 
@@ -269,6 +324,11 @@ public class PokemonServiceImpl implements PokemonService {
         this.pokemonListSize = pokemonListSize;
     }
 
+    /**
+     * Create comparator to manipulate easily based on sort param
+     * @param sort
+     * @return Comparator<BasicPokemonDTO>
+     */
     private Comparator<BasicPokemonDTO> buildComparatorBasedOnSort(String sort) {
 
         Comparator<BasicPokemonDTO> byId =
