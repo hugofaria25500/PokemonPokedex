@@ -1,6 +1,7 @@
 import "../css/HeroContent.css";
 
 function HeroContent () {
+    {/*HERO CONTENT COMPONENT TO SEPARATE TEXT VISUAL INFORMATION*/}
     return (
         <>
             <h3 className="label">Pokédex</h3>

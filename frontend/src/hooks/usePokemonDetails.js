@@ -6,6 +6,7 @@ export function usePokemonDetails(id) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  {/*IF SELECTED ID CHANGES THEN PROCEEDS TO CALL THE SERVICE METHOD - getPokemonDetailsById(id)*/}
   useEffect(() => {
   if (!id) return;
 

@@ -3,6 +3,7 @@ import FeatureCard from "../components/FeatureCard";
 import "../css/FeatureSection.css"
 
 function FeatureSection () {
+    {/*COMPONENT THAT HOLDS FEATURE CARDS COMPONENTS*/}
     return (
         <div className="feature-container">
             <FeatureCard title={"Fast Search"} description={"Find any Pokémon instantly"}/>

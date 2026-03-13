@@ -13,6 +13,12 @@ import java.util.List;
 @Component
 public class PokemonMapper {
 
+    /**
+     * Map PokeApiPokemonResponse to PokemonDTO
+     * @param response
+     * @return PokemonDTO
+     */
+
     public PokemonDTO toPokemonDTO(PokeApiPokemonResponse response) {
 
         PokemonDTO dto = new PokemonDTO();
@@ -33,6 +39,11 @@ public class PokemonMapper {
         return dto;
     }
 
+    /**
+     * Map PokeApiPokemonEvolutionResponse to EvolutionDTO
+     * @param response
+     * @return EvolutionDTO
+     */
     public EvolutionDTO toPokemonEvolutionDTO(PokeApiPokemonEvolutionResponse response) {
 
         EvolutionDTO dto = new EvolutionDTO();
@@ -53,6 +64,14 @@ public class PokemonMapper {
         return dto;
     }
 
+    /**
+     * Map simultaneously PokeApiResponse to PokemonDetailDTO
+     * @param response
+     * @param specieResponse
+     * @param abilitiyDTOList
+     * @param evolutionChainDTOList
+     * @return PokemonDetailDTO
+     */
     public PokemonDetailDTO toPokemonDetailDTO(PokeApiPokemonDetailResponse response,
                                                PokeApiPokemonSpecieResponse specieResponse,
                                                List<AbilitiyDTO> abilitiyDTOList,

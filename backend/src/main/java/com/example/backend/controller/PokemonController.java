@@ -1,6 +1,5 @@
 package com.example.backend.controller;
 
-import com.example.backend.dto.BasicPokemonDTO;
 import com.example.backend.dto.PokemonDTO;
 import com.example.backend.dto.PokemonDetailDTO;
 import com.example.backend.service.PokemonService;
