@@ -7,3 +7,12 @@
 .pokemon-preview-card-container img{
     width: 220px;
 }
+
+/*MEDIA QUERIES*/
+@media (max-width: 1100px) {
+
+    .pokemon-preview-card-container.right {
+        display: none;
+    }
+
+}
