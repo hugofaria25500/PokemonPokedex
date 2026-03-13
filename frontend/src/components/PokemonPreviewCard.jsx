@@ -1,3 +1,5 @@
+import "../css/PokemonPreviewCard.css";
+
 function PokemonPreviewCard ({imgSource, position}) {
     return (
         <div className={`pokemon-preview-card-container ${position}`}>

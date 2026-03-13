@@ -14,8 +14,7 @@ function HeroSection () {
             </div>
 
             <div className="pokemon-preview-container">
-                <PokemonPreviewCard imgSource={PokemonCardPreviewBulbasaur} position={"left"} /> 
-                <PokemonPreviewCard imgSource={PokemonCardPreviewCharmander} position={"center"} /> 
+                <PokemonPreviewCard imgSource={PokemonCardPreviewBulbasaur} position={"left"} />
                 <PokemonPreviewCard imgSource={PokemonCardPreviewSquirtle} position={"right"} /> 
             </div>
         </div>
