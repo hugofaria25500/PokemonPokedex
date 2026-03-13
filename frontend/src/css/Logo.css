@@ -1,3 +1,4 @@
+/*LOGO CONTAINER*/
 .logo-container {
     margin-top: 30px;
     display: flex;
@@ -8,7 +9,7 @@
 
 /*MEDIA QUERIES*/
 @media (max-width: 1600px) {
-
+    /*LOGO CONTAINER*/
     .homepage-container .logo-container {
         display: none;
     }

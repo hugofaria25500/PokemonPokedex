@@ -1,3 +1,4 @@
+/*POKEMON PREVIEW CARD CONTAINER*/
 .pokemon-preview-card-container {
     display: flex;
     align-items: center;
@@ -11,6 +12,7 @@
 /*MEDIA QUERIES*/
 @media (max-width: 1100px) {
 
+    /*POKEMON PREVIEW CARD CONTAINER - RIGHT*/
     .pokemon-preview-card-container.right {
         display: none;
     }

@@ -33,7 +33,7 @@ export function usePokemons(filters = {}) {
     }
   };
 
-   useEffect(() => {
+  useEffect(() => {
     setOffset(0);
     setPokemonList([]);
     setResetTrigger(prev => prev + 1);
