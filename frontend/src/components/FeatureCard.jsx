@@ -1,3 +1,5 @@
+import "../css/FeatureCard.css"
+
 function FeatureCard ({title, description}) {
     return (
         <div className="feature-card-container">
