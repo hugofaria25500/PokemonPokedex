@@ -24,7 +24,7 @@ function Navbar() {
                 <NavbarOption icon={gamesIcon} label="Video Games" disabled />
                 <NavbarOption icon={pokemonTvIcon} label="Pokemon TV" disabled />
                 <NavbarOption icon={eventsIcon} label="Events" disabled />
-                <NavbarOption icon={projectIcon} label="Project" path="/project" />
+                <NavbarOption icon={projectIcon} label="Project" onClick={() => window.open("https://github.com/hugofaria25500/PokemonPokedex", "_blank")}/>
             </nav>
 
             {/* MOBILE MENU */}

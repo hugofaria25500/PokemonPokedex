@@ -16,8 +16,8 @@ function NavbarOption({ icon, label, path, disabled = false, onClick}) {
     return (
         <NavLink to={path}
             onClick={onClick}
-            className={({ isActive }) =>
-                `navbar-option-container ${isActive ? "active" : ""}`
+            className={({ isActive }) => 
+                `navbar-option-container ${isActive && label != "Project" ? "active" : ""}`
             }>
                 
             <img className="navbar-icon" src={icon} alt={label} />
