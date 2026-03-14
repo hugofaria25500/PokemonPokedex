@@ -8,15 +8,15 @@ This project was built to practice **full-stack development**, including a **Rea
 
 # 📸 Application Preview
 
-### Main Interface
+### Desktop
 
-<img width="1904" height="941" alt="image" src="https://github.com/user-attachments/assets/6f90c9a6-45d9-43c1-9189-5a5342310e9f" />
-<img width="377" height="815" alt="image" src="https://github.com/user-attachments/assets/7126cfbf-5073-4c28-a525-89102603fa45" />
+<img width="1159" height="577" alt="image" src="https://github.com/user-attachments/assets/945d2d02-e5c6-4d9b-90a8-317c6f831c3e" />
+<img width="1187" height="588" alt="image" src="https://github.com/user-attachments/assets/160e0980-1326-46e4-99d7-ce22ffc3b986" />
 
-### Pokémon Details
+### Mobile
 
-<img width="370" height="814" alt="image" src="https://github.com/user-attachments/assets/588c1087-eb96-4946-b8a5-910c62a3d097" />
-<img width="1885" height="941" alt="image" src="https://github.com/user-attachments/assets/af5a55bd-b66b-4815-b1a3-9bb8d2af48aa" />
+<img width="1079" height="681" alt="image" src="https://github.com/user-attachments/assets/f3adb581-1b25-461e-bc13-79e902af6187" />
+
 
 ---
 
