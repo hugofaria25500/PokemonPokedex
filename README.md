@@ -10,11 +10,13 @@ This project was built to practice **full-stack development**, including a **Rea
 
 ### Main Interface
 
-![App Screenshot](docs/screenshots/app-main.png)
+<img width="1904" height="941" alt="image" src="https://github.com/user-attachments/assets/6f90c9a6-45d9-43c1-9189-5a5342310e9f" />
+<img width="377" height="815" alt="image" src="https://github.com/user-attachments/assets/7126cfbf-5073-4c28-a525-89102603fa45" />
 
 ### Pokémon Details
 
-![Details Screenshot](docs/screenshots/app-details.png)
+<img width="370" height="814" alt="image" src="https://github.com/user-attachments/assets/588c1087-eb96-4946-b8a5-910c62a3d097" />
+<img width="1885" height="941" alt="image" src="https://github.com/user-attachments/assets/af5a55bd-b66b-4815-b1a3-9bb8d2af48aa" />
 
 ---
 
@@ -180,17 +182,6 @@ Initial UI layout and interface ideas were created using **Figma**.
 
 Mock Example on Figma:
 <img width="866" height="617" alt="image" src="https://github.com/user-attachments/assets/74384cd2-4495-4a53-ab95-125d784dafb4" />
-
-Final Website Design:
-
-Desktop:
-<img width="1904" height="941" alt="image" src="https://github.com/user-attachments/assets/6f90c9a6-45d9-43c1-9189-5a5342310e9f" />
-<img width="1885" height="941" alt="image" src="https://github.com/user-attachments/assets/af5a55bd-b66b-4815-b1a3-9bb8d2af48aa" />
-
-Mobile:
-
-<img width="377" height="815" alt="image" src="https://github.com/user-attachments/assets/7126cfbf-5073-4c28-a525-89102603fa45" />
-<img width="370" height="814" alt="image" src="https://github.com/user-attachments/assets/588c1087-eb96-4946-b8a5-910c62a3d097" />
 
 ---
 
