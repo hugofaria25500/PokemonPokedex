@@ -189,4 +189,4 @@ Mock Example on Figma:
 
 Hugo Faria
 
-GitHub: https://github.com/your-username
+GitHub: https://github.com/hugofaria25500
